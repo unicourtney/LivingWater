@@ -1,0 +1,8 @@
+com\livingwater\entities\Bottle.class
+com\livingwater\entities\BatchBottles.class
+com\livingwater\entities\Role.class
+com\livingwater\entities\User.class
+com\livingwater\entities\Dispenser.class
+com\livingwater\entities\Customer.class
+com\livingwater\entities\Batch.class
+com\livingwater\entities\Delivery.class
