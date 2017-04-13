@@ -16,11 +16,11 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 	<context:component-scan base-package="com.livingwater" />
 
 	<mvc:annotation-driven />
-	<mvc:resources mapping="/resources/**" location="/resources/assets/" />
+	<mvc:resources mapping="/resources/**" location="/resources/" />
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/livingwater" />
+		<property name="url" value="jdbc:mysql://localhost:3306/livingwater	" />
 		<property name="username" value="root" />
 		<property name="password" value="" />
 	</bean>
@@ -38,7 +38,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 				<prop key="hibernate.default_schema">livingwater</prop>
 				<prop key="format_sql">true</prop>
 				<prop key="use_sql_comments">true</prop>
-				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
 			</props>
 		</property>
 	</bean>
@@ -50,3 +50,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 </beans>
+
+
+
+ 

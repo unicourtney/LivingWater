@@ -10,10 +10,7 @@ import javax.persistence.*;
 @Table(name = "role")
 public class Role {
 
-	public Role() {
-		super();
-	}
-
+	
 	@Id
 	@Column(name = "roleID")
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,7 +19,11 @@ public class Role {
 	@Column(name = "name")
 	private String name;
 
+	public Role() {
+		super();
+	}
 
+	
 	public String getRoleID() {
 		return roleID;
 	}
