@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -10,7 +12,7 @@
 <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-<title>Free Responsive Admin Theme - ZONTAL</title>
+<title>Living Water</title>
 <!-- BOOTSTRAP CORE STYLE  -->
 <link
 	href="${pageContext.request.contextPath}/resources/css/bootstrap.css"
@@ -107,7 +109,7 @@
 				<div class="col-md-12">
 					<div class="navbar-collapse collapse ">
 						<ul id="menu-top" class="nav navbar-nav navbar-right">
-							<li><a class="menu-top-active" href="${pageContext.request.contextPath}/">Dashboard</a></li>
+							<li><a class="menu-top-active" href="${pageContext.request.contextPath}/inventory">Dashboard</a></li>
 							<li><a href="ui.html">UI Elements</a></li>
 							<li><a href="table.html">Data Tables</a></li>
 							<li><a href="forms.html">Forms</a></li>
