@@ -46,4 +46,10 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+<<<<<<< HEAD
+*.iml
+*.jar
+LivingWater/LivingWater.iml
+=======
 LivingWater/.idea/*
+>>>>>>> refs/remotes/origin/master

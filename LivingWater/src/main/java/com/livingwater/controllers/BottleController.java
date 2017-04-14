@@ -1,5 +1,7 @@
 package com.livingwater.controllers;
 
+import com.livingwater.services.BottleService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,18 +15,14 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class BottleController {
 
+    @Autowired
+    BottleService bottleService;
+
     //----------------------Add
 
     @RequestMapping(value="/addBottle", method = RequestMethod.POST)
     public ModelAndView addBottle(HttpServletRequest request, HttpServletResponse response, ModelMap map){
-        ModelAndView view = new ModelAndView("inventory-bottles");
-
-        String bottle_id = request.getParameter("bottle_id");
-        String bottle_type = request.getParameter("bottle_type");
-        String status = request.getParameter("status");
-
-        System.out.println("BOTTLE ID: " + bottle_id + "\nBOTTLE TYPE: " + bottle_type + "\nSTATUS: " + status);
-        return view;
+        return bottleService.addBottle(request,response);
     }
 
     //----------------------Edit/Update
