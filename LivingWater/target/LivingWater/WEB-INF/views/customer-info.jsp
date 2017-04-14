@@ -182,7 +182,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                    <h1 class="page-head-line">Customers</h1>
+                <h1 class="page-head-line">Customers</h1>
             </div>
         </div>
         <ul class="breadcrumb">
@@ -195,100 +195,50 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-5"></div>
-            <button class="btn btn-success btn-default" data-toggle="modal" data-target="#addCustomerModal">
-                Add Customer
+            <button class="btn btn-warning btn-default">
+                Edit Customer
+            </button>
+            <button class="btn btn-danger btn-default">
+                Delete Customer
             </button>
             <hr>
         </div>
 
-        <div class="modal fade" id="addCustomerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-             aria-hidden="true" style="display: none;">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h4 class="modal-title" id="myModalLabel">Add Customer</h4>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        CUSTOMER PROFILE
                     </div>
-                    <div class="modal-body">
-                        <form action="${pageContext.request.contextPath}/addCustomer"
-                              method="POST">
+
+
+                    <div class="panel-body">
+                        <form>
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control" placeholder="Name" name="customer_name"/>
+                                <input type="text" class="form-control" placeholder="" name="customer_name" disabled/>
                             </div>
                             <div class="form-group">
                                 <label>Address</label>
-                                <input type="text" class="form-control" placeholder="Address" name="customer_address"/>
+                                <input type="text" class="form-control" placeholder="" name="customer_address"
+                                       disabled/>
                             </div>
                             <div class="form-group">
                                 <label>Contact Number</label>
-                                <input type="tel" class="form-control" placeholder="" name="customer_contact"/>
+                                <input type="tel" class="form-control" placeholder="" name="customer_contact" disabled/>
                             </div>
                             <div class="form-group">
                                 <label>Customer Type</label>
-                                <select class="form-control" name="customer_type">
+                                <select class="form-control" name="customer_type" disabled>
                                     <option value="Regular">Regular</option>
                                     <option value="Dealer">Dealer</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label>Pricing</label>
-                                <input type="text" class="form-control" placeholder="0.00" name="customer_pricing"/>
-                            </div>
-
-                            <button type="submit" class="btn btn-default">Submit</button>
 
                         </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-                    </div>
                 </div>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-md-12">
-                <table id="example"
-                       class="table table-hover table-condensed table-striped"
-                       cellspacing="0" width="100%">
-                    <thead>
-                    <tr>
-                        <th>Customer ID</th>
-                        <th>Name</th>
-                        <th>Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>001</td>
-                        <td>Courtney</td>
-                        <td><a href="${pageContext.request.contextPath}/profiles/customers/info" class="btn btn-info btn-xs">VIEW</a>
-                            <a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-                    </tr>
-                    <tr>
-                        <td>002</td>
-                        <td>Leeroy</td>
-                        <td><a href="${pageContext.request.contextPath}/profiles/customers/info" class="btn btn-info btn-xs">VIEW</a>
-                            <a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-                    </tr>
-                    <tr>
-                        <td>003</td>
-                        <td>Camilo</td>
-                        <td><a href="${pageContext.request.contextPath}/profiles/customers/info" class="btn btn-info btn-xs">VIEW</a>
-                            <a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-                    </tr>
-                    <tr>
-                        <td>004</td>
-                        <td>Davien</td>
-                        <td><a href="${pageContext.request.contextPath}/profiles/customers/info" class="btn btn-info btn-xs">VIEW</a>
-                            <a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-
-                    </tr>
-                    </tbody>
-                </table>
             </div>
 
         </div>
@@ -325,6 +275,22 @@
 <script>
     $(document).ready(function () {
         $('#example').DataTable();
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        var button = $('#EditBtn');
+        $(button).attr('disabled', 'disabled');
+
+        $('.click').click(function() {
+            if ($(button).attr('disabled')) $(button).removeAttr('disabled');
+            else $(button).attr('disabled', 'disabled');
+        });
+
+        $(button).click(function() {
+            alert('Enabled!');
+        });
     });
 </script>
 </body>

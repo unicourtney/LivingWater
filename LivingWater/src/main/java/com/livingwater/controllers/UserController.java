@@ -76,6 +76,12 @@ public class UserController {
 		return view;
 	}
 
+	@RequestMapping(value="/profiles/customers/info", method = RequestMethod.GET)
+	public ModelAndView customerInfoPage(){
+		ModelAndView view = new ModelAndView("customer-info");
+		return view;
+	}
+
 	//----------------------Login
 	
 	@RequestMapping(value="/login", method = RequestMethod.POST)
