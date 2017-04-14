@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -16,7 +15,7 @@
 <!-- BOOTSTRAP CORE STYLE  -->
 <link
 	href="${pageContext.request.contextPath}/resources/css/bootstrap.css"
-	rel="stylesheet">
+	rel="stylesheet" />
 <!-- BOOTSTRAP DATA TABLE STYLE  -->
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -31,12 +30,17 @@
 <!-- CUSTOM STYLE  -->
 <link href="${pageContext.request.contextPath}/resources/css/style.css"
 	rel="stylesheet" />
+<!-- DROP DOWN MENU  -->
+<link
+	href="${pageContext.request.contextPath}/resources/css/drop-down.css"
+	rel="stylesheet" />
 <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 </head>
 <body>
 	<header>
@@ -59,7 +63,7 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href=""> <img
+				<a class="navbar-brand" href="index.html"> <img
 					src="${pageContext.request.contextPath}/resources/img/logo.png" />
 				</a>
 
@@ -76,8 +80,8 @@
 							<div class="dropdown-menu dropdown-settings">
 								<div class="media">
 									<a class="media-left" href="#"> <img
-										src="/WEB-INF/views/assets/img/64-64.jpg" alt=""
-										class="img-rounded" />
+										src="${pageContext.request.contextPath}/resources/img/64-64.jpg"
+										alt="" class="img-rounded" />
 									</a>
 									<div class="media-body">
 										<h4 class="media-heading">Jhon Deo Alex</h4>
@@ -109,9 +113,40 @@
 				<div class="col-md-12">
 					<div class="navbar-collapse collapse ">
 						<ul id="menu-top" class="nav navbar-nav navbar-right">
-							<li><a class="menu-top-active" href="${pageContext.request.contextPath}/inventory">Dashboard</a></li>
-							<li><a href="ui.html">UI Elements</a></li>
-							<li><a href="table.html">Data Tables</a></li>
+							<li><a href="" class="dropdown-toggle" id="dropdownMenu1"
+								data-toggle="dropdown">Inventory</a>
+								<ul class="dropdown-menu" role="menu"
+									aria-labelledby="dropdownMenu1">
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/inventory/bottles">Bottles</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/inventory/supplies">Supplies</a></li>
+								</ul></li>
+							<li><a 
+								href="" class="dropdown-toggle" id="dropdownMenu2"
+								data-toggle="dropdown">Profiles</a>
+								<ul class="dropdown-menu" role="menu"
+									aria-labelledby="dropdownMenu2">
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/profiles/customers">Customer Profiles</a></li>
+									<li role="presentation" class="divider"></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/profiles/delivery-teams">Delivery Team Profiles</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/profiles/employees">Employee Profiles</a></li>
+								</ul></li>
+							<li><a href="" class="menu-top-active" class="dropdown-toggle" id="dropdownMenu3"
+								data-toggle="dropdown">Sales</a>
+								<ul class="dropdown-menu" role="menu"
+									aria-labelledby="dropdownMenu3">
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/sales/delivery">Delivery</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/sales/refilling">Refilling
+											Team Profiles</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/sales/dispensers">Dispensers</a></li>
+								</ul></li>
 							<li><a href="forms.html">Forms</a></li>
 							<li><a href="login.html">Login Page</a></li>
 							<li><a href="blank.html">Blank Page</a></li>
@@ -128,10 +163,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h4 class="page-head-line">Bottles</h4>
-
+					<h1 class="page-head-line">Dispensers</h1>
 				</div>
-
 			</div>
 			<div class="row">
 				<div class="col-md-12">
@@ -140,36 +173,27 @@
 						cellspacing="0" width="100%">
 						<thead>
 							<tr>
-								<th>Serial No.</th>
-								<th>Case</th>
-								<th>Status</th>
-								<th>DateLastDelivered</th>
+								<th>Customer ID</th>
+								<th>Name</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>#00001</td>
-								<td>Special</td>
-								<td>Delivered</td>
-								<td>4/13/2017</td>
+								<td>001</td>
+								<td>Courtney</td>
 							</tr>
 							<tr>
-								<td>#00002</td>
-								<td>Not</td>
-								<td>Damaged</td>
-								<td>4/14/2017</td>
+								<td>002</td>
+								<td>Leeroy</td>
 							</tr>
 							<tr>
-								<td>#00003</td>
-								<td>Special</td>
-								<td>Refilled</td>
-								<td>4/15/2017</td>
+								<td>003</td>
+								<td>Camilo</td>
 							</tr>
 							<tr>
-								<td>#00004</td>
-								<td>Not</td>
-								<td>Loaded</td>
-								<td>4/16/2017</td>
+								<td>004</td>
+								<td>Davien</td>
+
 							</tr>
 						</tbody>
 					</table>
@@ -177,6 +201,7 @@
 
 			</div>
 		</div>
+	</div>
 	</div>
 	<!-- CONTENT-WRAPPER SECTION END-->
 	<footer>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -30,6 +30,11 @@
 	rel="stylesheet" />
 <!-- CUSTOM STYLE  -->
 <link href="${pageContext.request.contextPath}/resources/css/style.css"
+	rel="stylesheet" />
+
+<!-- DROP DOWN MENU  -->
+<link
+	href="${pageContext.request.contextPath}/resources/css/drop-down.css"
 	rel="stylesheet" />
 <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -109,9 +114,43 @@
 				<div class="col-md-12">
 					<div class="navbar-collapse collapse ">
 						<ul id="menu-top" class="nav navbar-nav navbar-right">
-							<li><a class="menu-top-active" href="${pageContext.request.contextPath}/inventory">Dashboard</a></li>
-							<li><a href="ui.html">UI Elements</a></li>
-							<li><a href="table.html">Data Tables</a></li>
+							<li><a class="menu-top-active" href=""
+								class="dropdown-toggle" id="dropdownMenu1"
+								data-toggle="dropdown">Inventory</a>
+								<ul class="dropdown-menu" role="menu"
+									aria-labelledby="dropdownMenu1">
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/inventory/bottles">Bottles</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/inventory/supplies">Supplies</a></li>
+								</ul></li>
+							<li><a href="" class="dropdown-toggle" id="dropdownMenu2"
+								data-toggle="dropdown">Profiles</a>
+								<ul class="dropdown-menu" role="menu"
+									aria-labelledby="dropdownMenu2">
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/profiles/customers">Customer
+											Profiles</a></li>
+									<li role="presentation" class="divider"></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/profiles/delivery-teams">Delivery
+											Team Profiles</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/profiles/employees">Employee
+											Profiles</a></li>
+								</ul></li>
+							<li><a href="" class="dropdown-toggle" id="dropdownMenu3"
+								data-toggle="dropdown">Sales</a>
+								<ul class="dropdown-menu" role="menu"
+									aria-labelledby="dropdownMenu3">
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/sales/delivery">Delivery</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/sales/refilling">Refilling
+											Team Profiles</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/sales/dispensers">Dispensers</a></li>
+								</ul></li>
 							<li><a href="forms.html">Forms</a></li>
 							<li><a href="login.html">Login Page</a></li>
 							<li><a href="blank.html">Blank Page</a></li>
@@ -128,7 +167,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h4 class="page-head-line">Bottles</h4>
+					<h4 class="page-head-line">Supplies</h4>
 
 				</div>
 
@@ -140,36 +179,27 @@
 						cellspacing="0" width="100%">
 						<thead>
 							<tr>
-								<th>Serial No.</th>
-								<th>Case</th>
-								<th>Status</th>
-								<th>DateLastDelivered</th>
+								<th>Item</th>
+								<th>Quantity</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>#00001</td>
-								<td>Special</td>
-								<td>Delivered</td>
-								<td>4/13/2017</td>
+								<td>Umbrella</td>
+								<td>56</td>
 							</tr>
 							<tr>
-								<td>#00002</td>
-								<td>Not</td>
-								<td>Damaged</td>
-								<td>4/14/2017</td>
+								<td>Cap</td>
+								<td>38</td>
 							</tr>
 							<tr>
-								<td>#00003</td>
-								<td>Special</td>
-								<td>Refilled</td>
-								<td>4/15/2017</td>
+								<td>Stickers</td>
+								<td>80</td>
 							</tr>
 							<tr>
-								<td>#00004</td>
-								<td>Not</td>
-								<td>Loaded</td>
-								<td>4/16/2017</td>
+								<td>Stoppers</td>
+								<td>74</td>
+
 							</tr>
 						</tbody>
 					</table>
