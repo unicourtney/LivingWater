@@ -27,6 +27,12 @@ public class UserController {
 		ModelAndView view = new ModelAndView("inventory-bottles");
 		return view;
 	}
+
+	@RequestMapping(value="/inventory/batch", method = RequestMethod.GET)
+	public ModelAndView inventoryBatchPage(){
+		ModelAndView view = new ModelAndView("inventory-batch");
+		return view;
+	}
 	
 	@RequestMapping(value="/inventory/supplies", method = RequestMethod.GET)
 	public ModelAndView inventorySuppliesPage(){
@@ -82,10 +88,6 @@ public class UserController {
 		System.out.println("USER ID: " + user_id + "\nPASSWORD: " + password);
 		return view;
 	}
-	
-	//----------------------Add
-	
-	//----------------------Edit
 	
 	//----------------------Delete
 }
