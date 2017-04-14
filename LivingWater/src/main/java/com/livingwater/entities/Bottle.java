@@ -27,7 +27,14 @@ public class Bottle {
 
 	@Column(name="status")
 	private String status;
-	
+
+	public Bottle(String serialNumber, String bottleType, String status, Date dateLastDelivered) {
+		this.serialNumber = serialNumber;
+		this.bottleType = bottleType;
+		this.status = status;
+		this.dateLastDelivered = dateLastDelivered;
+	}
+
 	@Column(name="dateLastDelivered")
 	private Date dateLastDelivered;
 
