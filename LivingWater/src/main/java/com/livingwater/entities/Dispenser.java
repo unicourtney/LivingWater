@@ -7,7 +7,7 @@ import javax.persistence.*;
  * 
  */
 @Entity
-@Table(name = "Dispenser")
+@Table(name = "DispenserDao")
 public class Dispenser {
 
 	@Id

@@ -119,7 +119,12 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-  </dependencies>
+		<dependency>
+			<groupId>com.google.collections</groupId>
+			<artifactId>google-collections</artifactId>
+			<version>1.0</version>
+		</dependency>
+	</dependencies>
   <build>
     <finalName>LivingWater</finalName>
   </build>
