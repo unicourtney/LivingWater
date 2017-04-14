@@ -1,11 +1,11 @@
 package com.livingwater.dao;
 
-import com.livingwater.entities.User;
+import com.livingwater.entities.Dispenser;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-@Repository("userDao")
+@Repository("dispenserDao")
 @Transactional
-public interface UserDao extends GenericDao<User>{
+public interface DispenserDao extends GenericDao<Dispenser>{
 
 }

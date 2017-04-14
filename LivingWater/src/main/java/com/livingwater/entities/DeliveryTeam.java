@@ -1,20 +1,43 @@
 package com.livingwater.entities;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
+import java.io.Serializable;
 
-public class DeliveryTeam {
+@Entity
+@Table(name = "deliveryTeam")
+public class DeliveryTeam implements Serializable{
 	@Id
-	@Column(name = "deliveryID")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String deliveryID;
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name = "deliveryID")
+	private Delivery delivery;
 
+	@Id
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "user")
 	private User user;
+
+	public DeliveryTeam() {
+	}
+
+	public Delivery getDelivery() {
+		return delivery;
+	}
+
+	public void setDelivery(Delivery delivery) {
+		this.delivery = delivery;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public DeliveryTeam(Delivery delivery, User user) {
+
+		this.delivery = delivery;
+		this.user = user;
+	}
 }

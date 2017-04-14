@@ -18,6 +18,35 @@ public class User {
 	@Column(name = "name")
 	private String name;
 
+	@Column(name = "username")
+	private String username;
+
+	public User(String name, String username, String password, Role role) {
+		this.name = name;
+		this.username = username;
+		this.password = password;
+		this.role = role;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	@Column(name = "password")
+	private String password;
+
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "role")
 	private Role role;
