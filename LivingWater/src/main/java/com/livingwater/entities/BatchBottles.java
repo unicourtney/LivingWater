@@ -18,7 +18,7 @@ public class BatchBottles {
 	private String batchID;
 	
 	@ManyToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name = "bottle")
+	@JoinColumn(name = "bottleID")
 	private List<Bottle> bottle;
 
 	public BatchBottles() {
