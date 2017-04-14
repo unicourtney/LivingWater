@@ -287,6 +287,7 @@
                             <th>Case</th>
                             <th>Status</th>
                             <th>DateLastDelivered</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -295,24 +296,28 @@
                             <td>Special</td>
                             <td>Delivered</td>
                             <td>4/13/2017</td>
+                            <td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
                         </tr>
                         <tr>
                             <td>#00002</td>
                             <td>Not</td>
                             <td>Damaged</td>
                             <td>4/14/2017</td>
+                            <td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
                         </tr>
                         <tr>
                             <td>#00003</td>
                             <td>Special</td>
                             <td>Refilled</td>
                             <td>4/15/2017</td>
+                            <td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
                         </tr>
                         <tr>
                             <td>#00004</td>
                             <td>Not</td>
                             <td>Loaded</td>
                             <td>4/16/2017</td>
+                            <td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
                         </tr>
                         </tbody>
                     </table>
