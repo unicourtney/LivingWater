@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="LivingWater:war">
+    <output-path>$PROJECT_DIR$/LivingWater/target</output-path>
+    <root id="archive" name="LivingWater.war">
+      <element id="artifact" artifact-name="LivingWater:war exploded" />
+    </root>
+  </artifact>
+</component>

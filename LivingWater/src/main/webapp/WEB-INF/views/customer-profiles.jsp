@@ -120,6 +120,8 @@
 									<li role="presentation"><a role="menuitem" tabindex="-1"
 										href="${pageContext.request.contextPath}/inventory/bottles">Bottles</a></li>
 									<li role="presentation"><a role="menuitem" tabindex="-1"
+															   href="${pageContext.request.contextPath}/inventory/batch">Batch</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1"
 										href="${pageContext.request.contextPath}/inventory/supplies">Supplies</a></li>
 								</ul></li>
 							<li><a class="menu-top-active"
