@@ -195,7 +195,7 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-5"></div>
-            <button class="btn btn-warning btn-default">
+            <button id="clicker" class="btn btn-warning btn-default">
                 Edit Customer
             </button>
             <button class="btn btn-danger btn-default">
@@ -279,17 +279,22 @@
 </script>
 
 <script>
-    $(document).ready(function() {
-        var button = $('#EditBtn');
-        $(button).attr('disabled', 'disabled');
+    $().ready(function () {
 
-        $('.click').click(function() {
-            if ($(button).attr('disabled')) $(button).removeAttr('disabled');
-            else $(button).attr('disabled', 'disabled');
-        });
+        $('#clicker').click(function () {
+            $('input').each(function () {
 
-        $(button).click(function() {
-            alert('Enabled!');
+                $(this).removeAttr('disabled');
+
+
+            });
+
+            $('select').each(function () {
+
+                $(this).removeAttr('disabled');
+
+
+            });
         });
     });
 </script>
