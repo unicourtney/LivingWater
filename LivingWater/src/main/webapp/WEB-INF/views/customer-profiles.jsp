@@ -182,15 +182,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                    <h1 class="page-head-line">Customers</h1>
+                <h1 class="page-head-line">Customers</h1>
             </div>
         </div>
-        <ul class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Pictures</a></li>
-            <li><a href="#">Summer 15</a></li>
-            <li>Italy</li>
-        </ul>
 
         <div class="row">
             <div class="col-md-4"></div>
@@ -265,25 +259,29 @@
                     <tr>
                         <td>001</td>
                         <td>Courtney</td>
-                        <td><a href="${pageContext.request.contextPath}/profiles/customers/info" class="btn btn-info btn-xs">VIEW</a>
+                        <td><a href="${pageContext.request.contextPath}/profiles/customers/info"
+                               class="btn btn-info btn-xs">VIEW</a>
                             <a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
                     </tr>
                     <tr>
                         <td>002</td>
                         <td>Leeroy</td>
-                        <td><a href="${pageContext.request.contextPath}/profiles/customers/info" class="btn btn-info btn-xs">VIEW</a>
+                        <td><a href="${pageContext.request.contextPath}/profiles/customers/info"
+                               class="btn btn-info btn-xs">VIEW</a>
                             <a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
                     </tr>
                     <tr>
                         <td>003</td>
                         <td>Camilo</td>
-                        <td><a href="${pageContext.request.contextPath}/profiles/customers/info" class="btn btn-info btn-xs">VIEW</a>
+                        <td><a href="${pageContext.request.contextPath}/profiles/customers/info"
+                               class="btn btn-info btn-xs">VIEW</a>
                             <a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
                     </tr>
                     <tr>
                         <td>004</td>
                         <td>Davien</td>
-                        <td><a href="${pageContext.request.contextPath}/profiles/customers/info" class="btn btn-info btn-xs">VIEW</a>
+                        <td><a href="${pageContext.request.contextPath}/profiles/customers/info"
+                               class="btn btn-info btn-xs">VIEW</a>
                             <a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
 
                     </tr>

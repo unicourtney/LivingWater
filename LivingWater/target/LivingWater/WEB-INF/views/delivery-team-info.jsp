@@ -182,22 +182,22 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="page-head-line">Customers</h1>
+                <h1 class="page-head-line">Delivery Team</h1>
             </div>
         </div>
         <ul class="breadcrumb">
-            <li><a href="${pageContext.request.contextPath}/profiles/customers">Customers</a></li>
-            <li>View Customer</li>
+            <li><a href="${pageContext.request.contextPath}/profiles/delivery-teams">Delivery Team</a></li>
+            <li>View Member</li>
         </ul>
 
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-5"></div>
             <button id="clicker" class="showBtn btn btn-warning btn-default">
-                Edit Customer
+                Edit Member
             </button>
             <button class="btn btn-danger btn-default">
-                Delete Customer
+                Delete Member
             </button>
             <hr>
         </div>
@@ -207,43 +207,47 @@
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        CUSTOMER PROFILE
+                        MEMBER PROFILE
                     </div>
 
 
                     <div class="panel-body">
-                        <form action="${pageContext.request.contextPath}/editCustomer"
-                              method="POST">
+                        <form>
                             <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" class="form-control" placeholder="" name="customer_name" disabled/>
+                                <form action="${pageContext.request.contextPath}/editDeliveryTeamMember"
+                                      method="POST">
+                                    <div class="form-group">
+                                        <label>Delivery ID</label>
+                                        <select class="form-control" name="deliveryteam_id" disabled>
+                                            <option value="001">001</option>
+                                            <option value="002">002</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>User</label>
+                                        <select class="form-control" name="deliveryteam_user" disabled>
+                                            <option value="Courtney">Courtney</option>
+                                            <option value="Leeroy">Leeroy</option>
+                                            <option value="Camilo">Camilo</option>
+                                            <option value="Leah">Leah</option>
+                                        </select>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-success btn-default" style="display: none;">
+                                        Submit
+                                    </button>
+                                    <button id="hide2" class="btn btn-default toHideBtn" style="display: none;">Cancel
+                                    </button>
+
+                                </form>
                             </div>
-                            <div class="form-group">
-                                <label>Address</label>
-                                <input type="text" class="form-control" placeholder="" name="customer_address"
-                                       disabled/>
-                            </div>
-                            <div class="form-group">
-                                <label>Contact Number</label>
-                                <input type="tel" class="form-control" placeholder="" name="customer_contact" disabled/>
-                            </div>
-                            <div class="form-group">
-                                <label>Customer Type</label>
-                                <select class="form-control" name="customer_type" disabled>
-                                    <option value="Regular">Regular</option>
-                                    <option value="Dealer">Dealer</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="btn btn-success btn-default" style="display: none;">Submit</button>
-                            <button  id="hide2" class="btn btn-default toHideBtn" style="display: none;">Cancel</button>
-                        </form>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
-</div>
 </div>
 <!-- CONTENT-WRAPPER SECTION END-->
 <footer>
