@@ -186,16 +186,14 @@
             </div>
         </div>
         <ul class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Pictures</a></li>
-            <li><a href="#">Summer 15</a></li>
-            <li>Italy</li>
+            <li><a href="${pageContext.request.contextPath}/profiles/customers">Customers</a></li>
+            <li>View Customer</li>
         </ul>
 
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-5"></div>
-            <button id="clicker" class="btn btn-warning btn-default">
+            <button id="clicker" class="showBtn btn btn-warning btn-default">
                 Edit Customer
             </button>
             <button class="btn btn-danger btn-default">
@@ -214,7 +212,8 @@
 
 
                     <div class="panel-body">
-                        <form>
+                        <form action="${pageContext.request.contextPath}/editCustomer"
+                              method="POST">
                             <div class="form-group">
                                 <label>Name</label>
                                 <input type="text" class="form-control" placeholder="" name="customer_name" disabled/>
@@ -235,7 +234,8 @@
                                     <option value="Dealer">Dealer</option>
                                 </select>
                             </div>
-
+                            <button type="submit" class="btn btn-success btn-default" style="display: none;">Submit</button>
+                            <button  id="hide2" class="btn btn-default toHideBtn" style="display: none;">Cancel</button>
                         </form>
                     </div>
                 </div>
@@ -295,6 +295,40 @@
 
 
             });
+        });
+
+        $('#hide2').click(function () {
+            $('input').each(function () {
+
+                $(this).removeAttr('disabled');
+
+
+            });
+
+            $('select').each(function () {
+
+                $(this).removeAttr('disabled');
+
+
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#hide").click(function () {
+            $(".btn-success").hide();
+        });
+        $(".showBtn").click(function () {
+            $(".btn-success").show();
+            $(".toHideBtn").show();
+        });
+        $(".hide2").click(function () {
+            $(".btn-success").hide();
+        });
+        $(".hide2").click(function () {
+            $(".toHideBtn").hide();
         });
     });
 </script>
