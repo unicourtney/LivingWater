@@ -9,4 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface RoleDao extends GenericDao<Role>{
 
+    public Role getRole(String roleName);
+
 }
