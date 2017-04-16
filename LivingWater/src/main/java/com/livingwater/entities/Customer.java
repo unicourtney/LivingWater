@@ -14,7 +14,7 @@ public class Customer {
 	@Id
 	@Column(name="customerID")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String customerID;
+	private Integer customerID;
 
 	@Column(name="name")
 	private String name;
@@ -27,19 +27,19 @@ public class Customer {
 	private String address;
 	
 	@Column(name="contact_number")
-	private Integer contactNumber;
-	
+	private Long contactNumber;
+
 	@Column(name="pricing")	
 	private Double pricing;
 	
 	@Column(name="typeOfCustomer")
 	private String typeOfCustomer;
 
-	public String getCustomerID() {
+	public Integer getCustomerID() {
 		return customerID;
 	}
 
-	public void setCustomerID(String customerID) {
+	public void setCustomerID(Integer customerID) {
 		this.customerID = customerID;
 	}
 
@@ -59,11 +59,11 @@ public class Customer {
 		this.address = address;
 	}
 
-	public Integer getContactNumber() {
+	public Long getContactNumber() {
 		return contactNumber;
 	}
 
-	public void setContactNumber(Integer contactNumber) {
+	public void setContactNumber(Long contactNumber) {
 		this.contactNumber = contactNumber;
 	}
 

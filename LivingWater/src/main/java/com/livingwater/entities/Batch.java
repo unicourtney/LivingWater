@@ -14,7 +14,7 @@ public class Batch{
 	@Id
 	@Column(name="batchID")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String batchID;
+	private Integer batchID;
 	
 	@Column(name="status")
 	private String status;
@@ -23,11 +23,11 @@ public class Batch{
 		super();
 	}
 
-	public String getBatchID() {
+	public Integer getBatchID() {
 		return batchID;
 	}
 
-	public void setBatchID(String batchID) {
+	public void setBatchID(Integer batchID) {
 		this.batchID = batchID;
 	}
 
