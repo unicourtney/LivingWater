@@ -182,22 +182,22 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="page-head-line">Customers</h1>
+                <h1 class="page-head-line">Employees</h1>
             </div>
         </div>
         <ul class="breadcrumb">
-            <li><a href="${pageContext.request.contextPath}/profiles/customers">Customers</a></li>
-            <li>View Customer</li>
+            <li><a href="${pageContext.request.contextPath}/profiles/employees">Employees</a></li>
+            <li>View Employee</li>
         </ul>
 
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-5"></div>
             <button id="clicker" class="showBtn btn btn-warning btn-default">
-                Edit Customer
+                Edit Employee
             </button>
             <button class="btn btn-danger btn-default">
-                Delete Customer
+                Delete Employee
             </button>
             <hr>
         </div>
@@ -207,35 +207,40 @@
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        CUSTOMER PROFILE
+                        EMPLOYEE PROFILE
                     </div>
 
 
                     <div class="panel-body">
-                        <form action="${pageContext.request.contextPath}/editCustomer"
+                        <form action="${pageContext.request.contextPath}/editEmployee"
                               method="POST">
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control" placeholder="" name="customer_name" disabled/>
+                                <input type="text" class="form-control" placeholder="Name" name="user_name" disabled/>
                             </div>
                             <div class="form-group">
-                                <label>Address</label>
-                                <input type="text" class="form-control" placeholder="" name="customer_address"
+                                <label>Username</label>
+                                <input type="text" class="form-control" placeholder="Username" name="username"
                                        disabled/>
                             </div>
                             <div class="form-group">
-                                <label>Contact Number</label>
-                                <input type="tel" class="form-control" placeholder="" name="customer_contact" disabled/>
+                                <label>Password</label>
+                                <input type="password" class="form-control" placeholder="" name="user_password"
+                                       disabled/>
                             </div>
                             <div class="form-group">
-                                <label>Customer Type</label>
-                                <select class="form-control" name="customer_type" disabled>
-                                    <option value="Regular">Regular</option>
-                                    <option value="Dealer">Dealer</option>
+                                <label>Role</label>
+                                <select class="form-control" name="user_role" disabled/>
+                                <option value="Superadmin">Superadmin</option>
+                                <option value="Admin">Admin</option>
+                                <option value="Regular">Regular</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-success btn-default" style="display: none;">Submit</button>
-                            <button  id="hide2" class="btn btn-default toHideBtn" style="display: none;">Cancel</button>
+                            <button type="submit" class="btn btn-success btn-default" style="display: none;">Submit
+                            </button>
+                            <button type="button" id="hide2" class="btn btn-default toHideBtn" style="display: none;">
+                                Cancel
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -297,7 +302,7 @@
             });
         });
 
-        $('#hide2').click(function () {
+        $("#hide2").click(function () {
             $('input').each(function () {
 
                 $(this).removeAttr('disabled');
@@ -324,10 +329,10 @@
             $(".btn-success").show();
             $(".toHideBtn").show();
         });
-        $(".hide2").click(function () {
+        $("#hide2").click(function () {
             $(".btn-success").hide();
         });
-        $(".hide2").click(function () {
+        $("#hide2").click(function () {
             $(".toHideBtn").hide();
         });
     });
