@@ -232,10 +232,8 @@
 	<script
 		src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 
-	<script>
-		$(document).ready(function() {
-			$('#example').DataTable();
-		});
-	</script>
+	<!-- LIVINGWATER SCRIPTS  -->
+	<script
+			src="${pageContext.request.contextPath}/resources/js/livingwaterscripts.js"></script>
 </body>
 </html>

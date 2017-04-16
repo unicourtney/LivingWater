@@ -21,8 +21,21 @@ public class BatchController {
     @Autowired
     private BatchService batchService;
 
+    //----------------------Add
+
     @RequestMapping(value="/addBatch", method = RequestMethod.POST)
     public ModelAndView addBatch(HttpServletRequest request, HttpServletResponse response, ModelMap map){
         return batchService.addBatch(request,response);
+    }
+
+    @RequestMapping(value="/addBottleToBatch", method = RequestMethod.POST)
+    public ModelAndView addBottleToBatch(HttpServletRequest request, HttpServletResponse response, ModelMap map){
+        ModelAndView view = new ModelAndView("inventory-batch");
+
+        String batch_id = request.getParameter("batch_id");
+        String bottle_id = request.getParameter("bottle_id");
+
+        System.out.println("BATCH ID: " + batch_id + "\nBOTTLE ID: " + bottle_id);
+        return view;
     }
 }
