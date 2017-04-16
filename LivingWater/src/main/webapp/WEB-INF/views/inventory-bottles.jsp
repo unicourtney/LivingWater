@@ -226,7 +226,7 @@
                                     </select>
                                 </div>
 
-                                <button type="submit" class="btn btn-default">Submit</button>
+                                <button type="submit" class="btn btn-success btn-default">Submit</button>
 
                             </form>
                         </div>
@@ -265,7 +265,7 @@
                                     </select>
                                 </div>
 
-                                <button type="submit" class="btn btn-default">Submit</button>
+                                <button type="submit" class="btn btn-success btn-default">Submit</button>
 
                             </form>
                         </div>
@@ -354,10 +354,8 @@
 <script
         src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 
-<script>
-    $(document).ready(function () {
-        $('#example').DataTable();
-    });
-</script>
+<!-- LIVINGWATER SCRIPTS  -->
+<script
+        src="${pageContext.request.contextPath}/resources/js/livingwaterscripts.js"></script>
 </body>
 </html>

@@ -219,7 +219,7 @@
 							</form>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-success btn-default" data-dismiss="modal">Close</button>
 
 						</div>
 					</div>
@@ -301,11 +301,8 @@
 		src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
 	<script
 		src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
-
-	<script>
-		$(document).ready(function() {
-			$('#example').DataTable();
-		});
-	</script>
+	<!-- LIVINGWATER SCRIPTS  -->
+	<script
+			src="${pageContext.request.contextPath}/resources/js/livingwaterscripts.js"></script>
 </body>
 </html>

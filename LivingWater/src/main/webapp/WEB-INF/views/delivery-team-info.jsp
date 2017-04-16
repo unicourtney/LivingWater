@@ -237,7 +237,7 @@
                                     <button type="submit" class="btn btn-success btn-default" style="display: none;">
                                         Submit
                                     </button>
-                                    <button id="hide2" class="btn btn-default toHideBtn" style="display: none;">Cancel
+                                    <button type="button" id="hide" class="btn btn-default toHideBtn" style="display: none;">Cancel
                                     </button>
 
                                 </form>
@@ -276,65 +276,8 @@
 <script
         src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 
-<script>
-    $(document).ready(function () {
-        $('#example').DataTable();
-    });
-</script>
-
-<script>
-    $().ready(function () {
-
-        $('#clicker').click(function () {
-            $('input').each(function () {
-
-                $(this).removeAttr('disabled');
-
-
-            });
-
-            $('select').each(function () {
-
-                $(this).removeAttr('disabled');
-
-
-            });
-        });
-
-        $('#hide2').click(function () {
-            $('input').each(function () {
-
-                $(this).removeAttr('disabled');
-
-
-            });
-
-            $('select').each(function () {
-
-                $(this).removeAttr('disabled');
-
-
-            });
-        });
-    });
-</script>
-
-<script>
-    $(document).ready(function () {
-        $("#hide").click(function () {
-            $(".btn-success").hide();
-        });
-        $(".showBtn").click(function () {
-            $(".btn-success").show();
-            $(".toHideBtn").show();
-        });
-        $(".hide2").click(function () {
-            $(".btn-success").hide();
-        });
-        $(".hide2").click(function () {
-            $(".toHideBtn").hide();
-        });
-    });
-</script>
+<!-- LIVINGWATER SCRIPTS  -->
+<script
+        src="${pageContext.request.contextPath}/resources/js/livingwaterscripts.js"></script>
 </body>
 </html>

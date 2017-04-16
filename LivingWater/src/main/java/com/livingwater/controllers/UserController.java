@@ -94,6 +94,11 @@ public class UserController{
         return view;
     }
 
+    @RequestMapping(value = "/inventory/supplies/info", method = RequestMethod.GET)
+    public ModelAndView supplyInfoPage() {
+        ModelAndView view = new ModelAndView("employee-info");
+        return view;
+    }
     //----------------------Login
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -106,6 +111,8 @@ public class UserController{
         System.out.println("USER ID: " + user_id + "\nPASSWORD: " + password);
         return view;
     }
+
+    //----------------------Add
 
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
     public ModelAndView addUser(HttpServletRequest request, HttpServletResponse response, ModelMap map) {
