@@ -1,6 +1,6 @@
 package com.livingwater.controllers;
 
-import com.livingwater.services.CustomerService;
+import com.livingwater.services.BatchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -10,22 +10,19 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.math.BigInteger;
 
 /**
- * Created by CourtneyLove on 4/14/2017.
+ * Created by John Leeroy Gadiane on 16/04/2017.
  */
 
 @Controller
-public class CustomerController {
+public class BatchController {
 
-    //----------------------Add
     @Autowired
-    private CustomerService customerService;
+    private BatchService batchService;
 
-
-    @RequestMapping(value="/addCustomer", method = RequestMethod.POST)
-    public ModelAndView addCustomer(HttpServletRequest request, HttpServletResponse response, ModelMap map){
-        return customerService.addCustomer(request,response);
+    @RequestMapping(value="/addBatch", method = RequestMethod.POST)
+    public ModelAndView addBatch(HttpServletRequest request, HttpServletResponse response, ModelMap map){
+        return batchService.addBatch(request,response);
     }
 }

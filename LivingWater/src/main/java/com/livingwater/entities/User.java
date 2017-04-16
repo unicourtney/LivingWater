@@ -13,13 +13,21 @@ public class User {
 	@Id
 	@Column(name = "userID")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String userID;
+	private Integer userID;
 
 	@Column(name = "name")
 	private String name;
 
 	@Column(name = "username")
 	private String username;
+
+	@Column(name = "password")
+	private String password;
+
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name = "role")
+	private Role role;
+
 
 	public User(String name, String username, String password, Role role) {
 		this.name = name;
@@ -44,15 +52,8 @@ public class User {
 		this.password = password;
 	}
 
-	@Column(name = "password")
-	private String password;
 
-	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name = "role")
-	private Role role;
-
-
-	public String getUserID() {
+	public Integer getUserID() {
 		return this.userID;
 	}
 
@@ -60,7 +61,7 @@ public class User {
 		super();
 	}
 
-	public void setUserID(String userid) {
+	public void setUserID(Integer userid) {
 		this.userID = userid;
 	}
 
@@ -79,5 +80,6 @@ public class User {
 	public void setRole(Role role) {
 		this.role = role;
 	}
+
 
 }
