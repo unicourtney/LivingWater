@@ -178,10 +178,10 @@
 							BASIC  FORM ELEMENTS
 						</div>
 						<div class="panel-body">
-							<form>
+							<form action="${pageContext.request.contextPath}/addBatch" method="POST">
 								<div class="form-group">
 									<label>Batch Name</label>
-									<input type="text" class="form-control" placeholder="Bottle ID" />
+									<input type="text" class="form-control" placeholder="Bottle ID" name="bottle_id" />
 								</div>
 
 								<button type="submit" class="btn btn-default">Submit</button>
