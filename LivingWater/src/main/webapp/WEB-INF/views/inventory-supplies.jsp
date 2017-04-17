@@ -170,9 +170,50 @@
 			<div class="row">
 				<div class="col-md-12">
 					<h4 class="page-head-line">Supplies</h4>
-
 				</div>
+			</div>
 
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-5"></div>
+				<button class="btn btn-success btn-default" data-toggle="modal" data-target="#addSupplyModal">
+					Add a Supply
+				</button>
+
+				<hr>
+			</div>
+
+			<div class="modal fade" id="addSupplyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+				 aria-hidden="true" style="display: none;">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h4 class="modal-title" id="myModalLabel">Add Bottle</h4>
+						</div>
+						<div class="modal-body">
+							<form action="${pageContext.request.contextPath}/addSupply"
+								  method="POST">
+								<div class="form-group">
+									<label>Material</label>
+									<input type="text" class="form-control" placeholder="" name="supply_name"/>
+								</div>
+								<div class="form-group">
+									<label>Quantity</label>
+									<input type="text" class="form-control" placeholder="" name="supply_quantity"/>
+								</div>
+
+
+								<button type="submit" class="btn btn-success btn-default">Submit</button>
+
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
@@ -183,25 +224,37 @@
 							<tr>
 								<th>Item</th>
 								<th>Quantity</th>
+								<th>Action</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td>Umbrella</td>
 								<td>56</td>
+								<td><a href="${pageContext.request.contextPath}/inventory/supplies/info"
+									   class="btn btn-info btn-xs">VIEW</a>
+									<a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
 							</tr>
 							<tr>
 								<td>Cap</td>
 								<td>38</td>
+								<td><a href="${pageContext.request.contextPath}/inventory/supplies/info"
+									   class="btn btn-info btn-xs">VIEW</a>
+									<a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
 							</tr>
 							<tr>
 								<td>Stickers</td>
 								<td>80</td>
+								<td><a href="${pageContext.request.contextPath}/inventory/supplies/info"
+									   class="btn btn-info btn-xs">VIEW</a>
+									<a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
 							</tr>
 							<tr>
 								<td>Stoppers</td>
 								<td>74</td>
-
+								<td><a href="${pageContext.request.contextPath}/inventory/supplies/info"
+									   class="btn btn-info btn-xs">VIEW</a>
+									<a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
 							</tr>
 						</tbody>
 					</table>
@@ -237,10 +290,8 @@
 	<script
 		src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 
-	<script>
-		$(document).ready(function() {
-			$('#example').DataTable();
-		});
-	</script>
+	<!-- LIVINGWATER SCRIPTS  -->
+	<script
+			src="${pageContext.request.contextPath}/resources/js/livingwaterscripts.js"></script>
 </body>
 </html>
