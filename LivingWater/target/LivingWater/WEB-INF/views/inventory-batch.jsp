@@ -172,25 +172,61 @@
 					<h4 class="page-head-line">Batch</h4>
 
 				</div>
-				<div class="col-md-6">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							BASIC  FORM ELEMENTS
-						</div>
-						<div class="panel-body">
-							<form action="${pageContext.request.contextPath}/addBatch" method="POST">
-								<div class="form-group">
-									<label>Batch Name</label>
-									<input type="text" class="form-control" placeholder="Bottle ID" name="bottle_id" />
-								</div>
+				<div class="row">
+					<div class="col-md-4"></div>
+					<div class="col-md-5"></div>
+					<form action="${pageContext.request.contextPath}/addBatch"
+						  method="POST">
+						<input type="hidden" value="1" class="form-control" placeholder="Batch ID" name="batch_id" />
+					<button type="submit" class="btn btn-success btn-default">
+						Create Batch
+					</button>
+						<button type="button" class="btn btn-info btn-default" data-toggle="modal" data-target="#addBottleToBatch">
+							Add Bottle To Batch
+						</button>
+					</form>
+					<hr>
+				</div>
 
-								<button type="submit" class="btn btn-default">Submit</button>
+				<div class="modal fade" id="addBottleToBatch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+					 aria-hidden="true" style="display: none;">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+								<h4 class="modal-title" id="myModalLabel2">Add Bottle To Batch</h4>
+							</div>
+							<div class="modal-body">
+								<form action="${pageContext.request.contextPath}/addBottleToBatch"
+									  method="POST">
+									<div class="form-group">
+										<label>Batch ID</label>
+										<select class="form-control" name="batch_id">
+											<option value="001">001</option>
+											<option value="002">002</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label>Bottle ID</label>
+										<select class="form-control" name="bottle_id">
+											<option value="1234">1234</option>
+											<option value="5678">5678</option>
+											<option value="91011">91011</option>
+											<option value="121314">121314</option>
+										</select>
+									</div>
 
-							</form>
+									<button type="submit" class="btn btn-success btn-default">Submit</button>
+
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+							</div>
 						</div>
 					</div>
 				</div>
-
 			</div>
 			<div class="row">
 				<div class="col-md-12">
@@ -199,36 +235,31 @@
 						cellspacing="0" width="100%">
 						<thead>
 							<tr>
-								<th>Serial No.</th>
-								<th>Case</th>
+								<th>Batch ID</th>
 								<th>Status</th>
-								<th>DateLastDelivered</th>
+								<th>Actions</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td>#00001</td>
 								<td>Special</td>
-								<td>Delivered</td>
-								<td>4/13/2017</td>
+								<td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
 							</tr>
 							<tr>
 								<td>#00002</td>
 								<td>Not</td>
-								<td>Damaged</td>
-								<td>4/14/2017</td>
+								<td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
 							</tr>
 							<tr>
 								<td>#00003</td>
 								<td>Special</td>
-								<td>Refilled</td>
-								<td>4/15/2017</td>
+								<td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
 							</tr>
 							<tr>
 								<td>#00004</td>
 								<td>Not</td>
-								<td>Loaded</td>
-								<td>4/16/2017</td>
+								<td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
 							</tr>
 						</tbody>
 					</table>
@@ -264,10 +295,8 @@
 	<script
 		src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 
-	<script>
-		$(document).ready(function() {
-			$('#example').DataTable();
-		});
-	</script>
+	<!-- LIVINGWATER SCRIPTS  -->
+	<script
+			src="${pageContext.request.contextPath}/resources/js/livingwaterscripts.js"></script>
 </body>
 </html>

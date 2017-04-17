@@ -230,7 +230,7 @@
                                 <input type="text" class="form-control" placeholder="0.00" name="customer_pricing"/>
                             </div>
 
-                            <button type="submit" class="btn btn-default">Submit</button>
+                            <button type="submit" class="btn btn-success btn-default">Submit</button>
 
                         </form>
                     </div>

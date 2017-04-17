@@ -24,10 +24,10 @@ public class BatchServiceImpl implements BatchService {
     public ModelAndView addBatch(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView view = new ModelAndView("inventory-batch");
 
-        Integer bottle_id = Integer.parseInt(request.getParameter("bottle_id"));
+        Integer batch_id = Integer.parseInt(request.getParameter("batch_id"));
 
         Batch batch = new Batch();
-        batch.setBatchID(bottle_id);
+        batch.setBatchID(batch_id);
         batchDao.create(batch);
         return view;
     }
