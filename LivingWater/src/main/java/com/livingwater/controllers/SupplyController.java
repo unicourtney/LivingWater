@@ -1,5 +1,7 @@
 package com.livingwater.controllers;
 
+import com.livingwater.services.SuppliesService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.DigestUtils;
@@ -17,18 +19,12 @@ import javax.servlet.http.HttpServletResponse;
 public class SupplyController {
 
     //----------------------Add
+    @Autowired
+    private SuppliesService suppliesService;
+
 
     @RequestMapping(value = "/addSupply", method = RequestMethod.POST)
     public ModelAndView addUser(HttpServletRequest request, HttpServletResponse response, ModelMap map) {
-
-        ModelAndView view = new ModelAndView("inventory-supplies");
-        String supply_name = request.getParameter("supply_name");
-        String supply_quantity = request.getParameter("supply_quantity");
-
-
-        System.out.println("MATERIAL: " + supply_name
-                + "\nQUANTITY: " + supply_quantity);
-
-        return view;
+        return suppliesService.addSupply(request,response);
     }
 }
