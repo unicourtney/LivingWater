@@ -14,30 +14,34 @@ public class BatchBottles {
 
 	@Id
 	@Column(name = "batchID")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String batchID;
-	
-	@ManyToMany(cascade=CascadeType.ALL)
+	private int batchID;
+
+	public BatchBottles(int batchID, Bottle bottle) {
+		this.batchID = batchID;
+		this.bottle = bottle;
+	}
+
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "bottleID")
-	private List<Bottle> bottle;
+	private Bottle bottle;
 
 	public BatchBottles() {
 		super();
 	}
 
-	public String getBatchID() {
+	public int getBatchID() {
 		return batchID;
 	}
 
-	public void setBatchID(String batchID) {
+	public void setBatchID(int batchID) {
 		this.batchID = batchID;
 	}
 
-	public List<Bottle> getBottle() {
+	public Bottle getBottle() {
 		return bottle;
 	}
 
-	public void setBottle(List<Bottle> bottle) {
+	public void setBottle(Bottle bottle) {
 		this.bottle = bottle;
 	}
 

@@ -1,5 +1,6 @@
 package com.livingwater.controllers;
 
+import com.livingwater.entities.BatchBottles;
 import com.livingwater.services.BatchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,12 +31,6 @@ public class BatchController {
 
     @RequestMapping(value="/addBottleToBatch", method = RequestMethod.POST)
     public ModelAndView addBottleToBatch(HttpServletRequest request, HttpServletResponse response, ModelMap map){
-        ModelAndView view = new ModelAndView("inventory-batch");
-
-        String batch_id = request.getParameter("batch_id");
-        String bottle_id = request.getParameter("bottle_id");
-
-        System.out.println("BATCH ID: " + batch_id + "\nBOTTLE ID: " + bottle_id);
-        return view;
+        return batchService.addBottleToBatch(request,response);
     }
 }
