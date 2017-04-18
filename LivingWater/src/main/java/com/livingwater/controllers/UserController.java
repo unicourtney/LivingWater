@@ -96,7 +96,19 @@ public class UserController{
 
     @RequestMapping(value = "/inventory/supplies/info", method = RequestMethod.GET)
     public ModelAndView supplyInfoPage() {
-        ModelAndView view = new ModelAndView("employee-info");
+        ModelAndView view = new ModelAndView("supply-info");
+        return view;
+    }
+
+    @RequestMapping(value = "/profiles/customers/delivery", method = RequestMethod.GET)
+    public ModelAndView deliveryPage() {
+        ModelAndView view = new ModelAndView("customer-delivery");
+        return view;
+    }
+
+    @RequestMapping(value = "/profiles/customers/rent-dispenser", method = RequestMethod.GET)
+    public ModelAndView rentDispenserPage() {
+        ModelAndView view = new ModelAndView("customer-dispensers");
         return view;
     }
     //----------------------Login
