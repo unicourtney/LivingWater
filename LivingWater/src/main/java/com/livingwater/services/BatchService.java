@@ -11,4 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 public interface BatchService {
 
     public ModelAndView addBatch(HttpServletRequest request, HttpServletResponse response);
+
+    public ModelAndView addBottleToBatch(HttpServletRequest request, HttpServletResponse response);
 }

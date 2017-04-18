@@ -9,4 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface BatchBottlesDao extends GenericDao<BatchBottles>{
 
+    public boolean isBatchBottlesInDB(int batchID, int bottleID);
+
 }
