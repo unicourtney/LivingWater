@@ -67,7 +67,7 @@
                     class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="index.html"> <img
-                    src="${pageContext.request.contextPath}/resources/img/logo.png"/>
+                    src="${pageContext.request.contextPath}/resources/img/Livingwater Minglanilla.jpg"/>
             </a>
 
         </div>
@@ -237,7 +237,7 @@
 
                             <div class="form-group">
                                 <label>Price</label>
-                                <input type="text" class="form-control" placeholder="" name="delivery_price"/>
+                                <input type="text" class="form-control" placeholder="" name="transaction_price"/>
                             </div>
 
                             <button type="submit" class="btn btn-success btn-default">Submit

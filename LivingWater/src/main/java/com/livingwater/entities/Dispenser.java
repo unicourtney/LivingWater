@@ -18,19 +18,19 @@ public class Dispenser {
 	private String status;
 
 	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name = "user")
-	private User user;
+	@JoinColumn(name = "customerID")
+	private Customer customer;
 
 	public Dispenser() {
 		super();
 	}
 
-	public User getUser() {
-		return user;
+	public Customer getCustomer() {
+		return customer;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 	public String getSerialNumber() {

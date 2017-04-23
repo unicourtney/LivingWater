@@ -10,8 +10,8 @@ import java.util.List;
 @Transactional
 public interface UserDao extends GenericDao<User>{
 
-    public List<User> getAllUser();
+    public List<User> getAllUsers();
 
-    public User getAUser(int id);
+    public User getUser(int id);
 
 }

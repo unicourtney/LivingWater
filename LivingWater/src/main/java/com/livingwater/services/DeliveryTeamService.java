@@ -10,6 +10,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 public interface DeliveryTeamService {
 
-    public ModelAndView addDeliveryTeam(HttpServletRequest request, HttpServletResponse response);
+    public ModelAndView addUserToTeam(HttpServletRequest request, HttpServletResponse response);
 
 }

@@ -13,4 +13,8 @@ public interface TransactionDao extends GenericDao<Transaction>{
 
     public List<Transaction> getAllTransaction();
 
+    public Transaction getLastRecord();
+
+    public Transaction getTransaction(int id);
+
 }

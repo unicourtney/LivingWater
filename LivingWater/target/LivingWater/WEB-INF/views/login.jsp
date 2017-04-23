@@ -47,7 +47,7 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="index.html"> <img
-					src="${pageContext.request.contextPath}/resources/img/logo.png" />
+					src="${pageContext.request.contextPath}/resources/img/Livingwater%20Minglanilla.jpg" />
 				</a>
 
 			</div>

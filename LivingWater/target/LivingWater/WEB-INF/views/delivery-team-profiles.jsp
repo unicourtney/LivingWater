@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
@@ -58,7 +59,7 @@
                     class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="index.html"> <img
-                    src="${pageContext.request.contextPath}/resources/img/logo.png"/>
+                    src="${pageContext.request.contextPath}/resources/img/Livingwater Minglanilla.jpg"/>
             </a>
 
         </div>
@@ -74,7 +75,7 @@
                             <div class="media">
                                 <a class="media-left" href="#"> <img
                                         src="${pageContext.request.contextPath}/resources/img/64-64.jpg"
-                                        alt="" class="img-rounded" />
+                                        alt="" class="img-rounded"/>
                                 </a>
                                 <div class="media-body">
                                     <h4 class="media-heading">Jhon Deo Alex</h4>
@@ -82,16 +83,17 @@
 
                                 </div>
                             </div>
-                            <hr />
+                            <hr/>
                             <h5>
                                 <strong>Personal Bio : </strong>
                             </h5>
                             Anim pariatur cliche reprehen derit.
-                            <hr />
+                            <hr/>
                             <a href="#" class="btn btn-info btn-sm">Full Profile</a>&nbsp; <a
                                 href="login.html" class="btn btn-danger btn-sm">Logout</a>
 
-                        </div></li>
+                        </div>
+                    </li>
 
 
                 </ul>
@@ -189,34 +191,37 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h4 class="modal-title" id="myModalLabel">Add Customer</h4>
+                        <h4 class="modal-title" id="myModalLabel">Add Delivery Team</h4>
                     </div>
                     <div class="modal-body">
+
                         <form action="${pageContext.request.contextPath}/addDeliveryTeam"
                               method="POST">
                             <div class="form-group">
                                 <label>Delivery ID</label>
                                 <select class="form-control" name="deliveryteam_id">
-                                    <option value="001">001</option>
-                                    <option value="002">002</option>
+                                    <c:forEach items="${transactionList}" var="transaction"
+                                               varStatus="status">
+                                        <option value="${transaction.transactionID}">${transaction.transactionID}</option>
+                                    </c:forEach>
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label>User</label>
                                 <select class="form-control" name="deliveryteam_user">
-                                    <option value="Courtney">Courtney</option>
-                                    <option value="Leeroy">Leeroy</option>
-                                    <option value="Camilo">Camilo</option>
-                                    <option value="Leah">Leah</option>
+                                    <c:forEach items="${userList}" var="user"
+                                               varStatus="status">
+                                        <option value="${user.userID}">${user.name}</option>
+                                    </c:forEach>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-default">Submit</button>
+                            <button type="submit" class="btn btn-success btn-default">Submit</button>
 
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-success btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
                     </div>
                 </div>

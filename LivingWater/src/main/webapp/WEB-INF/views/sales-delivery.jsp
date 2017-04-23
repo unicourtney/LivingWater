@@ -58,7 +58,7 @@
                     class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="index.html"> <img
-                    src="${pageContext.request.contextPath}/resources/img/logo.png"/>
+                    src="${pageContext.request.contextPath}/resources/img/Livingwater Minglanilla.jpg"/>
             </a>
 
         </div>
@@ -186,7 +186,7 @@
                         <th>Customer Name</th>
                         <th>Bottle ID</th>
                         <th>Price</th>
-                        <th>Delivery Date</th>
+                        <th>Transaction Date</th>
                     </tr>
                     </thead>
                     <tbody>

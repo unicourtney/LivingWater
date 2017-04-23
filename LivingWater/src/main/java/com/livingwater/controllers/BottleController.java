@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 public class BottleController {
 
     @Autowired
-    BottleService bottleService;
+    private BottleService bottleService;
 
     //----------------------Add
 

@@ -21,4 +21,13 @@ public class CustomerDaoImpl extends GenericDaoImpl<Customer> implements Custome
         Query query = getCurrentSession().createQuery("from Customer b");
         return query.list();
     }
+
+    public Customer getCustomer(int id){
+        Query query = getCurrentSession().createQuery("from Customer b where b.customerID = :id");
+        query.setParameter("id",id);
+
+        return (Customer)query.uniqueResult();
+    }
+
+
 }
