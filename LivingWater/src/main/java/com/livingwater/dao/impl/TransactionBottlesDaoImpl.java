@@ -18,7 +18,15 @@ import java.util.List;
 public class TransactionBottlesDaoImpl extends GenericDaoImpl<TransactionBottles> implements TransactionBottlesDao {
 
     public List<TransactionBottles> getAllTransactionBottles() {
-        Query query = getCurrentSession().createQuery("from TransactionBottles b");
+        Query query = getCurrentSession().createQuery("from TransactionBottles b ");
         return query.list();
     }
+
+    public List<TransactionBottles> getAllBottlesWithATransactionIDLike(String transaction_id) {
+        Query query = getCurrentSession().createQuery("from TransactionBottles b where b.transactionID = :transaction_id");
+        query.setParameter("transaction_id", transaction_id);
+
+        return query.list();
+    }
+
 }

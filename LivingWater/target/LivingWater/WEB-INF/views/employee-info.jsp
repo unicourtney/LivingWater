@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
@@ -63,7 +64,7 @@
                     class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="index.html"> <img
-                    src="${pageContext.request.contextPath}/resources/img/logo.png"/>
+                    src="${pageContext.request.contextPath}/resources/img/Livingwater Minglanilla.jpg"/>
             </a>
 
         </div>
@@ -183,16 +184,17 @@
             <li><a href="${pageContext.request.contextPath}/profiles/employees">Employees</a></li>
             <li>View Employee</li>
         </ul>
-
+        <c:set var="user" value="${user}"/>
+        <c:set var="role" value="${role}"/>
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-5"></div>
             <button id="clicker" class="showBtn btn btn-warning btn-default">
                 Edit Employee
             </button>
-            <button class="btn btn-danger btn-default">
+            <a href="<c:url value='/deleteUser/${user.userID}' />" type="button" class="btn btn-danger btn-default">
                 Delete Employee
-            </button>
+            </a>
             <hr>
         </div>
 
@@ -206,28 +208,49 @@
 
 
                     <div class="panel-body">
-                        <form action="${pageContext.request.contextPath}/editEmployee"
+                        <form action="<c:url value='/editUser/${user.userID}'/>"
                               method="POST">
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control" placeholder="Name" name="user_name" disabled/>
+                                <input type="text" class="form-control" placeholder="Name" value="${user.name}"
+                                       name="user_name" disabled/>
                             </div>
                             <div class="form-group">
                                 <label>Username</label>
-                                <input type="text" class="form-control" placeholder="Username" name="username"
+                                <input type="text" class="form-control" placeholder="Username" value="${user.username}"
+                                       name="username"
                                        disabled/>
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" class="form-control" placeholder="" name="user_password"
+                                <input type="password" class="form-control" placeholder="" value="${user.password}"
+                                       name="user_password"
                                        disabled/>
                             </div>
                             <div class="form-group">
                                 <label>Role</label>
                                 <select class="form-control" name="user_role" disabled/>
-                                <option value="Superadmin">Superadmin</option>
-                                <option value="Admin">Admin</option>
-                                <option value="Regular">Regular</option>
+                                <c:choose>
+                                    <c:when test="${role.roleID==1}">
+                                        <c:set var="isSelected" value="selected"/>
+                                        <option selected=${isSelected} value="Superadmin">Superadmin</option>
+                                        <option value="Admin">Admin</option>
+                                        <option value="Employee">Employee</option>
+                                    </c:when>
+                                    <c:when test="${role.roleID==2}">
+                                        <c:set var="isSelected" value="selected"/>
+                                        <option value="Superadmin">Superadmin</option>
+                                        <option selected=${isSelected} value="Admin">Admin</option>
+                                        <option value="Employee">Employee</option>
+                                    </c:when>
+                                    <c:when test="${role.roleID==3}">
+                                        <c:set var="isSelected" value="selected"/>
+                                        <option value="Superadmin">Superadmin</option>
+                                        <option value="Admin">Admin</option>
+                                        <option selected=${isSelected} value="Employee">Employee</option>
+                                    </c:when>
+                                </c:choose>
+
                                 </select>
                             </div>
                             <button type="submit" class="btn btn-success btn-default" style="display: none;">Submit

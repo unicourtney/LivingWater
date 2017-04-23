@@ -3,17 +3,29 @@ package com.livingwater.controllers;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.livingwater.dao.RoleDao;
+import com.livingwater.entities.Role;
+import com.livingwater.entities.User;
+import com.livingwater.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.util.DigestUtils;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 
 @Controller
-public class UserController{
+public class UserController {
 
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private RoleDao roleDao;
     //----------------------Navigation
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
@@ -40,21 +52,15 @@ public class UserController{
         return view;
     }
 
-    @RequestMapping(value = "/profiles/customers", method = RequestMethod.GET)
-    public ModelAndView customerProfilesPage() {
-        ModelAndView view = new ModelAndView("customer-profiles");
-        return view;
-    }
-
-    @RequestMapping(value = "/profiles/delivery-teams", method = RequestMethod.GET)
-    public ModelAndView deliveryTeamProfilesPage() {
-        ModelAndView view = new ModelAndView("delivery-team-profiles");
-        return view;
-    }
 
     @RequestMapping(value = "/profiles/employees", method = RequestMethod.GET)
     public ModelAndView employeeProfilesPage() {
         ModelAndView view = new ModelAndView("employee-profiles");
+
+        List<User> userList = userService.getAllUsers();
+
+        view.addObject("userList", userList);
+
         return view;
     }
 
@@ -76,11 +82,6 @@ public class UserController{
         return view;
     }
 
-    @RequestMapping(value = "/profiles/customers/info", method = RequestMethod.GET)
-    public ModelAndView customerInfoPage() {
-        ModelAndView view = new ModelAndView("customer-info");
-        return view;
-    }
 
     @RequestMapping(value = "/profiles/delivery-teams/info", method = RequestMethod.GET)
     public ModelAndView deliveryTeamInfoPage() {
@@ -88,9 +89,16 @@ public class UserController{
         return view;
     }
 
-    @RequestMapping(value = "/profiles/employees/info", method = RequestMethod.GET)
-    public ModelAndView employeeInfoPage() {
+    @RequestMapping(value = "/profiles/employees/info/{id}", method = RequestMethod.GET)
+    public ModelAndView employeeInfoPage(@PathVariable("id") Integer id) {
         ModelAndView view = new ModelAndView("employee-info");
+
+        User user = userService.getUser(id);
+        Role role = roleDao.getRole(user.getRole().getName());
+
+        view.addObject("user", user);
+        view.addObject("role", role);
+
         return view;
     }
 
@@ -100,17 +108,6 @@ public class UserController{
         return view;
     }
 
-    @RequestMapping(value = "/profiles/customers/delivery", method = RequestMethod.GET)
-    public ModelAndView deliveryPage() {
-        ModelAndView view = new ModelAndView("customer-delivery");
-        return view;
-    }
-
-    @RequestMapping(value = "/profiles/customers/rent-dispenser", method = RequestMethod.GET)
-    public ModelAndView rentDispenserPage() {
-        ModelAndView view = new ModelAndView("customer-dispensers");
-        return view;
-    }
     //----------------------Login
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -127,20 +124,26 @@ public class UserController{
     //----------------------Add
 
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
-    public ModelAndView addUser(HttpServletRequest request, HttpServletResponse response, ModelMap map) {
-        ModelAndView view = new ModelAndView("employee-profiles");
-        String user_name = request.getParameter("user_name");
-        String username = request.getParameter("username");
-        String password = DigestUtils.md5DigestAsHex(request.getParameter("user_password").getBytes());
-        String user_role = request.getParameter("user_role");
+    public ModelAndView addUser(HttpServletRequest request, HttpServletResponse response) {
 
-        System.out.println("NAME: " + user_name
-                + "\nUSERNAME: " + username
-                + "\nPASSWORD: " + password
-                + "\nROLE: " + user_role);
-
-        return view;
+        return userService.addUser(request, response);
     }
 
+    //----------------------Edit
+
+    @RequestMapping(value = "/editUser/{id}", method = RequestMethod.POST)
+    public ModelAndView editCustomer(@PathVariable("id") Integer id, HttpServletRequest request, HttpServletResponse response) {
+
+
+        return userService.updateUser(id, request, response);
+    }
+
+
     //----------------------Delete
+
+    @RequestMapping(value = "/deleteUser/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteProfilesCustomer(@PathVariable("id") Integer id) {
+
+        return userService.deleteUser(id);
+    }
 }

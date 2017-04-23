@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
@@ -67,7 +68,7 @@
                     class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="index.html"> <img
-                    src="${pageContext.request.contextPath}/resources/img/logo.png"/>
+                    src="${pageContext.request.contextPath}/resources/img/Livingwater Minglanilla.jpg"/>
             </a>
 
         </div>
@@ -195,14 +196,19 @@
                         RENT DISPENSER FORM
                     </div>
                     <div class="panel-body">
-                        <form action="${pageContext.request.contextPath}/addDelivery"
+
+                        <form action="${pageContext.request.contextPath}/addDispenser"
                               method="POST">
 
-                            <input type="hidden" class="form-control" placeholder="" value="001" name="customer_id"/>
+                            <input type="hidden" class="form-control" placeholder=""
+                                   value="<%session.getAttribute("session_customer_id");%> ${sessionScope.session_customer_id }"
+                                   name="customer_id"/>
 
                             <div class="form-group">
                                 <label>Customer ID</label>
-                                <input type="text" class="form-control" placeholder="" value="<%session.getAttribute("session_customer_id");%> ${sessionScope.session_customer_id }" name="customer_id" disabled/>
+                                <input type="text" class="form-control" placeholder=""
+                                       value="<%session.getAttribute("session_customer_name");%> ${sessionScope.session_customer_name}"
+                                       name="customer_name" disabled/>
                             </div>
 
                             <div class="form-group">
@@ -222,7 +228,7 @@
             <div class="col-md-6 col-sm-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        DELIVERY FORM
+                        TRANSACTION FORM
                     </div>
                     <div class="panel-body">
                         <table id="example"
@@ -235,22 +241,13 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>#00001</td>
-                                <td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-                            </tr>
-                            <tr>
-                                <td>#00002</td>
-                                <td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-                            </tr>
-                            <tr>
-                                <td>#00003</td>
-                                <td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-                            </tr>
-                            <tr>
-                                <td>#00004</td>
-                                <td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-                            </tr>
+                            <c:forEach items="${dispenserList}" var="dispenser"
+                                       varStatus="status">
+                                <tr>
+                                    <td>${dispenser.serialNumber}</td>
+                                    <td><a href="<c:url value='/deleteDispenser/${dispenserList[status.index].serialNumber}' />" class="btn btn-danger btn-xs">DELETE</a></td>
+                                </tr>
+                            </c:forEach>
                             </tbody>
                         </table>
                     </div>

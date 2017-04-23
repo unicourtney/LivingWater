@@ -1,5 +1,6 @@
 package com.livingwater.entities;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.persistence.*;
@@ -14,10 +15,14 @@ public class BatchBottles {
 
 	@Id
 	@Column(name = "batchID")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int batchID;
 
-	public BatchBottles(int batchID, Bottle bottle) {
-		this.batchID = batchID;
+	@Column(name="date")
+	private Timestamp date;
+
+	public BatchBottles(Timestamp date, Bottle bottle) {
+		this.date = date;
 		this.bottle = bottle;
 	}
 
@@ -45,5 +50,11 @@ public class BatchBottles {
 		this.bottle = bottle;
 	}
 
-	
+	public Timestamp getDate() {
+		return date;
+	}
+
+	public void setDate(Timestamp date) {
+		this.date = date;
+	}
 }

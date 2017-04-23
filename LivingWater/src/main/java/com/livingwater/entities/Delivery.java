@@ -4,37 +4,37 @@ import javax.persistence.*;
 
 /**
  * The persistent class for the users database table.
- * 
  */
 @Entity
 @Table(name = "delivery")
 public class Delivery {
 
-	@Id
-	@Column(name = "deliveryID")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String deliveryID;
+    @Id
+    @Column(name = "deliveryID")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private String deliveryID;
+
 
 	@Column(name = "status")
 	private String status;
 
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name = "batchID")
-	private Batch batch;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "batchID")
+    private Batch batch;
 
-	public Delivery() {
-		super();
-	}
+    public Delivery() {
+        super();
+    }
 
-	public String getDeliveryID() {
-		return deliveryID;
-	}
+    public String getDeliveryID() {
+        return deliveryID;
+    }
 
-	public void setDeliveryID(String deliveryID) {
-		this.deliveryID = deliveryID;
-	}
+    public void setDeliveryID(String deliveryID) {
+        this.deliveryID = deliveryID;
+    }
 
-	public String getStatus() {
+/*	public String getStatus() {
 		return status;
 	}
 
@@ -44,10 +44,10 @@ public class Delivery {
 
 	public Batch getBatch() {
 		return batch;
-	}
+	}*/
 
-	public void setBatch(Batch batch) {
-		this.batch = batch;
-	}
+    public void setBatch(Batch batch) {
+        this.batch = batch;
+    }
 
 }

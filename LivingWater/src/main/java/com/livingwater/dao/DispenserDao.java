@@ -10,6 +10,6 @@ import java.util.List;
 @Transactional
 public interface DispenserDao extends GenericDao<Dispenser>{
 
-    public List<Dispenser> getAllDispenser();
+    public List<Dispenser> getAllDispenserFromCustomer(int id);
 
 }

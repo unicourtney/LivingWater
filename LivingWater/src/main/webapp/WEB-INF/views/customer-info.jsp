@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
@@ -63,11 +64,46 @@
                     class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="index.html"> <img
-                    src="${pageContext.request.contextPath}/resources/img/logo.png"/>
+                    src="${pageContext.request.contextPath}/resources/img/Livingwater Minglanilla.jpg"/>
             </a>
 
         </div>
+        <div class="left-div">
+            <div class="user-settings-wrapper">
+                <ul class="nav">
 
+                    <li class="dropdown"><a class="dropdown-toggle"
+                                            data-toggle="dropdown" href="#" aria-expanded="false"> <span
+                            class="glyphicon glyphicon-user" style="font-size: 25px;"></span>
+                    </a>
+                        <div class="dropdown-menu dropdown-settings">
+                            <div class="media">
+                                <a class="media-left" href="#"> <img
+                                        src="${pageContext.request.contextPath}/resources/img/64-64.jpg"
+                                        alt="" class="img-rounded"/>
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Jhon Deo Alex</h4>
+                                    <h5>Developer & Designer</h5>
+
+                                </div>
+                            </div>
+                            <hr/>
+                            <h5>
+                                <strong>Personal Bio : </strong>
+                            </h5>
+                            Anim pariatur cliche reprehen derit.
+                            <hr/>
+                            <a href="#" class="btn btn-info btn-sm">Full Profile</a>&nbsp; <a
+                                href="login.html" class="btn btn-danger btn-sm">Logout</a>
+
+                        </div>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
 <!-- LOGO HEADER END-->
@@ -147,16 +183,16 @@
             <li><a href="${pageContext.request.contextPath}/profiles/customers">Customers</a></li>
             <li>View Customer</li>
         </ul>
-
+        <c:set var="customer" value="${customer}"/>
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-5"></div>
             <button id="clicker" class="showBtn btn btn-warning btn-default">
                 Edit Customer
             </button>
-            <button class="btn btn-danger btn-default">
+            <a href="<c:url value='/deleteCustomer/${customer.customerID}' />" type="button" class="btn btn-danger btn-default">
                 Delete Customer
-            </button>
+            </a>
             <hr>
         </div>
 
@@ -170,26 +206,40 @@
 
 
                     <div class="panel-body">
-                        <form action="${pageContext.request.contextPath}/editCustomer"
+
+                        <form action="<c:url value='/editCustomer/${customer.customerID}' />"
                               method="POST">
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control" placeholder="" name="customer_name" disabled/>
+                                <input type="text" class="form-control" placeholder="" value="${customer.name}"
+                                       name="customer_name" disabled/>
                             </div>
                             <div class="form-group">
                                 <label>Address</label>
-                                <input type="text" class="form-control" placeholder="" name="customer_address"
+                                <input type="text" class="form-control" placeholder="" value="${customer.address}"
+                                       name="customer_address"
                                        disabled/>
                             </div>
                             <div class="form-group">
                                 <label>Contact Number</label>
-                                <input type="tel" class="form-control" placeholder="" name="customer_contact" disabled/>
+                                <input type="tel" class="form-control" placeholder="" value="${customer.contactNumber}"
+                                       name="customer_contact" disabled/>
                             </div>
                             <div class="form-group">
                                 <label>Customer Type</label>
                                 <select class="form-control" name="customer_type" disabled>
-                                    <option value="Regular">Regular</option>
-                                    <option value="Dealer">Dealer</option>
+                                    <c:choose>
+                                        <c:when test="${customer.typeOfCustomer=='Regular'}">
+                                            <c:set var="isSelected" value="selected"/>
+                                            <option selected="${isSelected}" value="Regular">Regular</option>
+                                            <option value="Dealer">Dealer</option>
+                                        </c:when>
+                                        <c:when test="${customer.typeOfCustomer=='Dealer'}">
+                                            <c:set var="isSelected" value="selected"/>
+                                            <option value="Regular">Regular</option>
+                                            <option selected="${isSelected}" value="Dealer">Dealer</option>
+                                        </c:when>
+                                    </c:choose>
                                 </select>
                             </div>
                             <button type="submit" class="btn btn-success btn-default" style="display: none;">Submit

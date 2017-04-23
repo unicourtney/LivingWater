@@ -7,6 +7,14 @@ import com.livingwater.entities.Role;
 import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by John Leeroy Gadiane on 14/04/2017.
@@ -25,4 +33,15 @@ public class BatchBottlesDaoImpl extends GenericDaoImpl<BatchBottles> implements
         }
         return false;
     }
+
+
+    public BatchBottles getLastRecord() {
+
+        Query query = getCurrentSession().createQuery("from BatchBottles order by 'DESC'");
+        query.setMaxResults(1);
+        BatchBottles batchBottles = (BatchBottles) query.uniqueResult();
+
+        return batchBottles;
+    }
+
 }

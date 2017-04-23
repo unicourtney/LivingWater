@@ -11,4 +11,6 @@ public interface BatchBottlesDao extends GenericDao<BatchBottles>{
 
     public boolean isBatchBottlesInDB(int batchID, int bottleID);
 
+    public BatchBottles getLastRecord();
+
 }

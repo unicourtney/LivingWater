@@ -31,11 +31,11 @@ public class DeliveryTeamServiceImpl implements DeliveryTeamService{
     @Autowired
     private DeliveryTeamDao deliveryTeamDao;
 
-    public ModelAndView addDeliveryTeam(HttpServletRequest request, HttpServletResponse response) {
+    public ModelAndView addUserToTeam(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView mav = new ModelAndView("delivery-team-profiles");
 
         Delivery delivery = deliveryDao.getADelivery(Integer.parseInt(request.getParameter("deliveryteam_id")));
-        User user = userDao.getAUser(Integer.parseInt(request.getParameter("deliveryteam_user")));
+        User user = userDao.getUser(Integer.parseInt(request.getParameter("deliveryteam_user")));
 
         DeliveryTeam deliveryTeam = new DeliveryTeam(delivery,user);
 
@@ -44,4 +44,5 @@ public class DeliveryTeamServiceImpl implements DeliveryTeamService{
         return mav;
 
     }
+
 }

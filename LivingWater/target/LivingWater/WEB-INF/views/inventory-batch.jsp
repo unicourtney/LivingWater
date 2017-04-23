@@ -60,7 +60,7 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href=""> <img
-					src="${pageContext.request.contextPath}/resources/img/logo.png" />
+					src="${pageContext.request.contextPath}/resources/img/Livingwater Minglanilla.jpg" />
 				</a>
 
 			</div>

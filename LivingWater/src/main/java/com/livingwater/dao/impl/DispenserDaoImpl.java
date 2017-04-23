@@ -17,8 +17,12 @@ import java.util.List;
 @Transactional
 public class DispenserDaoImpl extends GenericDaoImpl<Dispenser> implements DispenserDao {
 
-    public List<Dispenser> getAllDispenser() {
-        Query query = getCurrentSession().createQuery("from Dispenser b");
-        return query.list();
+    public List<Dispenser> getAllDispenserFromCustomer(int id) {
+        Query query = getCurrentSession().createQuery("from Dispenser where customerID = :id");
+        query.setParameter("id", id);
+
+        List<Dispenser> dispenserList = query.list();
+
+        return dispenserList;
     }
 }

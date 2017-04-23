@@ -10,7 +10,8 @@ import java.io.Serializable;
 @Table(name = "transactionBottles")
 public class TransactionBottles implements Serializable{
     @Id
-    @OneToOne
+//    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "transactionID")
     private Transaction transaction;
 

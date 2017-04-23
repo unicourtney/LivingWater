@@ -21,4 +21,22 @@ public class TransactionDaoImpl extends GenericDaoImpl<Transaction> implements T
         Query query = getCurrentSession().createQuery("from Transaction b");
         return query.list();
     }
+
+    public Transaction getLastRecord() {
+
+        Query query = getCurrentSession().createQuery("from Transaction b order by b.transactionID DESC");
+        query.setMaxResults(1);
+        Transaction transaction = (Transaction) query.uniqueResult();
+
+        return transaction;
+    }
+
+    public Transaction getTransaction(int id) {
+
+        Query query = getCurrentSession().createQuery("from Transaction b where b.transactionID = :id");
+        query.setParameter("id", id);
+        Transaction transaction = (Transaction) query.uniqueResult();
+
+        return transaction;
+    }
 }
