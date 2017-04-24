@@ -19,10 +19,10 @@
 	rel="stylesheet">
 <!-- BOOTSTRAP DATA TABLE STYLE  -->
 <link
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
 	rel="stylesheet">
 <link
-	href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css"
+	href="${pageContext.request.contextPath}/resources/css/dataTables.bootstrap.min.css"
 	rel="stylesheet">
 <!-- FONT AWESOME ICONS  -->
 <link
@@ -36,12 +36,6 @@
 <link
 	href="${pageContext.request.contextPath}/resources/css/drop-down.css"
 	rel="stylesheet" />
-<!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body>
 	<header>
@@ -65,7 +59,7 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href=""> <img
-					src="${pageContext.request.contextPath}/resources/img/logo.png" />
+					src="${pageContext.request.contextPath}/resources/img/Livingwater Minglanilla.jpg" />
 				</a>
 
 			</div>
@@ -146,16 +140,16 @@
 								<ul class="dropdown-menu" role="menu"
 									aria-labelledby="dropdownMenu3">
 									<li role="presentation"><a role="menuitem" tabindex="-1"
-										href="${pageContext.request.contextPath}/sales/delivery">Delivery</a></li>
+										href="${pageContext.request.contextPath}/sales/delivery">Transaction</a></li>
 									<li role="presentation"><a role="menuitem" tabindex="-1"
 										href="${pageContext.request.contextPath}/sales/refilling">Refilling
 											Team Profiles</a></li>
 									<li role="presentation"><a role="menuitem" tabindex="-1"
 										href="${pageContext.request.contextPath}/sales/dispensers">Dispensers</a></li>
 								</ul></li>
-							<li><a href="forms.html">Forms</a></li>
-							<li><a href="login.html">Login Page</a></li>
-							<li><a href="blank.html">Blank Page</a></li>
+							<li><a href="">OTHER LINKS</a></li>
+							<li><a href="">OTHER LINKS</a></li>
+							<li><a href="">Log Out</a></li>
 
 						</ul>
 					</div>
@@ -284,14 +278,20 @@
 	<script
 		src="${pageContext.request.contextPath}/resources/js/bootstrap.js"></script>
 	<!-- BOOTSTRAP DATA TABLE SCRIPTS  -->
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.js"></script>
 	<script
-		src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+		src="${pageContext.request.contextPath}/resources/js/jquery.dataTables.min.js"></script>
 	<script
-		src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+		src="${pageContext.request.contextPath}/resources/js/dataTables.bootstrap.min.js"></script>
 
 	<!-- LIVINGWATER SCRIPTS  -->
 	<script
 			src="${pageContext.request.contextPath}/resources/js/livingwaterscripts.js"></script>
+	<!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="${pageContext.request.contextPath}/resources/js/html5shiv.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/respond.min.js"></script>
+	<![endif]-->
 </body>
 </html>

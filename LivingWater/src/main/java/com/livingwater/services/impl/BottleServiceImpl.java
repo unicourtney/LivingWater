@@ -15,7 +15,7 @@ import java.util.Date;
 /**
  * Created by John Leeroy Gadiane on 14/04/2017.
  */
-@Service("registrationService")
+@Service("bottleService")
 @Transactional
 public class BottleServiceImpl implements BottleService{
 
@@ -32,6 +32,9 @@ public class BottleServiceImpl implements BottleService{
         java.sql.Date date2 = new java.sql.Date(date.getTime());
         Bottle bottle = new Bottle(bottle_id,bottle_type,status,date2);
         bottleDao.create(bottle);
+
         return view;
     }
+
+
 }

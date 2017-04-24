@@ -12,7 +12,7 @@ public class Transaction {
     @Id
     @Column(name = "transactionID")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String transactionID;
+    private Integer transactionID;
 
     @ManyToOne
     @JoinColumn(name = "customerID")
@@ -37,11 +37,11 @@ public class Transaction {
     public Transaction() {
     }
 
-    public String getTransactionID() {
+    public Integer getTransactionID() {
         return transactionID;
     }
 
-    public void setTransactionID(String transactionID) {
+    public void setTransactionID(Integer transactionID) {
         this.transactionID = transactionID;
     }
 

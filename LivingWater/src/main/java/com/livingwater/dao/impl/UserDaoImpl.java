@@ -15,15 +15,16 @@ import java.util.List;
 @Transactional
 public class UserDaoImpl extends GenericDaoImpl<User> implements UserDao {
 
-    public List<User> getAllUser() {
+    public List<User> getAllUsers() {
         Query query = getCurrentSession().createQuery("from User b");
         return query.list();
     }
 
-    public User getAUser(int id) {
+    public User getUser(int id) {
         Query query = getCurrentSession().createQuery("from User b where b.userID = :id");
         query.setParameter("id",id);
 
         return (User)query.uniqueResult();
     }
+
 }

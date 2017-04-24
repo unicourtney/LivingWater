@@ -24,12 +24,6 @@
 <!-- CUSTOM STYLE  -->
 <link href="${pageContext.request.contextPath}/resources/css/style.css"
 	rel="stylesheet" />
-<!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body>
 	<header>
@@ -53,13 +47,13 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="index.html"> <img
-					src="${pageContext.request.contextPath}/resources/img/logo.png" />
+					src="${pageContext.request.contextPath}/resources/img/Livingwater%20Minglanilla.jpg" />
 				</a>
 
 			</div>
 
 			<div class="left-div">
-				<i class="fa fa-user-plus login-icon"></i>
+				<i class="fa fa-user-plus login-icon" ></i>
 			</div>
 		</div>
 	</div>
@@ -115,5 +109,11 @@
 	<!-- BOOTSTRAP SCRIPTS  -->
 	<script
 		src="${pageContext.request.contextPath}/resources/js/bootstrap.js"></script>
+	<!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="${pageContext.request.contextPath}/resources/js/html5shiv.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/respond.min.js"></script>
+	<![endif]-->
 </body>
 </html>
