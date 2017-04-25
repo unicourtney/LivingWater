@@ -36,5 +36,11 @@ public class BottleServiceImpl implements BottleService{
         return view;
     }
 
+    public Bottle getABottle(String id){
+        Bottle bottle = bottleDao.getABottle(id);
+
+        return bottle;
+    }
+
 
 }

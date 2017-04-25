@@ -22,8 +22,8 @@ public class BottleDaoImpl extends GenericDaoImpl<Bottle> implements BottleDao {
         return query.list();
     }
 
-    public Bottle getABottle(int id) {
-        Query query = getCurrentSession().createQuery("from Bottle b where b.bottleID = :id");
+    public Bottle getABottle(String id) {
+        Query query = getCurrentSession().createQuery("from Bottle b where b.serialNumber= :id");
         query.setParameter("id",id);
 
         return (Bottle)query.uniqueResult();

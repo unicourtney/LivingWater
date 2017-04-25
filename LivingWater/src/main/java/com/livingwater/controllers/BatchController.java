@@ -24,13 +24,13 @@ public class BatchController {
 
     //----------------------Add
 
-/*    @RequestMapping(value="/addBatch", method = RequestMethod.POST)
-    public ModelAndView addBatch(HttpServletRequest request, HttpServletResponse response, ModelMap map){
+    @RequestMapping(value="/addBatch", method = RequestMethod.POST)
+    public ModelAndView addBatch(HttpServletRequest request, HttpServletResponse response){
         return batchService.addBatch(request,response);
     }
 
     @RequestMapping(value="/addBottleToBatch", method = RequestMethod.POST)
-    public ModelAndView addBottleToBatch(HttpServletRequest request, HttpServletResponse response, ModelMap map){
+    public ModelAndView addBottleToBatch(HttpServletRequest request, HttpServletResponse response){
         return batchService.addBottleToBatch(request,response);
-    }*/
+    }
 }

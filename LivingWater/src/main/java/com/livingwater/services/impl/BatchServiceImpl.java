@@ -23,6 +23,7 @@ import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by John Leeroy Gadiane on 16/04/2017.
@@ -37,8 +38,11 @@ public class BatchServiceImpl implements BatchService {
     @Autowired
     private BottleDao bottleDao;
 
+    @Autowired
+    private BatchBottlesDao batchBottlesDao;
 
-/*    public ModelAndView addBatch(HttpServletRequest request, HttpServletResponse response) {
+
+    public ModelAndView addBatch(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView view = new ModelAndView("inventory-batch");
 
         Batch batch = new Batch();
@@ -46,15 +50,15 @@ public class BatchServiceImpl implements BatchService {
         return view;
     }
 
-    public ModelAndView addBottleToBatch(HttpServletRequest request, HttpServletResponse response){
+    public ModelAndView addBottleToBatch(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView view = new ModelAndView("inventory-batch");
 
         int batch_id = Integer.parseInt(request.getParameter("batch_id"));
-        int bottle_id = Integer.parseInt(request.getParameter("bottle_id"));
+        String bottle_id = request.getParameter("bottle_id");
 
-        if(!batchBottlesDao.isBatchBottlesInDB(batch_id, bottle_id)){
+        if (!batchBottlesDao.isBatchBottlesInDB(batch_id, bottle_id)) {
             Bottle bottle = bottleDao.getABottle(bottle_id);
-            BatchBottles batchBottles = new BatchBottles(batch_id,bottle);
+            BatchBottles batchBottles = new BatchBottles(batch_id, bottle);
 
             batchBottlesDao.create(batchBottles);
         }
@@ -62,8 +66,19 @@ public class BatchServiceImpl implements BatchService {
 
         return view;
 
-    }*/
+    }
 
+    public List<Batch> getAllBatch() {
+        List<Batch> batchList = batchDao.getAllBatch();
+
+        return batchList;
+    }
+
+    public Batch getBatch(int id){
+        Batch batch = batchDao.getBatch(id);
+
+        return batch;
+    }
 
 
 }

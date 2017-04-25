@@ -17,5 +17,7 @@ public interface TransactionService {
 
     public ModelAndView cancelTransaction(HttpServletRequest request, HttpServletResponse response);
 
-    public List<Transaction> getAllTransaction();
+    public Transaction getTransaction(int id);
+
+    public ModelAndView confirmTransaction(HttpServletRequest request, HttpServletResponse response);
 }

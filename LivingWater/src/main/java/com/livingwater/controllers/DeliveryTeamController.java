@@ -1,10 +1,8 @@
 package com.livingwater.controllers;
 
-import com.livingwater.entities.Transaction;
-import com.livingwater.entities.User;
-import com.livingwater.services.DeliveryTeamService;
-import com.livingwater.services.TransactionService;
-import com.livingwater.services.UserService;
+import com.livingwater.dao.DeliveryTeamDao;
+import com.livingwater.entities.*;
+import com.livingwater.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -24,7 +22,7 @@ import java.util.List;
 public class DeliveryTeamController {
 
     @Autowired
-    private TransactionService transactionService;
+    private DeliveryService deliveryService;
 
     @Autowired
     private UserService userService;
@@ -32,17 +30,9 @@ public class DeliveryTeamController {
     @Autowired
     private DeliveryTeamService deliveryTeamService;
 
-    @RequestMapping(value = "/profiles/delivery-teams", method = RequestMethod.GET)
-    public ModelAndView deliveryTeamProfilesPage() {
-        ModelAndView view = new ModelAndView("delivery-team-profiles");
+    @Autowired
+    private DeliveryTeamDao deliveryTeamDao;
 
-        List<Transaction> transactionList = transactionService.getAllTransaction();
-        List<User> userList = userService.getAllUsers();
-
-        view.addObject("transactionList", transactionList);
-        view.addObject("userList", userList);
-        return view;
-    }
 
     //----------------------Add
 

@@ -11,6 +11,4 @@ import javax.servlet.http.HttpServletResponse;
  */
 public interface BatchBottlesService {
 
-    public BatchBottles getLastRecord();
-
 }

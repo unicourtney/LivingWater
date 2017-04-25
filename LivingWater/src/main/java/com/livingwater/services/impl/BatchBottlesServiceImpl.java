@@ -27,11 +27,5 @@ public class BatchBottlesServiceImpl implements BatchBottlesService{
     @Autowired
     private BatchBottlesDao batchBottlesDao;
 
-    public BatchBottles getLastRecord() {
-
-        BatchBottles batchBottles = batchBottlesDao.getLastRecord();
-
-        return batchBottles;
-    }
 
 }

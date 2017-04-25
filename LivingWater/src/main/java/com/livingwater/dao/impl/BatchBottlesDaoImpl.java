@@ -23,7 +23,7 @@ import java.util.Date;
 @Transactional
 public class BatchBottlesDaoImpl extends GenericDaoImpl<BatchBottles> implements BatchBottlesDao {
 
-    public boolean isBatchBottlesInDB(int batchID, int bottleID) {
+    public boolean isBatchBottlesInDB(int batchID, String bottleID) {
         Query query = getCurrentSession().createQuery("from BatchBottles b where b.batchID = :batchID and b.bottleID = :bottleID");
         query.setParameter("batchID",batchID);
         query.setParameter("bottleID",bottleID);
@@ -34,14 +34,5 @@ public class BatchBottlesDaoImpl extends GenericDaoImpl<BatchBottles> implements
         return false;
     }
 
-
-    public BatchBottles getLastRecord() {
-
-        Query query = getCurrentSession().createQuery("from BatchBottles order by 'DESC'");
-        query.setMaxResults(1);
-        BatchBottles batchBottles = (BatchBottles) query.uniqueResult();
-
-        return batchBottles;
-    }
 
 }

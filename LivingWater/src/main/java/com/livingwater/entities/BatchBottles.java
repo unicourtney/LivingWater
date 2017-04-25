@@ -21,14 +21,15 @@ public class BatchBottles {
 	@Column(name="date")
 	private Timestamp date;
 
-	public BatchBottles(Timestamp date, Bottle bottle) {
-		this.date = date;
-		this.bottle = bottle;
-	}
-
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "bottleID")
 	private Bottle bottle;
+
+	public BatchBottles(int batchID, Bottle bottle) {
+		this.batchID = batchID;
+		this.bottle = bottle;
+	}
+
 
 	public BatchBottles() {
 		super();

@@ -92,7 +92,7 @@ public class UserServiceImpl implements UserService {
 
     }
 
-    @RequestMapping(value = "/deleteUser/{id}", method = RequestMethod.POST)
+
     public ModelAndView deleteUser(int id) {
 
         ModelAndView view = new ModelAndView("employee-profiles");
@@ -106,5 +106,32 @@ public class UserServiceImpl implements UserService {
         view.addObject("userList", userList);
 
         return view;
+    }
+
+    public ModelAndView userLogin(HttpServletRequest request, HttpServletResponse response) {
+        String view_path=null;
+        String username = request.getParameter("username");
+        String user_password = DigestUtils.md5DigestAsHex(request.getParameter("user_password").getBytes());
+
+        User user = userDao.getUsername(username);
+
+        if (user != null) {
+            if (user.getPassword().equals(user_password)) {
+                view_path = "inventory-bottles";
+                request.getSession().setAttribute("session_login_user", user);
+            }else {
+                view_path = "login";
+            }
+        }
+
+        ModelAndView view = new ModelAndView(view_path);
+
+        return view;
+    }
+
+    public User getUsername(String username) {
+        User user = userDao.getUsername(username);
+
+        return user;
     }
 }

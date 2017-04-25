@@ -14,4 +14,6 @@ public interface UserDao extends GenericDao<User>{
 
     public User getUser(int id);
 
+    public User getUsername(String username);
+
 }

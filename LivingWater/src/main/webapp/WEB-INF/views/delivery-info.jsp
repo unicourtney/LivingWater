@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
@@ -63,7 +64,7 @@
                     class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="index.html"> <img
-                    src="${pageContext.request.contextPath}/resources/img/Livingwater Minglanilla.jpg"/>
+                    src="${pageContext.request.contextPath}/resources/img/Livingwater Minglanilla.png"/>
             </a>
 
         </div>
@@ -126,6 +127,9 @@
                                 <li role="presentation"><a role="menuitem" tabindex="-1"
                                                            href="${pageContext.request.contextPath}/inventory/supplies">Supplies</a>
                                 </li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                           href="${pageContext.request.contextPath}/inventory/delivery">Delivery</a>
+                                </li>
                             </ul>
                         </li>
                         <li><a class="menu-top-active"
@@ -137,9 +141,6 @@
                                                            href="${pageContext.request.contextPath}/profiles/customers">Customer
                                     Profiles</a></li>
                                 <li role="presentation" class="divider"></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                           href="${pageContext.request.contextPath}/profiles/delivery-teams">Delivery
-                                    Team Profiles</a></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1"
                                                            href="${pageContext.request.contextPath}/profiles/employees">Employee
                                     Profiles</a></li>
@@ -162,7 +163,13 @@
                         </li>
                         <li><a href="">OTHER LINKS</a></li>
                         <li><a href="">OTHER LINKS</a></li>
-                        <li><a href="">Log Out</a></li>
+                        <li><a href="" class="dropdown-toggle" id="dropdownMenu4"
+                               data-toggle="dropdown"><%session.getAttribute("session_login_user");%> ${sessionScope.session_login_user.username}</a>
+                            <ul class="dropdown-menu" role="menu"
+                                aria-labelledby="dropdownMenu4">
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                           href="${pageContext.request.contextPath}/logout">Logout</a></li>
+                            </ul></li>
 
                     </ul>
                 </div>
@@ -176,23 +183,24 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="page-head-line">Delivery Team</h1>
+                <h1 class="page-head-line">Employees</h1>
             </div>
         </div>
         <ul class="breadcrumb">
-            <li><a href="${pageContext.request.contextPath}/profiles/delivery-teams">Delivery Team</a></li>
-            <li>View Member</li>
+            <li><a href="${pageContext.request.contextPath}/profiles/employees">Employees</a></li>
+            <li>View Employee</li>
         </ul>
-
+        <c:set var="user" value="${user}"/>
+        <c:set var="role" value="${role}"/>
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-5"></div>
             <button id="clicker" class="showBtn btn btn-warning btn-default">
-                Edit Member
+                Edit Employee
             </button>
-            <button class="btn btn-danger btn-default">
-                Delete Member
-            </button>
+            <a href="<c:url value='/deleteUser/${user.userID}' />" type="button" class="btn btn-danger btn-default">
+                Delete Employee
+            </a>
             <hr>
         </div>
 
@@ -201,47 +209,69 @@
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        MEMBER PROFILE
+                        EMPLOYEE PROFILE
                     </div>
 
 
                     <div class="panel-body">
-                        <div class="form-group">
-                            <form action="${pageContext.request.contextPath}/editDeliveryTeamMember"
-                                  method="POST">
-                                <div class="form-group">
-                                    <label>Delivery ID</label>
-                                    <select class="form-control" name="deliveryteam_id" disabled>
-                                        <option value="001">001</option>
-                                        <option value="002">002</option>
-                                    </select>
-                                </div>
+                        <form action="<c:url value='/editUser/${user.userID}'/>"
+                              method="POST">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control" placeholder="Name" value="${user.name}"
+                                       name="user_name" disabled/>
+                            </div>
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input type="text" class="form-control" placeholder="Username" value="${user.username}"
+                                       name="username"
+                                       disabled/>
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" class="form-control" placeholder="" value="${user.password}"
+                                       name="user_password"
+                                       disabled/>
+                            </div>
+                            <div class="form-group">
+                                <label>Role</label>
+                                <select class="form-control" name="user_role" disabled/>
+                                <c:choose>
+                                    <c:when test="${role.roleID==1}">
+                                        <c:set var="isSelected" value="selected"/>
+                                        <option selected=${isSelected} value="Superadmin">Superadmin</option>
+                                        <option value="Admin">Admin</option>
+                                        <option value="Employee">Employee</option>
+                                    </c:when>
+                                    <c:when test="${role.roleID==2}">
+                                        <c:set var="isSelected" value="selected"/>
+                                        <option value="Superadmin">Superadmin</option>
+                                        <option selected=${isSelected} value="Admin">Admin</option>
+                                        <option value="Employee">Employee</option>
+                                    </c:when>
+                                    <c:when test="${role.roleID==3}">
+                                        <c:set var="isSelected" value="selected"/>
+                                        <option value="Superadmin">Superadmin</option>
+                                        <option value="Admin">Admin</option>
+                                        <option selected=${isSelected} value="Employee">Employee</option>
+                                    </c:when>
+                                </c:choose>
 
-                                <div class="form-group">
-                                    <label>User</label>
-                                    <select class="form-control" name="deliveryteam_user" disabled>
-                                        <option value="Courtney">Courtney</option>
-                                        <option value="Leeroy">Leeroy</option>
-                                        <option value="Camilo">Camilo</option>
-                                        <option value="Leah">Leah</option>
-                                    </select>
-                                </div>
-
-                                <button type="submit" class="btn btn-success btn-default" style="display: none;">
-                                    Submit
-                                </button>
-                                <button type="button" id="hide" class="btn btn-default toHideBtn"
-                                        style="display: none;">Cancel
-                                </button>
-
-                            </form>
-                        </div>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-default" style="display: none;">Submit
+                            </button>
+                            <button type="button" id="hide" class="btn btn-default toHideBtn" style="display: none;">
+                                Cancel
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
-
+</div>
 </div>
 <!-- CONTENT-WRAPPER SECTION END-->
 <footer>

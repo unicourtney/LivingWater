@@ -13,6 +13,6 @@ public interface TransactionBottlesDao extends GenericDao<TransactionBottles>{
 
     public List<TransactionBottles> getAllTransactionBottles();
 
-    public List<TransactionBottles> getAllBottlesWithATransactionIDLike(String transaction_id);
+    public List<TransactionBottles> getAllBottlesWithATransactionIDLike(int transaction_id);
 
 }
