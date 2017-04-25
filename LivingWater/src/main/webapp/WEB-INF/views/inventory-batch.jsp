@@ -168,14 +168,43 @@
 
 				</div>
 				<div class="row">
-					<div class="col-md-4"></div>
+					<div class="col-md-4">
+
+							<div class="col-md-5">
+							<p>Select Batch ID</p>
+							</div>
+						<div class="col-md-7">
+							<div class="col-md-6">
+								<form method="post" action="${pageContext.request.contextPath}/inventory/getBatch">
+									<select name="showBatchID" class="form-control input-sm" onchange="this.form.submit();">
+											<option value="-1">Select</option>
+										<c:forEach items="${batchList}" var="batch" varStatus="status">
+											<c:choose>
+												<c:when test="${batch.batchID == batchSelected}">
+												<option selected="selected" value="${batch.batchID}">${batch.batchID}</option>
+												</c:when>
+												<c:otherwise>
+													<option value="${batch.batchID}">${batch.batchID}</option>
+												</c:otherwise>
+											</c:choose>
+
+										</c:forEach>
+										<
+									</select>
+								</form>
+							</div>
+
+							<div class="col-md-6"></div>
+						</div>
+
+					</div>
 					<div class="col-md-5"></div>
 					<form action="${pageContext.request.contextPath}/addBatch"
 						  method="POST">
-						<input type="hidden" value="1" class="form-control" placeholder="Batch ID" name="batch_id" />
-					<button type="submit" class="btn btn-success btn-default">
-						Create Batch
-					</button>
+						<input type="hidden" 	value="1" class="form-control" placeholder="Batch ID" name="batch_id" />
+						<button type="submit" class="btn btn-success btn-default">
+							Create Batch
+						</button>
 						<button type="button" class="btn btn-info btn-default" data-toggle="modal" data-target="#addBottleToBatch">
 							Add Bottle To Batch
 						</button>
@@ -197,17 +226,18 @@
 									<div class="form-group">
 										<label>Batch ID</label>
 										<select class="form-control" name="batch_id">
-											<option value="001">001</option>
-											<option value="002">002</option>
+											<c:forEach items="${batchList}" var="batch" varStatus="status">
+												<option value="${batch.batchID}">${batch.batchID}</option>
+											</c:forEach>
+
 										</select>
 									</div>
 									<div class="form-group">
 										<label>Bottle ID</label>
 										<select class="form-control" name="bottle_id">
-											<option value="1234">1234</option>
-											<option value="5678">5678</option>
-											<option value="91011">91011</option>
-											<option value="121314">121314</option>
+											<c:forEach items="${allBottlesList}" var="bottles" varStatus="status">
+												<option value="${bottles.serialNumber}">${bottles.serialNumber}</option>
+											</c:forEach>
 										</select>
 									</div>
 
@@ -228,34 +258,28 @@
 					<table id="example"
 						class="table table-hover table-condensed table-striped"
 						cellspacing="0" width="100%">
+
+
+
 						<thead>
 							<tr>
-								<th>Batch ID</th>
+								<th>Serial Number</th>
+								<th>Bottle Type</th>
+								<th>Date Last Delivered</th>
 								<th>Status</th>
-								<th>Actions</th>
 							</tr>
 						</thead>
 						<tbody>
+							<c:forEach items="${bottlesList}" var="bottle" varStatus="status">
 							<tr>
-								<td>#00001</td>
-								<td>Special</td>
-								<td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
+								<td>${bottle.serialNumber}</td>
+								<td>${bottle.bottleType}</td>
+								<td>${bottle.dateLastDelivered}</td>
+								<td>${bottle.status}</td>
 							</tr>
-							<tr>
-								<td>#00002</td>
-								<td>Not</td>
-								<td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-							</tr>
-							<tr>
-								<td>#00003</td>
-								<td>Special</td>
-								<td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-							</tr>
-							<tr>
-								<td>#00004</td>
-								<td>Not</td>
-								<td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-							</tr>
+
+
+							</c:forEach>
 						</tbody>
 					</table>
 				</div>
