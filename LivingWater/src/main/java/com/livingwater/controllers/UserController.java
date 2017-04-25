@@ -3,6 +3,7 @@ package com.livingwater.controllers;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.livingwater.dao.BottleDao;
 import com.livingwater.dao.RoleDao;
 import com.livingwater.entities.Role;
 import com.livingwater.entities.User;
@@ -25,6 +26,9 @@ public class UserController {
     private UserService userService;
 
     @Autowired
+    private BottleDao bottleDao;
+
+    @Autowired
     private RoleDao roleDao;
     //----------------------Navigation
 
@@ -37,14 +41,11 @@ public class UserController {
     @RequestMapping(value = "/inventory/bottles", method = RequestMethod.GET)
     public ModelAndView inventoryBottlesPage() {
         ModelAndView view = new ModelAndView("inventory-bottles");
+        view.addObject("bottlesList",bottleDao.getAllBottle());
         return view;
     }
 
-    @RequestMapping(value = "/inventory/batch", method = RequestMethod.GET)
-    public ModelAndView inventoryBatchPage() {
-        ModelAndView view = new ModelAndView("inventory-batch");
-        return view;
-    }
+
 
     @RequestMapping(value = "/inventory/supplies", method = RequestMethod.GET)
     public ModelAndView inventorySuppliesPage() {
@@ -113,6 +114,7 @@ public class UserController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ModelAndView userLogin(HttpServletRequest request, HttpServletResponse response, ModelMap map) {
         ModelAndView view = new ModelAndView("inventory-bottles");
+        view.addObject("bottlesList",bottleDao.getAllBottle());
 
         String user_id = request.getParameter("user_id");
         String password = request.getParameter("password");

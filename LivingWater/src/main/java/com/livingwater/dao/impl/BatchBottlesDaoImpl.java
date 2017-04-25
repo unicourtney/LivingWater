@@ -15,6 +15,7 @@ import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by John Leeroy Gadiane on 14/04/2017.
@@ -23,8 +24,8 @@ import java.util.Date;
 @Transactional
 public class BatchBottlesDaoImpl extends GenericDaoImpl<BatchBottles> implements BatchBottlesDao {
 
-    public boolean isBatchBottlesInDB(int batchID, int bottleID) {
-        Query query = getCurrentSession().createQuery("from BatchBottles b where b.batchID = :batchID and b.bottleID = :bottleID");
+    public boolean isBatchBottlesInDB(int batchID, String bottleID) {
+        Query query = getCurrentSession().createQuery("from BatchBottles where batchID = :batchID and bottleID = :bottleID");
         query.setParameter("batchID",batchID);
         query.setParameter("bottleID",bottleID);
 
@@ -42,6 +43,14 @@ public class BatchBottlesDaoImpl extends GenericDaoImpl<BatchBottles> implements
         BatchBottles batchBottles = (BatchBottles) query.uniqueResult();
 
         return batchBottles;
+    }
+
+    public List<BatchBottles> getAllBottles(int batchID) {
+        Query query = getCurrentSession().createQuery("from BatchBottles where batchID = :id");
+        query.setParameter("id",batchID);
+
+        return query.list();
+
     }
 
 }

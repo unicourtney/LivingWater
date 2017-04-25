@@ -6,6 +6,7 @@ import com.livingwater.services.BottleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -34,6 +35,22 @@ public class BottleServiceImpl implements BottleService{
         bottleDao.create(bottle);
 
         return view;
+    }
+
+    public ModelAndView updateBottle(HttpServletRequest request, HttpServletResponse response) {
+        ModelAndView view = new ModelAndView("inventory-bottles");
+
+        String bottle_id = Integer.parseInt(request.getParameter("bottle_id"))+"";
+        String status = request.getParameter("status");
+
+        Bottle bottle = bottleDao.getABottle(bottle_id);
+        bottle.setStatus(status);
+        bottleDao.update(bottle);
+
+        view.addObject("bottlesList",bottleDao.getAllBottle());
+
+        return view;
+
     }
 
 

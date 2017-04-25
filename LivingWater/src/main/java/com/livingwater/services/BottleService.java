@@ -12,4 +12,6 @@ public interface BottleService {
 
     public ModelAndView addBottle(HttpServletRequest request, HttpServletResponse response);
 
+    ModelAndView updateBottle(HttpServletRequest request, HttpServletResponse response);
+
 }

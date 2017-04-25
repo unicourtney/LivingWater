@@ -245,8 +245,9 @@
                                 <div class="form-group">
                                     <label>Bottle ID</label>
                                     <select class="form-control" name="bottle_id">
-                                        <option value="001">001</option>
-                                        <option value="002">002</option>
+                                        <c:forEach items="${bottlesList}" var="bottles" varStatus="status">
+                                            <option value="${bottles.serialNumber}">${bottles.serialNumber}</option>
+                                        </c:forEach>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -285,34 +286,18 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>#00001</td>
-                            <td>Special</td>
-                            <td>Delivered</td>
-                            <td>4/13/2017</td>
-                            <td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-                        </tr>
-                        <tr>
-                            <td>#00002</td>
-                            <td>Not</td>
-                            <td>Damaged</td>
-                            <td>4/14/2017</td>
-                            <td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-                        </tr>
-                        <tr>
-                            <td>#00003</td>
-                            <td>Special</td>
-                            <td>Refilled</td>
-                            <td>4/15/2017</td>
-                            <td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-                        </tr>
-                        <tr>
-                            <td>#00004</td>
-                            <td>Not</td>
-                            <td>Loaded</td>
-                            <td>4/16/2017</td>
-                            <td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-                        </tr>
+                        <c:forEach items="${bottlesList}" var="bottle" varStatus="status">
+                            <tr>
+                                <td>${bottle.serialNumber}</td>
+                                <td>${bottle.bottleType}</td>
+                                <td>${bottle.status}</td>
+                                <td>${bottle.dateLastDelivered}</td>
+                                <td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
+                            </tr>
+
+
+                        </c:forEach>
+
                         </tbody>
                     </table>
                 </div>

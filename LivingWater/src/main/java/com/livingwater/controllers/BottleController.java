@@ -29,12 +29,6 @@ public class BottleController {
 
     @RequestMapping(value="/updateBottle", method = RequestMethod.POST)
     public ModelAndView updateBottle(HttpServletRequest request, HttpServletResponse response, ModelMap map){
-        ModelAndView view = new ModelAndView("inventory-bottles");
-
-        String bottle_id = request.getParameter("bottle_id");
-        String status = request.getParameter("status");
-
-        System.out.println("BOTTLE ID: " + bottle_id + "\nSTATUS: " + status);
-        return view;
+        return bottleService.updateBottle(request,response);
     }
 }

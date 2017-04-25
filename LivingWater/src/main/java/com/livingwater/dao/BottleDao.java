@@ -11,9 +11,8 @@ import java.util.List;
 @Transactional
 public interface BottleDao extends GenericDao<Bottle>{
 
-/*    public List<Bottle> getAllBottle();
-
-    public Bottle getABottle(int id);*/
+    public List<Bottle> getAllBottle();
+    public Bottle getABottle(String id);
 
 
 }
