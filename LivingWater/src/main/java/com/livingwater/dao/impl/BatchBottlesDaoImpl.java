@@ -25,7 +25,9 @@ import java.util.List;
 public class BatchBottlesDaoImpl extends GenericDaoImpl<BatchBottles> implements BatchBottlesDao {
 
     public boolean isBatchBottlesInDB(int batchID, String bottleID) {
+
         Query query = getCurrentSession().createQuery("from BatchBottles where batchID = :batchID and bottleID = :bottleID");
+
         query.setParameter("batchID",batchID);
         query.setParameter("bottleID",bottleID);
 
@@ -35,15 +37,6 @@ public class BatchBottlesDaoImpl extends GenericDaoImpl<BatchBottles> implements
         return false;
     }
 
-
-    public BatchBottles getLastRecord() {
-
-        Query query = getCurrentSession().createQuery("from BatchBottles order by 'DESC'");
-        query.setMaxResults(1);
-        BatchBottles batchBottles = (BatchBottles) query.uniqueResult();
-
-        return batchBottles;
-    }
 
     public List<BatchBottles> getAllBottles(int batchID) {
         Query query = getCurrentSession().createQuery("from BatchBottles where batchID = :id");

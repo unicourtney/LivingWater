@@ -39,4 +39,5 @@ public class TransactionDaoImpl extends GenericDaoImpl<Transaction> implements T
 
         return transaction;
     }
+
 }

@@ -56,12 +56,20 @@ public class TransactionController {
         return transactionBottlesService.addTransactionBottles(request, response);
     }
 
+    //----------------------Update
+
+    @RequestMapping(value = "/confirmTransaction", method = RequestMethod.POST)
+    public ModelAndView confirmTransaction(HttpServletRequest request, HttpServletResponse response) {
+
+        return transactionService.confirmTransaction(request, response);
+    }
+
     //----------------------Delete
 
-    @RequestMapping(value = "/deleteTransactionBottle/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/deleteTransactionBottle/{id}", method = RequestMethod.GET)
     public ModelAndView deleteTransactionBottles(@PathVariable("id") Integer id, HttpServletRequest request, HttpServletResponse response) throws ParseException {
 
-        return transactionService.createTransaction(id, request, response);
+        return transactionBottlesService.deleteTransactionBottles(id, request, response);
     }
 
     @RequestMapping(value = "/cancelTransaction", method = RequestMethod.GET)

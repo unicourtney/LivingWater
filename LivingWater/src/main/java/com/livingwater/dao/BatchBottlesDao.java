@@ -13,7 +13,6 @@ public interface BatchBottlesDao extends GenericDao<BatchBottles>{
 
     public boolean isBatchBottlesInDB(int batchID, String bottleID);
 
-    public BatchBottles getLastRecord();
 
     List<BatchBottles> getAllBottles(int batchID);
 

@@ -5,12 +5,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.livingwater.dao.BottleDao;
 import com.livingwater.dao.RoleDao;
+import com.livingwater.entities.Batch;
 import com.livingwater.entities.Role;
 import com.livingwater.entities.User;
+import com.livingwater.services.BatchService;
 import com.livingwater.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,11 +25,17 @@ import java.util.List;
 @Controller
 public class UserController {
 
+    //password: 5f4dcc3b5aa765d61d8327deb882cf99
+
     @Autowired
     private UserService userService;
 
     @Autowired
+
+    private BatchService batchService;
+
     private BottleDao bottleDao;
+
 
     @Autowired
     private RoleDao roleDao;
@@ -84,12 +93,6 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = "/profiles/delivery-teams/info", method = RequestMethod.GET)
-    public ModelAndView deliveryTeamInfoPage() {
-        ModelAndView view = new ModelAndView("delivery-team-info");
-        return view;
-    }
-
     @RequestMapping(value = "/profiles/employees/info/{id}", method = RequestMethod.GET)
     public ModelAndView employeeInfoPage(@PathVariable("id") Integer id) {
         ModelAndView view = new ModelAndView("employee-info");
@@ -112,14 +115,18 @@ public class UserController {
     //----------------------Login
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public ModelAndView userLogin(HttpServletRequest request, HttpServletResponse response, ModelMap map) {
-        ModelAndView view = new ModelAndView("inventory-bottles");
-        view.addObject("bottlesList",bottleDao.getAllBottle());
 
-        String user_id = request.getParameter("user_id");
-        String password = request.getParameter("password");
+    public ModelAndView userLogin(HttpServletRequest request, HttpServletResponse response) {
+        return userService.userLogin(request, response);
+    }
 
-        System.out.println("USER ID: " + user_id + "\nPASSWORD: " + password);
+    //----------------------Logout
+
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public ModelAndView userLogout(HttpServletRequest request, HttpServletResponse response) {
+        ModelAndView view = new ModelAndView("login");
+
+        request.getSession().invalidate();
         return view;
     }
 

@@ -12,6 +12,7 @@ import java.util.List;
 public interface BottleDao extends GenericDao<Bottle>{
 
     public List<Bottle> getAllBottle();
+
     public Bottle getABottle(String id);
 
 

@@ -12,7 +12,7 @@ public class Delivery {
     @Id
     @Column(name = "deliveryID")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String deliveryID;
+    private Integer deliveryID;
 
 
 	@Column(name = "status")
@@ -26,15 +26,15 @@ public class Delivery {
         super();
     }
 
-    public String getDeliveryID() {
+    public Integer getDeliveryID() {
         return deliveryID;
     }
 
-    public void setDeliveryID(String deliveryID) {
+    public void setDeliveryID(Integer deliveryID) {
         this.deliveryID = deliveryID;
     }
 
-/*	public String getStatus() {
+	public String getStatus() {
 		return status;
 	}
 
@@ -44,7 +44,7 @@ public class Delivery {
 
 	public Batch getBatch() {
 		return batch;
-	}*/
+	}
 
     public void setBatch(Batch batch) {
         this.batch = batch;

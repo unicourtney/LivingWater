@@ -33,19 +33,12 @@ public class BatchBottlesServiceImpl implements BatchBottlesService{
     @Autowired
     private BatchBottlesDao batchBottlesDao;
 
+
     @Autowired
     private BottleDao bottleDao;
 
     @Autowired
     private BatchDao batchDao;
-
-    public BatchBottles getLastRecord() {
-
-        BatchBottles batchBottles = batchBottlesDao.getLastRecord();
-
-        return batchBottles;
-    }
-
 
 
     public ModelAndView addBatchBottles(HttpServletRequest req, HttpServletResponse res) {

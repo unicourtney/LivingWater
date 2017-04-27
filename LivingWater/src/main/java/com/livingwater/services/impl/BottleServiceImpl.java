@@ -37,6 +37,13 @@ public class BottleServiceImpl implements BottleService{
         return view;
     }
 
+
+    public Bottle getABottle(String id) {
+        Bottle bottle = bottleDao.getABottle(id);
+
+        return bottle;
+    }
+
     public ModelAndView updateBottle(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView view = new ModelAndView("inventory-bottles");
 

@@ -47,7 +47,7 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="index.html"> <img
-					src="${pageContext.request.contextPath}/resources/img/Livingwater%20Minglanilla.jpg" />
+					src="${pageContext.request.contextPath}/resources/img/Livingwater Minglanilla.png" />
 				</a>
 
 			</div>
@@ -75,10 +75,10 @@
 
 					<form action="${pageContext.request.contextPath}/login"
 						method="POST" id="loginForm">
-						<br /> <label>Enter User ID : </label> <input type="text"
-							class="form-control" name="user_id"/> <label>Enter Password : </label> 
+						<br /> <label>Enter Username : </label> <input type="text"
+							class="form-control" name="username"/> <label>Enter Password : </label>
 							<input
-							type="password" class="form-control" name="password" />
+							type="password" class="form-control" name="user_password" />
 						<hr />
 						<a class="btn btn-info" onclick="document.getElementById('loginForm').submit()"><span
 							classs="glyphicon glyphicon-user"></span> &nbsp;Log Me In </a>&nbsp;

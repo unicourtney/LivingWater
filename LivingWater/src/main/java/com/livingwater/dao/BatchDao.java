@@ -11,7 +11,12 @@ import java.util.List;
 @Transactional
 public interface BatchDao extends GenericDao<Batch>{
 
+    public List<Batch> getAllBatch();
+
+    public Batch getBatch(int id);
+
+
     Batch getABatch(int batchID);
 
-    List<Batch> getAllBatch();
+
 }

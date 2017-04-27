@@ -1,6 +1,6 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -16,7 +16,7 @@
     <!-- BOOTSTRAP CORE STYLE  -->
     <link
             href="${pageContext.request.contextPath}/resources/css/bootstrap.css"
-            rel="stylesheet"/>
+            rel="stylesheet">
     <!-- BOOTSTRAP DATA TABLE STYLE  -->
     <link
             href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
@@ -31,6 +31,7 @@
     <!-- CUSTOM STYLE  -->
     <link href="${pageContext.request.contextPath}/resources/css/style.css"
           rel="stylesheet"/>
+
     <!-- DROP DOWN MENU  -->
     <link
             href="${pageContext.request.contextPath}/resources/css/drop-down.css"
@@ -58,11 +59,12 @@
                 <span class="icon-bar"></span> <span class="icon-bar"></span> <span
                     class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"> <img
-                    src="${pageContext.request.contextPath}/resources/img/Livingwater Minglanilla.jpg"/>
+            <a class="navbar-brand" href=""> <img
+                    src="${pageContext.request.contextPath}/resources/img/Livingwater Minglanilla.png"/>
             </a>
 
         </div>
+
         <div class="left-div">
             <div class="user-settings-wrapper">
                 <ul class="nav">
@@ -74,8 +76,8 @@
                         <div class="dropdown-menu dropdown-settings">
                             <div class="media">
                                 <a class="media-left" href="#"> <img
-                                        src="${pageContext.request.contextPath}/resources/img/64-64.jpg"
-                                        alt="" class="img-rounded"/>
+                                        src="/WEB-INF/views/assets/img/64-64.jpg" alt=""
+                                        class="img-rounded"/>
                                 </a>
                                 <div class="media-body">
                                     <h4 class="media-heading">Jhon Deo Alex</h4>
@@ -99,7 +101,6 @@
                 </ul>
             </div>
         </div>
-
     </div>
 </div>
 <!-- LOGO HEADER END-->
@@ -109,7 +110,8 @@
             <div class="col-md-12">
                 <div class="navbar-collapse collapse ">
                     <ul id="menu-top" class="nav navbar-nav navbar-right">
-                        <li><a href="" class="dropdown-toggle" id="dropdownMenu1"
+                        <li><a class="menu-top-active" href=""
+                               class="dropdown-toggle" id="dropdownMenu1"
                                data-toggle="dropdown">Inventory</a>
                             <ul class="dropdown-menu" role="menu"
                                 aria-labelledby="dropdownMenu1">
@@ -122,10 +124,12 @@
                                 <li role="presentation"><a role="menuitem" tabindex="-1"
                                                            href="${pageContext.request.contextPath}/inventory/supplies">Supplies</a>
                                 </li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                           href="${pageContext.request.contextPath}/inventory/delivery">Delivery</a>
+                                </li>
                             </ul>
                         </li>
-                        <li><a class="menu-top-active"
-                               href="" class="dropdown-toggle" id="dropdownMenu2"
+                        <li><a href="" class="dropdown-toggle" id="dropdownMenu2"
                                data-toggle="dropdown">Profiles</a>
                             <ul class="dropdown-menu" role="menu"
                                 aria-labelledby="dropdownMenu2">
@@ -133,9 +137,6 @@
                                                            href="${pageContext.request.contextPath}/profiles/customers">Customer
                                     Profiles</a></li>
                                 <li role="presentation" class="divider"></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                           href="${pageContext.request.contextPath}/profiles/delivery-teams">Delivery
-                                    Team Profiles</a></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1"
                                                            href="${pageContext.request.contextPath}/profiles/employees">Employee
                                     Profiles</a></li>
@@ -158,7 +159,13 @@
                         </li>
                         <li><a href="">OTHER LINKS</a></li>
                         <li><a href="">OTHER LINKS</a></li>
-                        <li><a href="">Log Out</a></li>
+                        <li><a href="" class="dropdown-toggle" id="dropdownMenu4"
+                               data-toggle="dropdown"><%session.getAttribute("session_login_user");%> ${sessionScope.session_login_user.username}</a>
+                            <ul class="dropdown-menu" role="menu"
+                                aria-labelledby="dropdownMenu4">
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                           href="${pageContext.request.contextPath}/logout">Logout</a></li>
+                            </ul></li>
 
                     </ul>
                 </div>
@@ -172,62 +179,99 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="page-head-line">Delivery Teams</h1>
+                <h4 class="page-head-line">Delivery</h4>
+
             </div>
-        </div>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-5"></div>
+                <button type="button" class="btn btn-success btn-default" data-toggle="modal"
+                        data-target="#createDelivery">
+                    Create Delivery
+                </button>
+                <button class="btn btn-info btn-default" data-toggle="modal" data-target="#addDeliveryTeamModal">
+                    Add Delivery Team
+                </button>
+                <hr>
+            </div>
 
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-5"></div>
-            <button class="btn btn-success btn-default" data-toggle="modal" data-target="#addDeliveryTeamModal">
-                Add Delivery Team
-            </button>
-            <hr>
-        </div>
+            <div class="modal fade" id="createDelivery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
+                 aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title" id="myModalLabel1">Create Delivery</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form action="${pageContext.request.contextPath}/createDelivery"
+                                  method="POST">
+                                <div class="form-group">
+                                    <label>Batch ID</label>
+                                    <select class="form-control" name="batch_id">
+                                        <c:forEach items="${batchList}" var="batch"
+                                                   varStatus="status">
+                                            <option value="${batch.batchID}">${batch.batchID}</option>
+                                        </c:forEach>
+                                    </select>
+                                </div>
 
-        <div class="modal fade" id="addDeliveryTeamModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-             aria-hidden="true" style="display: none;">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h4 class="modal-title" id="myModalLabel">Add Delivery Team</h4>
+                                <button type="submit" class="btn btn-success btn-default">Submit</button>
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                        </div>
                     </div>
-                    <div class="modal-body">
+                </div>
+            </div>
 
-                        <form action="${pageContext.request.contextPath}/addDeliveryTeam"
-                              method="POST">
-                            <div class="form-group">
-                                <label>Delivery ID</label>
-                                <select class="form-control" name="deliveryteam_id">
-                                    <c:forEach items="${transactionList}" var="transaction"
-                                               varStatus="status">
-                                        <option value="${transaction.transactionID}">${transaction.transactionID}</option>
-                                    </c:forEach>
-                                </select>
-                            </div>
+            <div class="modal fade" id="addDeliveryTeamModal" tabindex="-1" role="dialog"
+                 aria-labelledby="myModalLabel2"
+                 aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title" id="myModalLabel2">Add Delivery Team</h4>
+                        </div>
+                        <div class="modal-body">
 
-                            <div class="form-group">
-                                <label>User</label>
-                                <select class="form-control" name="deliveryteam_user">
-                                    <c:forEach items="${userList}" var="user"
-                                               varStatus="status">
-                                        <option value="${user.userID}">${user.name}</option>
-                                    </c:forEach>
-                                </select>
-                            </div>
-                            <button type="submit" class="btn btn-success btn-default">Submit</button>
+                            <form action="${pageContext.request.contextPath}/addDeliveryTeam"
+                                  method="POST">
+                                <div class="form-group">
+                                    <label>Delivery ID</label>
+                                    <select class="form-control" name="deliveryteam_id">
+                                        <c:forEach items="${deliveryList}" var="delivery"
+                                                   varStatus="status">
+                                            <option value="${delivery.deliveryID}">${delivery.deliveryID}</option>
+                                        </c:forEach>
+                                    </select>
+                                </div>
 
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <div class="form-group">
+                                    <label>User</label>
+                                    <select class="form-control" name="deliveryteam_user">
+                                        <c:forEach items="${userList}" var="user"
+                                                   varStatus="status">
+                                            <option value="${user.userID}">${user.name}</option>
+                                        </c:forEach>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-success btn-default">Submit</button>
 
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="row">
             <div class="col-md-12">
                 <table id="example"
@@ -235,47 +279,31 @@
                        cellspacing="0" width="100%">
                     <thead>
                     <tr>
-                        <th>Delivery Team ID</th>
-                        <th>Member Name</th>
-                        <th>Action</th>
+                        <th>Delivery ID</th>
+                        <th>Batch ID</th>
+                        <th>Status</th>
+                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>001</td>
-                        <td>Courtney</td>
-                        <td><a href="${pageContext.request.contextPath}/profiles/delivery-teams/info"
-                               class="btn btn-info btn-xs">VIEW</a>
-                            <a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-                    </tr>
-                    <tr>
-                        <td>002</td>
-                        <td>Leeroy</td>
-                        <td><a href="${pageContext.request.contextPath}/profiles/delivery-teams/info"
-                               class="btn btn-info btn-xs">VIEW</a>
-                            <a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-                    </tr>
-                    <tr>
-                        <td>003</td>
-                        <td>Leah</td>
-                        <td><a href="${pageContext.request.contextPath}/profiles/delivery-teams/info"
-                               class="btn btn-info btn-xs">VIEW</a>
-                            <a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-                    </tr>
-                    <tr>
-                        <td>004</td>
-                        <td>Camilo</td>
-                        <td><a href="${pageContext.request.contextPath}/profiles/delivery-teams/info"
-                               class="btn btn-info btn-xs">VIEW</a>
-                            <a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-                    </tr>
+                    <c:forEach items="${deliveryList}" var="delivery"
+                               varStatus="status">
+                        <tr>
+                            <td>${delivery.deliveryID}</td>
+                            <td>${delivery.batch.batchID}</td>
+                            <td>${delivery.status}</td>
+                            <td>
+                                <a href="<c:url value='/inventory/delivery/info/${deliveryList[status.index].deliveryID}' />" class="btn btn-info btn-xs">VIEW</a>
+                                <a href="#" class="btn btn-danger btn-xs">DELETE</a>
+                            </td>
+                        </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
             </div>
 
         </div>
     </div>
-</div>
 </div>
 <!-- CONTENT-WRAPPER SECTION END-->
 <footer>
@@ -313,6 +341,5 @@
 <script src="${pageContext.request.contextPath}/resources/js/html5shiv.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/respond.min.js"></script>
 <![endif]-->
-
 </body>
 </html>

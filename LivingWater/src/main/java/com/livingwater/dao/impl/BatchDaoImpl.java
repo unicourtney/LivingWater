@@ -17,14 +17,23 @@ import java.util.List;
 @Transactional
 public class BatchDaoImpl extends GenericDaoImpl<Batch> implements BatchDao {
 
-    public Batch getABatch(int batchID) {
-        Query query = getCurrentSession().createQuery("from Batch where batchID = :id");
-        query.setParameter("id",batchID);
+    public List<Batch> getAllBatch() {
+        Query query = getCurrentSession().createQuery("from Batch b");
+
+        return query.list();
+    }
+
+    public Batch getBatch(int id) {
+        Query query = getCurrentSession().createQuery("from Batch b where b.batchID = :id");
+        query.setParameter("id", id);
+
         return (Batch) query.uniqueResult();
     }
 
-    public List<Batch> getAllBatch() {
-        Query query = getCurrentSession().createQuery("from Batch");
-        return query.list();
+    public Batch getABatch(int batchID) {
+        Query query = getCurrentSession().createQuery("from Batch where batchID = :id");
+        query.setParameter("id", batchID);
+        return (Batch) query.uniqueResult();
     }
+
 }
