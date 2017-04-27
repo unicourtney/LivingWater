@@ -1,6 +1,8 @@
 package com.livingwater.entities;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.*;
@@ -11,16 +13,26 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "batchBottles")
-public class BatchBottles {
+public class BatchBottles implements Serializable{
 
 	@Id
-	@Column(name = "batchID")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name = "batchID")
+	private Batch batch;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="date")
+	private Calendar date;
+
 	private int batchID;
 
-	@Column(name="date")
-	private Timestamp date;
+	public BatchBottles(Calendar date,Batch batch, Bottle bottle) {
+		this.date = date;
+		this.bottle = bottle;
+		this.batch = batch;
+	}
 
+	@Id
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "bottleID")
 	private Bottle bottle;
@@ -35,12 +47,12 @@ public class BatchBottles {
 		super();
 	}
 
-	public int getBatchID() {
-		return batchID;
+	public Batch getBatch() {
+		return batch;
 	}
 
-	public void setBatchID(int batchID) {
-		this.batchID = batchID;
+	public void setBatch(Batch batch) {
+		this.batch = batch;
 	}
 
 	public Bottle getBottle() {
@@ -51,11 +63,11 @@ public class BatchBottles {
 		this.bottle = bottle;
 	}
 
-	public Timestamp getDate() {
+	public Calendar getDate() {
 		return date;
 	}
 
-	public void setDate(Timestamp date) {
+	public void setDate(Calendar date) {
 		this.date = date;
 	}
 }

@@ -15,4 +15,7 @@ public interface BottleService {
 
     public Bottle getABottle(String id);
 
+    ModelAndView updateBottle(HttpServletRequest request, HttpServletResponse response);
+
+
 }

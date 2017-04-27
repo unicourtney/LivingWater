@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+         pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <meta name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1"/>
-    <meta name="description" content=""/>
-    <meta name="author" content=""/>
+          content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
     <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <![endif]-->
@@ -27,15 +27,15 @@
     <!-- FONT AWESOME ICONS  -->
     <link
             href="${pageContext.request.contextPath}/resources/css/font-awesome.css"
-            rel="stylesheet"/>
+            rel="stylesheet" />
     <!-- CUSTOM STYLE  -->
     <link href="${pageContext.request.contextPath}/resources/css/style.css"
-          rel="stylesheet"/>
+          rel="stylesheet" />
 
     <!-- DROP DOWN MENU  -->
     <link
             href="${pageContext.request.contextPath}/resources/css/drop-down.css"
-            rel="stylesheet"/>
+            rel="stylesheet" />
 
 </head>
 <body>
@@ -60,7 +60,7 @@
                     class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href=""> <img
-                    src="${pageContext.request.contextPath}/resources/img/Livingwater Minglanilla.png"/>
+                    src="${pageContext.request.contextPath}/resources/img/Livingwater Minglanilla.jpg" />
             </a>
 
         </div>
@@ -77,7 +77,7 @@
                             <div class="media">
                                 <a class="media-left" href="#"> <img
                                         src="/WEB-INF/views/assets/img/64-64.jpg" alt=""
-                                        class="img-rounded"/>
+                                        class="img-rounded" />
                                 </a>
                                 <div class="media-body">
                                     <h4 class="media-heading">Jhon Deo Alex</h4>
@@ -85,17 +85,16 @@
 
                                 </div>
                             </div>
-                            <hr/>
+                            <hr />
                             <h5>
                                 <strong>Personal Bio : </strong>
                             </h5>
                             Anim pariatur cliche reprehen derit.
-                            <hr/>
+                            <hr />
                             <a href="#" class="btn btn-info btn-sm">Full Profile</a>&nbsp; <a
                                 href="login.html" class="btn btn-danger btn-sm">Logout</a>
 
-                        </div>
-                    </li>
+                        </div></li>
 
 
                 </ul>
@@ -116,19 +115,12 @@
                             <ul class="dropdown-menu" role="menu"
                                 aria-labelledby="dropdownMenu1">
                                 <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                           href="${pageContext.request.contextPath}/inventory/bottles">Bottles</a>
-                                </li>
+                                                           href="${pageContext.request.contextPath}/inventory/bottles">Bottles</a></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                           href="${pageContext.request.contextPath}/inventory/batch">Batch</a>
-                                </li>
+                                                           href="${pageContext.request.contextPath}/inventory/batch">Batch</a></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                           href="${pageContext.request.contextPath}/inventory/supplies">Supplies</a>
-                                </li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                           href="${pageContext.request.contextPath}/inventory/delivery">Delivery</a>
-                                </li>
-                            </ul>
-                        </li>
+                                                           href="${pageContext.request.contextPath}/inventory/supplies">Supplies</a></li>
+                            </ul></li>
                         <li><a href="" class="dropdown-toggle" id="dropdownMenu2"
                                data-toggle="dropdown">Profiles</a>
                             <ul class="dropdown-menu" role="menu"
@@ -138,34 +130,27 @@
                                     Profiles</a></li>
                                 <li role="presentation" class="divider"></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                           href="${pageContext.request.contextPath}/profiles/delivery-teams">Delivery
+                                    Team Profiles</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
                                                            href="${pageContext.request.contextPath}/profiles/employees">Employee
                                     Profiles</a></li>
-                            </ul>
-                        </li>
+                            </ul></li>
                         <li><a href="" class="dropdown-toggle" id="dropdownMenu3"
                                data-toggle="dropdown">Sales</a>
                             <ul class="dropdown-menu" role="menu"
                                 aria-labelledby="dropdownMenu3">
                                 <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                           href="${pageContext.request.contextPath}/sales/delivery">Transaction</a>
-                                </li>
+                                                           href="${pageContext.request.contextPath}/sales/delivery">Transaction</a></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1"
                                                            href="${pageContext.request.contextPath}/sales/refilling">Refilling
                                     Team Profiles</a></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                           href="${pageContext.request.contextPath}/sales/dispensers">Dispensers</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="">OTHER LINKS</a></li>
-                        <li><a href="">OTHER LINKS</a></li>
-                        <li><a href="" class="dropdown-toggle" id="dropdownMenu4"
-                               data-toggle="dropdown"><%session.getAttribute("session_login_user");%> ${sessionScope.session_login_user.username}</a>
-                            <ul class="dropdown-menu" role="menu"
-                                aria-labelledby="dropdownMenu4">
-                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                           href="${pageContext.request.contextPath}/logout">Logout</a></li>
+                                                           href="${pageContext.request.contextPath}/sales/dispensers">Dispensers</a></li>
                             </ul></li>
+                        <li><a href="">OTHER LINKS</a></li>
+                        <li><a href="">OTHER LINKS</a></li>
+                        <li><a href="">Log Out</a></li>
 
                     </ul>
                 </div>
@@ -183,29 +168,57 @@
 
             </div>
             <div class="row">
-                <div class="col-md-4"></div>
-                <div class="col-md-4"></div>
+                <div class="col-md-4">
+
+                    <div class="col-md-5">
+                        <p>Select Batch ID</p>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="col-md-6">
+                            <form method="post" action="${pageContext.request.contextPath}/inventory/getBatch">
+                                <select name="showBatchID" class="form-control input-sm" onchange="this.form.submit();">
+                                    <option value="-1">Select</option>
+                                    <c:forEach items="${batchList}" var="batch" varStatus="status">
+                                        <c:choose>
+                                            <c:when test="${batch.batchID == batchSelected}">
+                                                <option selected="selected" value="${batch.batchID}">${batch.batchID}</option>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <option value="${batch.batchID}">${batch.batchID}</option>
+                                            </c:otherwise>
+                                        </c:choose>
+
+                                    </c:forEach>
+                                    <
+                                </select>
+                            </form>
+                        </div>
+
+                        <div class="col-md-6"></div>
+                    </div>
+
+                </div>
+                <div class="col-md-5"></div>
                 <form action="${pageContext.request.contextPath}/addBatch"
                       method="POST">
-                    <input type="hidden" value="1" class="form-control" placeholder="Batch ID" name="batch_id"/>
+                    <input type="hidden" 	value="1" class="form-control" placeholder="Batch ID" name="batch_id" />
                     <button type="submit" class="btn btn-success btn-default">
                         Create Batch
                     </button>
-                    <button type="button" class="btn btn-info btn-default" data-toggle="modal"
-                            data-target="#addBottleToBatch">
+                    <button type="button" class="btn btn-info btn-default" data-toggle="modal" data-target="#addBottleToBatch">
                         Add Bottle To Batch
                     </button>
                 </form>
                 <hr>
             </div>
 
-            <div class="modal fade" id="addBottleToBatch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
+            <div class="modal fade" id="addBottleToBatch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                  aria-hidden="true" style="display: none;">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h4 class="modal-title" id="myModalLabel1">Add Bottle To Batch</h4>
+                            <h4 class="modal-title" id="myModalLabel2">Add Bottle To Batch</h4>
                         </div>
                         <div class="modal-body">
                             <form action="${pageContext.request.contextPath}/addBottleToBatch"
@@ -213,48 +226,17 @@
                                 <div class="form-group">
                                     <label>Batch ID</label>
                                     <select class="form-control" name="batch_id">
-                                        <option value="001">001</option>
-                                        <option value="002">002</option>
+                                        <c:forEach items="${batchList}" var="batch" varStatus="status">
+                                            <option value="${batch.batchID}">${batch.batchID}</option>
+                                        </c:forEach>
+
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Bottle ID</label>
                                     <select class="form-control" name="bottle_id">
-                                        <option value="1234">1234</option>
-                                        <option value="5678">5678</option>
-                                        <option value="91011">91011</option>
-                                        <option value="121314">121314</option>
-                                    </select>
-                                </div>
-
-                                <button type="submit" class="btn btn-success btn-default">Submit</button>
-
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade" id="createDelivery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2"
-                 aria-hidden="true" style="display: none;">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h4 class="modal-title" id="myModalLabel2">Create DeliverySSSSSSSSSS</h4>
-                        </div>
-                        <div class="modal-body">
-                            <form action="${pageContext.request.contextPath}/createDelivery"
-                                  method="POST">
-                                <div class="form-group">
-                                    <label>Batch ID</label>
-                                    <select class="form-control" name="batch_id">
-                                        <c:forEach items="${batchList}" var="batch"
-                                                   varStatus="status">
-                                            <option value="${batch.batchID}">${batch.batchID}</option>
+                                        <c:forEach items="${allBottlesList}" var="bottles" varStatus="status">
+                                            <option value="${bottles.serialNumber}">${bottles.serialNumber}</option>
                                         </c:forEach>
                                     </select>
                                 </div>
@@ -276,34 +258,28 @@
                 <table id="example"
                        class="table table-hover table-condensed table-striped"
                        cellspacing="0" width="100%">
+
+
+
                     <thead>
                     <tr>
-                        <th>Batch ID</th>
+                        <th>Serial Number</th>
+                        <th>Bottle Type</th>
+                        <th>Date Last Delivered</th>
                         <th>Status</th>
-                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>#00001</td>
-                        <td>Special</td>
-                        <td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-                    </tr>
-                    <tr>
-                        <td>#00002</td>
-                        <td>Not</td>
-                        <td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-                    </tr>
-                    <tr>
-                        <td>#00003</td>
-                        <td>Special</td>
-                        <td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-                    </tr>
-                    <tr>
-                        <td>#00004</td>
-                        <td>Not</td>
-                        <td><a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-                    </tr>
+                    <c:forEach items="${bottlesList}" var="bottle" varStatus="status">
+                        <tr>
+                            <td>${bottle.serialNumber}</td>
+                            <td>${bottle.bottleType}</td>
+                            <td>${bottle.dateLastDelivered}</td>
+                            <td>${bottle.status}</td>
+                        </tr>
+
+
+                    </c:forEach>
                     </tbody>
                 </table>
             </div>

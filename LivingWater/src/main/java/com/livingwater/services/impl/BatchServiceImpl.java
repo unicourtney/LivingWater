@@ -47,8 +47,11 @@ public class BatchServiceImpl implements BatchService {
 
         Batch batch = new Batch();
         batchDao.create(batch);
+        view.addObject("batchList", batchDao.getAllBatch());
+        view.addObject("allBottlesList", bottleDao.getAllBottle());
         return view;
     }
+
 
     public ModelAndView addBottleToBatch(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView view = new ModelAndView("inventory-batch");
@@ -63,8 +66,18 @@ public class BatchServiceImpl implements BatchService {
             batchBottlesDao.create(batchBottles);
         }
 
+        return view;
+
+    }
+
+    public ModelAndView getBatches() {
+        ModelAndView view = new ModelAndView("inventory-batch");
+        List<Batch> batchList = batchDao.getAllBatch();
+        view.addObject("batchList", batchList);
+        view.addObject("allBottlesList", bottleDao.getAllBottle());
 
         return view;
+
 
     }
 
@@ -74,10 +87,15 @@ public class BatchServiceImpl implements BatchService {
         return batchList;
     }
 
-    public Batch getBatch(int id){
+    public Batch getBatch(int id) {
         Batch batch = batchDao.getBatch(id);
 
         return batch;
+    }
+
+
+    private List<Batch> getBatch() {
+        return batchDao.getAllBatch();
     }
 
 

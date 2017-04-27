@@ -15,4 +15,8 @@ public interface BatchDao extends GenericDao<Batch>{
 
     public Batch getBatch(int id);
 
+
+    Batch getABatch(int batchID);
+
+
 }

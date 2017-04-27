@@ -29,4 +29,11 @@ public class BatchDaoImpl extends GenericDaoImpl<Batch> implements BatchDao {
 
         return (Batch) query.uniqueResult();
     }
+
+    public Batch getABatch(int batchID) {
+        Query query = getCurrentSession().createQuery("from Batch where batchID = :id");
+        query.setParameter("id", batchID);
+        return (Batch) query.uniqueResult();
+    }
+
 }
