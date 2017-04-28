@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.livingwater.dao.BottleDao;
 import com.livingwater.dao.RoleDao;
 import com.livingwater.entities.Batch;
+import com.livingwater.entities.Bottle;
 import com.livingwater.entities.Role;
 import com.livingwater.entities.User;
 import com.livingwater.services.BatchService;
@@ -31,9 +32,9 @@ public class UserController {
     private UserService userService;
 
     @Autowired
-
     private BatchService batchService;
 
+    @Autowired
     private BottleDao bottleDao;
 
 
@@ -47,68 +48,131 @@ public class UserController {
         return view;
     }
 
-    @RequestMapping(value = "/inventory/bottles", method = RequestMethod.GET)
-    public ModelAndView inventoryBottlesPage() {
-        ModelAndView view = new ModelAndView("inventory-bottles");
-        view.addObject("bottlesList",bottleDao.getAllBottle());
-        return view;
-    }
-
-
-
     @RequestMapping(value = "/inventory/supplies", method = RequestMethod.GET)
-    public ModelAndView inventorySuppliesPage() {
-        ModelAndView view = new ModelAndView("inventory-supplies");
+    public ModelAndView inventorySuppliesPage(HttpServletRequest request) {
+        ModelAndView view;
+
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
+
+        if (user1 == null) {
+
+            view = new ModelAndView("login");
+        } else {
+
+            view = new ModelAndView("inventory-supplies");
+        }
         return view;
     }
 
 
     @RequestMapping(value = "/profiles/employees", method = RequestMethod.GET)
-    public ModelAndView employeeProfilesPage() {
-        ModelAndView view = new ModelAndView("employee-profiles");
+    public ModelAndView employeeProfilesPage(HttpServletRequest request) {
 
-        List<User> userList = userService.getAllUsers();
+        ModelAndView view;
 
-        view.addObject("userList", userList);
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
 
+        if (user1 == null) {
+
+            view = new ModelAndView("login");
+        } else {
+
+            view = new ModelAndView("employee-profiles");
+
+            List<User> userList = userService.getAllUsers();
+
+            view.addObject("userList", userList);
+        }
         return view;
     }
 
     @RequestMapping(value = "/sales/delivery", method = RequestMethod.GET)
-    public ModelAndView salesDeliveryPage() {
-        ModelAndView view = new ModelAndView("sales-delivery");
+    public ModelAndView salesDeliveryPage(HttpServletRequest request) {
+
+        ModelAndView view;
+
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
+
+        if (user1 == null) {
+
+            view = new ModelAndView("login");
+        } else {
+
+            view = new ModelAndView("sales-delivery");
+        }
         return view;
     }
 
     @RequestMapping(value = "/sales/refilling", method = RequestMethod.GET)
-    public ModelAndView salesRefillingPage() {
-        ModelAndView view = new ModelAndView("sales-refilling");
+    public ModelAndView salesRefillingPage(HttpServletRequest request) {
+        ModelAndView view;
+
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
+
+        if (user1 == null) {
+
+            view = new ModelAndView("login");
+        } else {
+
+            view = new ModelAndView("sales-refilling");
+        }
         return view;
     }
 
     @RequestMapping(value = "/sales/dispensers", method = RequestMethod.GET)
-    public ModelAndView salesDispensersPage() {
-        ModelAndView view = new ModelAndView("sales-dispensers");
+    public ModelAndView salesDispensersPage(HttpServletRequest request) {
+        ModelAndView view;
+
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
+
+        if (user1 == null) {
+
+            view = new ModelAndView("login");
+        } else {
+
+            view = new ModelAndView("sales-dispensers");
+        }
         return view;
     }
 
 
     @RequestMapping(value = "/profiles/employees/info/{id}", method = RequestMethod.GET)
-    public ModelAndView employeeInfoPage(@PathVariable("id") Integer id) {
-        ModelAndView view = new ModelAndView("employee-info");
+    public ModelAndView employeeInfoPage(@PathVariable("id") Integer id, HttpServletRequest request) {
+        ModelAndView view;
 
-        User user = userService.getUser(id);
-        Role role = roleDao.getRole(user.getRole().getName());
 
-        view.addObject("user", user);
-        view.addObject("role", role);
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
+
+        if (user1 == null) {
+
+            view = new ModelAndView("login");
+        } else {
+
+            view = new ModelAndView("employee-info");
+
+            User user = userService.getUser(id);
+            Role role = roleDao.getRole(user.getRole().getName());
+
+            view.addObject("user", user);
+            view.addObject("role", role);
+        }
 
         return view;
     }
 
     @RequestMapping(value = "/inventory/supplies/info", method = RequestMethod.GET)
-    public ModelAndView supplyInfoPage() {
-        ModelAndView view = new ModelAndView("supply-info");
+    public ModelAndView supplyInfoPage(HttpServletRequest request) {
+        ModelAndView view;
+
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
+
+        if (user1 == null) {
+
+            view = new ModelAndView("login");
+        } else {
+
+            view = new ModelAndView("supply-info");
+        }
         return view;
     }
 
@@ -151,8 +215,8 @@ public class UserController {
     //----------------------Delete
 
     @RequestMapping(value = "/deleteUser/{id}", method = RequestMethod.GET)
-    public ModelAndView deleteProfilesCustomer(@PathVariable("id") Integer id) {
+    public ModelAndView deleteProfilesCustomer(@PathVariable("id") Integer id, HttpServletRequest request) {
 
-        return userService.deleteUser(id);
+        return userService.deleteUser(id, request);
     }
 }

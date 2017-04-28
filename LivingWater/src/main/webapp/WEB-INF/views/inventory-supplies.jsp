@@ -130,10 +130,22 @@
 									<li role="presentation"><a role="menuitem" tabindex="-1"
 										href="${pageContext.request.contextPath}/profiles/customers">Customer
 											Profiles</a></li>
-									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1"
-										href="${pageContext.request.contextPath}/profiles/employees">Employee
-											Profiles</a></li>
+									<%session.getAttribute("session_login_user");%>
+									<c:choose>
+										<c:when test="${sessionScope.session_login_user.role.roleID=='3'}">
+											<c:set var="toDisplay" value="none;"/>
+
+										</c:when>
+										<c:otherwise>
+											<c:set var="toDisplay" value=""/>
+
+										</c:otherwise>
+									</c:choose>
+
+									<li role="presentation" class="divider" style="display: ${toDisplay}"></li>
+									<li role="presentation"><a style="display: ${toDisplay}" role="menuitem" tabindex="-1"
+															   href="${pageContext.request.contextPath}/profiles/employees">Employee
+										Profiles</a></li>
 								</ul></li>
 							<li><a href="" class="dropdown-toggle" id="dropdownMenu3"
 								data-toggle="dropdown">Sales</a>

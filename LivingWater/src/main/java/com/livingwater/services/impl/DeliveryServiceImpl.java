@@ -3,6 +3,7 @@ package com.livingwater.services.impl;
 import com.livingwater.dao.DeliveryDao;
 import com.livingwater.entities.Batch;
 import com.livingwater.entities.Delivery;
+import com.livingwater.entities.User;
 import com.livingwater.services.BatchService;
 import com.livingwater.services.DeliveryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,23 +30,33 @@ public class DeliveryServiceImpl implements DeliveryService {
     private DeliveryDao deliveryDao;
 
     public ModelAndView createDelivery(HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView view = new ModelAndView("inventory-delivery");
+        ModelAndView view;
 
-        int batch_id = Integer.parseInt(request.getParameter("batch_id"));
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
 
-        Batch batch = batchService.getBatch(batch_id);
+        if (user1 == null) {
 
-        System.out.println("BATCH ID: " + batch.getBatchID());
-        Delivery delivery = new Delivery();
+            view = new ModelAndView("login");
+        } else {
 
-        delivery.setBatch(batch);
+            view = new ModelAndView("inventory-delivery");
+
+            int batch_id = Integer.parseInt(request.getParameter("batch_id"));
+
+            Batch batch = batchService.getBatch(batch_id);
+
+            System.out.println("BATCH ID: " + batch.getBatchID());
+            Delivery delivery = new Delivery();
+
+            delivery.setBatch(batch);
 
 
-        deliveryDao.create(delivery);
+            deliveryDao.create(delivery);
 
-        List<Batch> batchList = batchService.getAllBatch();
+            List<Batch> batchList = batchService.getAllBatch();
 
-        view.addObject("batchList", batchList);
+            view.addObject("batchList", batchList);
+        }
         return view;
     }
 

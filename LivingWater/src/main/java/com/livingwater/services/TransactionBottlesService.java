@@ -18,4 +18,6 @@ public interface TransactionBottlesService {
 
     public ModelAndView deleteTransactionBottles(Integer id, HttpServletRequest request, HttpServletResponse response);
 
+    public ModelAndView cancelTransactionBottle(HttpServletRequest request, HttpServletResponse response);
+
 }

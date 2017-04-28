@@ -5,6 +5,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  * Created by John Leeroy Gadiane on 14/04/2017.
@@ -16,6 +17,8 @@ public interface BottleService {
     public Bottle getABottle(String id);
 
     ModelAndView updateBottle(HttpServletRequest request, HttpServletResponse response);
+
+    public List<Bottle> getAllBottle();
 
 
 }

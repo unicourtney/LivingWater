@@ -1,10 +1,10 @@
 package com.livingwater.services.impl;
 
 import com.livingwater.dao.TransactionBottlesDao;
-import com.livingwater.entities.Bottle;
-import com.livingwater.entities.Transaction;
-import com.livingwater.entities.TransactionBottles;
+import com.livingwater.dao.TransactionDao;
+import com.livingwater.entities.*;
 import com.livingwater.services.BottleService;
+import com.livingwater.services.CustomerService;
 import com.livingwater.services.TransactionBottlesService;
 import com.livingwater.services.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +27,16 @@ public class TransactionBottlesServiceImpl implements TransactionBottlesService 
     private TransactionBottlesDao transactionBottlesDao;
 
     @Autowired
+    private TransactionDao transactionDao;
+
+    @Autowired
     private BottleService bottleService;
 
     @Autowired
     private TransactionService transactionService;
+
+    @Autowired
+    private CustomerService customerService;
 
     public List<TransactionBottles> getAllBottlesWithATransactionIDLike(int transaction_id) {
         List<TransactionBottles> transactionBottlesList = transactionBottlesDao.getAllBottlesWithATransactionIDLike(transaction_id);
@@ -39,44 +45,100 @@ public class TransactionBottlesServiceImpl implements TransactionBottlesService 
     }
 
     public ModelAndView addTransactionBottles(HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView view = new ModelAndView("customer-transaction-bottles");
+        ModelAndView view;
 
-        Integer transaction_id = Integer.parseInt(String.valueOf(request.getSession().getAttribute("session_transaction_id")));
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
+
+        if (user1 == null) {
+
+            view = new ModelAndView("login");
+        } else {
+
+            view = new ModelAndView("customer-transaction-bottles");
+
+            Integer transaction_id = Integer.parseInt(String.valueOf(request.getSession().getAttribute("session_transaction_id")));
 //        String bottle_case = String.valueOf(request.getSession().getAttribute("session_bottle_case"));
-        Double transaction_price = Double.parseDouble(String.valueOf(request.getSession().getAttribute("session_transaction_price")));
-        String bottle_id = request.getParameter("bottle_id");
+            Double transaction_price = Double.parseDouble(String.valueOf(request.getSession().getAttribute("session_transaction_price")));
+            String bottle_id = request.getParameter("bottle_id");
 
-        Transaction transaction = transactionService.getTransaction(transaction_id);
-        Bottle bottle = bottleService.getABottle(bottle_id);
-        TransactionBottles transactionBottles = new TransactionBottles();
-        transactionBottles.setTransaction(transaction);
-        transactionBottles.setBottle(bottle);
+            Transaction transaction = transactionService.getTransaction(transaction_id);
+            Bottle bottle = bottleService.getABottle(bottle_id);
+            TransactionBottles transactionBottles = new TransactionBottles();
+            transactionBottles.setTransaction(transaction);
+            transactionBottles.setBottle(bottle);
 
-        transactionBottlesDao.create(transactionBottles);
+            transactionBottlesDao.create(transactionBottles);
 
-        List<TransactionBottles> transactionBottlesList = transactionBottlesDao.getAllBottlesWithATransactionIDLike(transaction_id);
+            List<TransactionBottles> transactionBottlesList = transactionBottlesDao.getAllBottlesWithATransactionIDLike(transaction_id);
 
-        view.addObject("transactionBottlesList", transactionBottlesList);
+            view.addObject("transactionBottlesList", transactionBottlesList);
+        }
 
         return view;
     }
 
     public ModelAndView deleteTransactionBottles(Integer id, HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView view = new ModelAndView("customer-transaction-bottles");
+        ModelAndView view;
 
-        Integer transaction_id = Integer.parseInt(String.valueOf(request.getSession().getAttribute("session_transaction_id")));
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
 
-        Transaction transaction = transactionService.getTransaction(transaction_id);
+        if (user1 == null) {
 
-        Bottle bottle = bottleService.getABottle(String.valueOf(id));
+            view = new ModelAndView("login");
+        } else {
 
-        TransactionBottles transactionBottles = new TransactionBottles(transaction, bottle);
+            view = new ModelAndView("customer-transaction-bottles");
 
-        transactionBottlesDao.delete(transactionBottles);
+            Integer transaction_id = Integer.parseInt(String.valueOf(request.getSession().getAttribute("session_transaction_id")));
 
-        List<TransactionBottles> transactionBottlesList = transactionBottlesDao.getAllBottlesWithATransactionIDLike(transaction_id);
+            Transaction transaction = transactionService.getTransaction(transaction_id);
 
-        view.addObject("transactionBottlesList", transactionBottlesList);
+            Bottle bottle = bottleService.getABottle(String.valueOf(id));
+
+            TransactionBottles transactionBottles = new TransactionBottles(transaction, bottle);
+
+            transactionBottlesDao.delete(transactionBottles);
+
+            List<TransactionBottles> transactionBottlesList = transactionBottlesDao.getAllBottlesWithATransactionIDLike(transaction_id);
+
+            view.addObject("transactionBottlesList", transactionBottlesList);
+        }
+
+
+        return view;
+    }
+
+    public ModelAndView cancelTransactionBottle(HttpServletRequest request, HttpServletResponse response) {
+
+        ModelAndView view;
+
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
+
+        if (user1 == null) {
+
+            view = new ModelAndView("login");
+        } else {
+
+            view = new ModelAndView("customer-transaction");
+
+            Integer id = Integer.parseInt(String.valueOf(request.getSession().getAttribute("session_customer_id")));
+
+            Customer customer = customerService.getCustomer(id);
+
+            Integer transaction_id = Integer.parseInt(String.valueOf(request.getSession().getAttribute("session_transaction_id")));
+            List<TransactionBottles> transactionBottlesList = getAllBottlesWithATransactionIDLike(transaction_id);
+
+            Transaction transaction = transactionService.getTransaction(transaction_id);
+
+            for(TransactionBottles a :  transactionBottlesList){
+
+                transactionBottlesDao.delete(a);
+            }
+
+            transactionDao.delete(transaction);
+
+            view.addObject("customer", customer);
+        }
 
         return view;
     }

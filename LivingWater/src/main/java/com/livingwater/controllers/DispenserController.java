@@ -2,6 +2,7 @@ package com.livingwater.controllers;
 
 import com.livingwater.entities.Customer;
 import com.livingwater.entities.Dispenser;
+import com.livingwater.entities.User;
 import com.livingwater.services.CustomerService;
 import com.livingwater.services.DispenserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,19 +30,29 @@ public class DispenserController {
 
     @RequestMapping(value = "/profiles/customers/rent-dispenser/{id}", method = RequestMethod.GET)
     public ModelAndView rentDispenserPage(@PathVariable("id") Integer id, HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView view = new ModelAndView("customer-dispensers");
+        ModelAndView view;
 
-        Customer customer = customerService.getCustomer(id);
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
 
-        request.getSession().setAttribute("session_customer_name", customer.getName());
-        request.getSession().setAttribute("session_customer_id", customer.getCustomerID());
+        if (user1 == null) {
 
-        List<Dispenser> dispenserList = dispenserService.getAllDispenserFromCustomer(id);
+            view = new ModelAndView("login");
+        } else {
 
-        if (dispenserList != null) {
-            view.addObject("dispenserList", dispenserList);
+            view = new ModelAndView("customer-dispensers");
+
+            Customer customer = customerService.getCustomer(id);
+
+            request.getSession().setAttribute("session_customer_name", customer.getName());
+            request.getSession().setAttribute("session_customer_id", customer.getCustomerID());
+
+            List<Dispenser> dispenserList = dispenserService.getAllDispenserFromCustomer(id);
+
+            if (dispenserList != null) {
+                view.addObject("dispenserList", dispenserList);
+            }
+            view.addObject("customer", customer);
         }
-        view.addObject("customer", customer);
         return view;
     }
 

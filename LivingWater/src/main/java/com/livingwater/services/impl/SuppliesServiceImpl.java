@@ -2,6 +2,7 @@ package com.livingwater.services.impl;
 
 import com.livingwater.dao.SupplyDao;
 import com.livingwater.entities.Supply;
+import com.livingwater.entities.User;
 import com.livingwater.services.SuppliesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,13 +24,24 @@ public class SuppliesServiceImpl implements SuppliesService{
     private SupplyDao supplyDao;
 
     public ModelAndView addSupply(HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView mav = new ModelAndView("inventory-supplies");
+        ModelAndView mav;
 
-        String supply_name = request.getParameter("supply_name");
-        int supply_quantity = Integer.parseInt(request.getParameter("supply_quantity"));
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
 
-        Supply supply = new Supply(supply_name,supply_quantity);
-        supplyDao.create(supply);
+        if (user1 == null) {
+
+            mav = new ModelAndView("login");
+        } else {
+
+            mav = new ModelAndView("inventory-supplies");
+
+            String supply_name = request.getParameter("supply_name");
+            int supply_quantity = Integer.parseInt(request.getParameter("supply_quantity"));
+
+            Supply supply = new Supply(supply_name,supply_quantity);
+            supplyDao.create(supply);
+
+        }
 
         return mav;
     }

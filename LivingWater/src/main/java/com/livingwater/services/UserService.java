@@ -21,7 +21,7 @@ public interface UserService {
 
     public ModelAndView updateUser(int id, HttpServletRequest request, HttpServletResponse response);
 
-    public ModelAndView deleteUser(int id);
+    public ModelAndView deleteUser(int id, HttpServletRequest request);
 
     public ModelAndView userLogin(HttpServletRequest request, HttpServletResponse response);
 
