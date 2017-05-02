@@ -1,5 +1,6 @@
 package com.livingwater.controllers;
 
+import com.livingwater.dao.BatchDao;
 import com.livingwater.entities.Batch;
 import com.livingwater.entities.Delivery;
 import com.livingwater.entities.DeliveryTeam;
@@ -36,6 +37,9 @@ public class DeliveryController {
     private UserService userService;
 
     @Autowired
+    private BatchDao batchDao;
+
+    @Autowired
     private DeliveryTeamService deliveryTeamService;
 
 
@@ -50,7 +54,7 @@ public class DeliveryController {
 
         ModelAndView view = new ModelAndView("inventory-delivery");
 
-        List<Batch> batchList = batchService.getAllBatch();
+        List<Batch> batchList = batchDao.getAllBatch();
 
         List<Delivery> deliveryList = deliveryService.getAllDelivery();
 
@@ -70,6 +74,7 @@ public class DeliveryController {
 
     @RequestMapping(value = "/createDelivery", method = RequestMethod.POST)
     public ModelAndView createDelivery(HttpServletRequest request, HttpServletResponse response) {
+        System.out.println("HELLOOOOOOOO");
         return deliveryService.createDelivery(request, response);
     }
 }

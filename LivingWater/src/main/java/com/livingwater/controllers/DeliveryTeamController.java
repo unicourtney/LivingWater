@@ -1,5 +1,6 @@
 package com.livingwater.controllers;
 
+import com.livingwater.dao.TransactionDao;
 import com.livingwater.entities.Transaction;
 import com.livingwater.entities.User;
 import com.livingwater.services.DeliveryTeamService;
@@ -27,6 +28,9 @@ public class DeliveryTeamController {
     private TransactionService transactionService;
 
     @Autowired
+    private TransactionDao transactionDao;
+
+    @Autowired
     private UserService userService;
 
     @Autowired
@@ -36,7 +40,7 @@ public class DeliveryTeamController {
     public ModelAndView deliveryTeamProfilesPage() {
         ModelAndView view = new ModelAndView("delivery-team-profiles");
 
-        List<Transaction> transactionList = transactionService.getAllTransaction();
+        List<Transaction> transactionList = transactionDao.getAllTransaction();
         List<User> userList = userService.getAllUsers();
 
         view.addObject("transactionList", transactionList);

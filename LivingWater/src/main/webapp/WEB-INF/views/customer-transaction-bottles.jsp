@@ -68,7 +68,7 @@
                     class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="index.html"> <img
-                    src="${pageContext.request.contextPath}/resources/img/Livingwater Minglanilla.jpg"/>
+                    src="${pageContext.request.contextPath}/resources/img/Livingwater Minglanilla.png"/>
             </a>
 
         </div>
@@ -131,6 +131,9 @@
                                 <li role="presentation"><a role="menuitem" tabindex="-1"
                                                            href="${pageContext.request.contextPath}/inventory/supplies">Supplies</a>
                                 </li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                           href="${pageContext.request.contextPath}/inventory/delivery">Delivery</a>
+                                </li>
                             </ul>
                         </li>
                         <li><a class="menu-top-active"
@@ -142,9 +145,6 @@
                                                            href="${pageContext.request.contextPath}/profiles/customers">Customer
                                     Profiles</a></li>
                                 <li role="presentation" class="divider"></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                           href="${pageContext.request.contextPath}/profiles/delivery-teams">Delivery
-                                    Team Profiles</a></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1"
                                                            href="${pageContext.request.contextPath}/profiles/employees">Employee
                                     Profiles</a></li>
@@ -167,7 +167,15 @@
                         </li>
                         <li><a href="">OTHER LINKS</a></li>
                         <li><a href="">OTHER LINKS</a></li>
-                        <li><a href="">Log Out</a></li>
+                        <li><a href="" class="dropdown-toggle" id="dropdownMenu4"
+                               data-toggle="dropdown"><%session.getAttribute("session_login_user");%> ${sessionScope.session_login_user.username}</a>
+                            <ul class="dropdown-menu" role="menu"
+                                aria-labelledby="dropdownMenu4">
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                           href="${pageContext.request.contextPath}/logout">Logout</a>
+                                </li>
+                            </ul>
+                        </li>
 
                     </ul>
                 </div>
@@ -196,7 +204,6 @@
                         TRANSACTION FORM
                     </div>
                     <div class="panel-body">
-                        <c:set var="customer" value="${customer}"/>
                         <form action="${pageContext.request.contextPath}/addTransactionBottles"
                               method="POST">
 
@@ -237,7 +244,7 @@
                                 <input type="text" class="form-control" placeholder="" name="bottle_id"/>
                             </div>
 
-                            <button type="submit" class="btn btn-success btn-default">Submit
+                            <button type="submit" class="btn btn-success btn-default">Add Bottle
                             </button>
                             <a href="${pageContext.request.contextPath}/cancelTransaction" type="button"
                                class="btn btn-default toHideBtn">
@@ -266,12 +273,19 @@
                             <c:forEach items="${transactionBottlesList}" var="transactionBottles"
                                        varStatus="status">
                                 <tr>
-                                    <td>${transactionBottles.bottleID}</td>
-                                    <td><a href="<c:url value='/deleteTransactionBottle/${transactionBottlesList[status.index].bottleID}' />" class="btn btn-danger btn-xs">DELETE</a></td>
+                                    <td>${transactionBottles.bottle.serialNumber}</td>
+                                    <td>
+                                        <a href="<c:url value='/deleteTransactionBottle/${transactionBottles.bottle.serialNumber}' />"
+                                           class="btn btn-danger btn-xs">DELETE</a></td>
                                 </tr>
                             </c:forEach>
                             </tbody>
                         </table>
+                        <form action="${pageContext.request.contextPath}/confirmTransaction"
+                              method="POST">
+                            <button type="submit" class="btn btn-success btn-default">Confirm
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>

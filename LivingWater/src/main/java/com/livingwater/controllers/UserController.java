@@ -112,14 +112,17 @@ public class UserController {
     //----------------------Login
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public ModelAndView userLogin(HttpServletRequest request, HttpServletResponse response, ModelMap map) {
-        ModelAndView view = new ModelAndView("inventory-bottles");
-        view.addObject("bottlesList",bottleDao.getAllBottle());
+    public ModelAndView userLogin(HttpServletRequest request, HttpServletResponse response) {
+        return userService.userLogin(request, response);
+    }
 
-        String user_id = request.getParameter("user_id");
-        String password = request.getParameter("password");
+    //----------------------Logout
 
-        System.out.println("USER ID: " + user_id + "\nPASSWORD: " + password);
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public ModelAndView userLogout(HttpServletRequest request, HttpServletResponse response) {
+        ModelAndView view = new ModelAndView("login");
+
+        request.getSession().invalidate();
         return view;
     }
 

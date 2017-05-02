@@ -120,6 +120,9 @@
 															   href="${pageContext.request.contextPath}/inventory/batch">Batch</a></li>
 									<li role="presentation"><a role="menuitem" tabindex="-1"
 										href="${pageContext.request.contextPath}/inventory/supplies">Supplies</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+															   href="${pageContext.request.contextPath}/inventory/delivery">Delivery</a>
+									</li>
 								</ul></li>
 							<li><a href="" class="dropdown-toggle" id="dropdownMenu2"
 								data-toggle="dropdown">Profiles</a>

@@ -38,6 +38,8 @@ public class TransactionServiceImpl implements TransactionService {
     @Autowired
     private TransactionDao transactionDao;
 
+    @Autowired
+    private TransactionBottlesService transactionBottlesService;
 
     public ModelAndView createTransaction(Integer id, HttpServletRequest request, HttpServletResponse response) throws ParseException {
         ModelAndView view = new ModelAndView("customer-transaction-bottles");
@@ -91,9 +93,44 @@ public class TransactionServiceImpl implements TransactionService {
         return view;
     }
 
-    public List<Transaction> getAllTransaction(){
+    public List<Transaction> getAllTransaction() {
         List<Transaction> transactionList = transactionDao.getAllTransaction();
 
         return transactionList;
     }
+
+    public Transaction getTransaction(int id) {
+        Transaction transaction = transactionDao.getTransaction(id);
+
+        return transaction;
+    }
+
+    public ModelAndView confirmTransaction(HttpServletRequest request, HttpServletResponse response) {
+        ModelAndView view = new ModelAndView("customer-profiles");
+
+        Integer transaction_id = Integer.parseInt(String.valueOf(request.getSession().getAttribute("session_transaction_id")));
+        Double transaction_price = Double.parseDouble(String.valueOf(request.getSession().getAttribute("session_transaction_price")));
+        Transaction transaction = transactionDao.getTransaction(transaction_id);
+
+        List<TransactionBottles> transactionBottlesList = transactionBottlesService.getAllBottlesWithATransactionIDLike(transaction_id);
+
+        Double totalCost = transaction_price * transactionBottlesList.size();
+        transaction.setTotalCost(totalCost);
+        transaction.setNumberOfBottles(transactionBottlesList.size());
+        transactionDao.update(transaction);
+
+        request.getSession().removeAttribute("session_customer_name");
+        request.getSession().removeAttribute("session_customer_id");
+        request.getSession().removeAttribute("session_bottle_case");
+        request.getSession().removeAttribute("session_transaction_price");
+        request.getSession().removeAttribute("session_transaction_date");
+        request.getSession().removeAttribute("session_transaction_id");
+
+        List<Customer> customerList = customerService.getAllCustomer();
+
+        view.addObject("customerList", customerList);
+
+        return view;
+    }
+
 }

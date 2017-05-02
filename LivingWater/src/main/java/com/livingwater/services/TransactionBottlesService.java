@@ -12,7 +12,7 @@ import java.util.List;
  */
 public interface TransactionBottlesService {
 
-    public List<TransactionBottles> getAllBottlesWithATransactionIDLike(String transaction_id);
+    public List<TransactionBottles> getAllBottlesWithATransactionIDLike(int transaction_id);
 
     public ModelAndView addTransactionBottles(HttpServletRequest request, HttpServletResponse response);
 

@@ -15,4 +15,5 @@ public interface BatchService {
 
     public ModelAndView addBatch(HttpServletRequest request, HttpServletResponse response);
     ModelAndView getBatches();
+
 }

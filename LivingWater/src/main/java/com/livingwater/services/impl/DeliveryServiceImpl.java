@@ -1,5 +1,6 @@
 package com.livingwater.services.impl;
 
+import com.livingwater.dao.BatchDao;
 import com.livingwater.dao.DeliveryDao;
 import com.livingwater.entities.Batch;
 import com.livingwater.entities.Delivery;
@@ -26,26 +27,21 @@ public class DeliveryServiceImpl implements DeliveryService {
     private BatchService batchService;
 
     @Autowired
+    private BatchDao batchDao;
+
+    @Autowired
     private DeliveryDao deliveryDao;
 
     public ModelAndView createDelivery(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView view = new ModelAndView("inventory-delivery");
 
-        int batch_id = Integer.parseInt(request.getParameter("batch_id"));
-
-        Batch batch = batchService.getBatch(batch_id);
-
-        System.out.println("BATCH ID: " + batch.getBatchID());
         Delivery delivery = new Delivery();
-
-        delivery.setBatch(batch);
-
-
+        delivery.setStatus("Okay");
         deliveryDao.create(delivery);
 
-        List<Batch> batchList = batchService.getAllBatch();
+        /*List<Batch> batchList = batchDao.getAllBatch();
 
-        view.addObject("batchList", batchList);
+        view.addObject("batchList", batchList);*/
         return view;
     }
 

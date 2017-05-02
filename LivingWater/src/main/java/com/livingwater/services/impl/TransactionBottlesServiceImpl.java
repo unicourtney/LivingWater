@@ -24,7 +24,7 @@ public class TransactionBottlesServiceImpl implements TransactionBottlesService 
     @Autowired
     private TransactionBottlesDao transactionBottlesDao;
 
-    public List<TransactionBottles> getAllBottlesWithATransactionIDLike(String transaction_id) {
+    public List<TransactionBottles> getAllBottlesWithATransactionIDLike(int transaction_id) {
         List<TransactionBottles> transactionBottlesList = transactionBottlesDao.getAllBottlesWithATransactionIDLike(transaction_id);
 
         return transactionBottlesList;
@@ -71,7 +71,7 @@ public class TransactionBottlesServiceImpl implements TransactionBottlesService 
 
         transactionBottlesDao.delete(transactionBottles);
 
-        List<TransactionBottles> transactionBottlesList = transactionBottlesDao.getAllBottlesWithATransactionIDLike(transaction_id);
+        List<TransactionBottles> transactionBottlesList = transactionBottlesDao.getAllBottlesWithATransactionIDLike(Integer.parseInt(transaction_id));
 
         view.addObject("transactionBottlesList", transactionBottlesList);
 
