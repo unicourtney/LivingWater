@@ -27,11 +27,11 @@ public class UserDaoImpl extends GenericDaoImpl<User> implements UserDao {
         return (User)query.uniqueResult();
     }
 
-
     public User getUsername(String username) {
-        Query query = getCurrentSession().createQuery("from User b where b.username LIKE :username");
-        query.setParameter("username", "%"+username+"%");
+        Query query = getCurrentSession().createQuery("from User b where b.username = :username");
+        query.setParameter("username",username);
 
         return (User)query.uniqueResult();
     }
+
 }

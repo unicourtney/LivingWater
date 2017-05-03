@@ -263,7 +263,7 @@
                             </button>
                             <a href="${pageContext.request.contextPath}/profiles/customers" type="button"
                                class="btn btn-default toHideBtn">
-                            Cancel
+                                Cancel
                             </a>
                         </form>
                     </div>

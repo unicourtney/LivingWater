@@ -148,6 +148,7 @@ public class UserServiceImpl implements UserService {
         String login_error_message = null;
 
         if (user != null) {
+            System.out.println(user.getPassword() + " " + user_password);
             if (user.getPassword().equals(user_password)) {
                 view_path = "inventory-bottles";
                 List<Bottle> bottleList = bottleService.getAllBottle();

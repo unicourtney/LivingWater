@@ -97,6 +97,7 @@
                         </div></li>
 
 
+<<<<<<< HEAD
                 </ul>
             </div>
         </div>
@@ -182,6 +183,66 @@
                                 </li>
                             </ul>
                         </li>
+=======
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- LOGO HEADER END-->
+	<section class="menu-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="navbar-collapse collapse ">
+						<ul id="menu-top" class="nav navbar-nav navbar-right">
+							<li><a class="menu-top-active" href=""
+								class="dropdown-toggle" id="dropdownMenu1"
+								data-toggle="dropdown">Inventory</a>
+								<ul class="dropdown-menu" role="menu"
+									aria-labelledby="dropdownMenu1">
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/inventory/bottles">Bottles</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+															   href="${pageContext.request.contextPath}/inventory/batch">Batch</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/inventory/supplies">Supplies</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+															   href="${pageContext.request.contextPath}/inventory/delivery">Delivery</a>
+									</li>
+								</ul></li>
+							<li><a href="" class="dropdown-toggle" id="dropdownMenu2"
+								data-toggle="dropdown">Profiles</a>
+								<ul class="dropdown-menu" role="menu"
+									aria-labelledby="dropdownMenu2">
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/profiles/customers">Customer
+											Profiles</a></li>
+									<li role="presentation" class="divider"></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/profiles/delivery-teams">Delivery
+											Team Profiles</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/profiles/employees">Employee
+											Profiles</a></li>
+								</ul></li>
+								</ul></li>
+							<li><a href="" class="dropdown-toggle" id="dropdownMenu3"
+								data-toggle="dropdown">Sales</a>
+								<ul class="dropdown-menu" role="menu"
+									aria-labelledby="dropdownMenu3">
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/sales/delivery">Transaction</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/sales/refilling">Refilling
+											Team Profiles</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1"
+										href="${pageContext.request.contextPath}/sales/dispensers">Dispensers</a></li>
+								</ul></li>
+							<li><a href="">OTHER LINKS</a></li>
+							<li><a href="">OTHER LINKS</a></li>
+							<li><a href="">Log Out</a></li>
+>>>>>>> refs/remotes/origin/master
 
                     </ul>
                 </div>

@@ -292,7 +292,6 @@
                     <thead>
                     <tr>
                         <th>Delivery ID</th>
-                        <th>Batch ID</th>
                         <th>Status</th>
                         <th>Actions</th>
                     </tr>
@@ -302,7 +301,6 @@
                                varStatus="status">
                         <tr>
                             <td>${delivery.deliveryID}</td>
-                            <td>${delivery.batch.batchID}</td>
                             <td>${delivery.status}</td>
                             <td>
                                 <a href="<c:url value='/inventory/delivery/info/${deliveryList[status.index].deliveryID}' />" class="btn btn-info btn-xs">VIEW</a>

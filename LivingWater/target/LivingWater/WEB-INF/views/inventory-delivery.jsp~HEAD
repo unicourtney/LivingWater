@@ -1,6 +1,6 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -16,7 +16,7 @@
     <!-- BOOTSTRAP CORE STYLE  -->
     <link
             href="${pageContext.request.contextPath}/resources/css/bootstrap.css"
-            rel="stylesheet"/>
+            rel="stylesheet">
     <!-- BOOTSTRAP DATA TABLE STYLE  -->
     <link
             href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
@@ -31,18 +31,10 @@
     <!-- CUSTOM STYLE  -->
     <link href="${pageContext.request.contextPath}/resources/css/style.css"
           rel="stylesheet"/>
+
     <!-- DROP DOWN MENU  -->
     <link
             href="${pageContext.request.contextPath}/resources/css/drop-down.css"
-            rel="stylesheet"/>
-
-    <!-- BREADCRUMBS  -->
-    <link
-            href="${pageContext.request.contextPath}/resources/css/breadcrumbs.css"
-            rel="stylesheet"/>
-    <!-- DATE PICKER  -->
-    <link
-            href="${pageContext.request.contextPath}/resources/css/bootstrap-datepicker.css"
             rel="stylesheet"/>
 
 </head>
@@ -67,7 +59,7 @@
                 <span class="icon-bar"></span> <span class="icon-bar"></span> <span
                     class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"> <img
+            <a class="navbar-brand" href=""> <img
                     src="${pageContext.request.contextPath}/resources/img/Livingwater Minglanilla.png"/>
             </a>
 
@@ -84,8 +76,8 @@
                         <div class="dropdown-menu dropdown-settings">
                             <div class="media">
                                 <a class="media-left" href="#"> <img
-                                        src="${pageContext.request.contextPath}/resources/img/64-64.jpg"
-                                        alt="" class="img-rounded"/>
+                                        src="/WEB-INF/views/assets/img/64-64.jpg" alt=""
+                                        class="img-rounded"/>
                                 </a>
                                 <div class="media-body">
                                     <h4 class="media-heading">Jhon Deo Alex</h4>
@@ -118,7 +110,8 @@
             <div class="col-md-12">
                 <div class="navbar-collapse collapse ">
                     <ul id="menu-top" class="nav navbar-nav navbar-right">
-                        <li><a href="" class="dropdown-toggle" id="dropdownMenu1"
+                        <li><a class="menu-top-active" href=""
+                               class="dropdown-toggle" id="dropdownMenu1"
                                data-toggle="dropdown">Inventory</a>
                             <ul class="dropdown-menu" role="menu"
                                 aria-labelledby="dropdownMenu1">
@@ -136,28 +129,15 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a class="menu-top-active"
-                               href="" class="dropdown-toggle" id="dropdownMenu2"
+                        <li><a href="" class="dropdown-toggle" id="dropdownMenu2"
                                data-toggle="dropdown">Profiles</a>
                             <ul class="dropdown-menu" role="menu"
                                 aria-labelledby="dropdownMenu2">
                                 <li role="presentation"><a role="menuitem" tabindex="-1"
                                                            href="${pageContext.request.contextPath}/profiles/customers">Customer
                                     Profiles</a></li>
-                                <%session.getAttribute("session_login_user");%>
-                                <c:choose>
-                                    <c:when test="${sessionScope.session_login_user.role.roleID=='3'}">
-                                        <c:set var="toDisplay" value="none;"/>
-
-                                    </c:when>
-                                    <c:otherwise>
-                                        <c:set var="toDisplay" value=""/>
-
-                                    </c:otherwise>
-                                </c:choose>
-
-                                <li role="presentation" class="divider" style="display: ${toDisplay}"></li>
-                                <li role="presentation"><a style="display: ${toDisplay}" role="menuitem" tabindex="-1"
+                                <li role="presentation" class="divider"></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
                                                            href="${pageContext.request.contextPath}/profiles/employees">Employee
                                     Profiles</a></li>
                             </ul>
@@ -199,80 +179,132 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="page-head-line">Customers</h1>
+                <h4 class="page-head-line">Delivery</h4>
+
+            </div>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-5"></div>
+                <form action="${pageContext.request.contextPath}/createDelivery"
+                      method="POST">
+                <button type="submit" class="btn btn-success btn-default">
+                    Create Delivery
+                </button>
+
+                <button class="btn btn-info btn-default" data-toggle="modal" data-target="#addDeliveryTeamModal">
+                    Add Delivery Team
+                </button>
+                </form>
+                <hr>
+            </div>
+
+            <div class="modal fade" id="createDelivery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
+                 aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title" id="myModalLabel1">Create Delivery</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form action="${pageContext.request.contextPath}/createDelivery"
+                                  method="POST">
+                                <div class="form-group">
+                                    <label>Batch ID</label>
+                                    <select class="form-control" name="batch_id">
+                                        <c:forEach items="${batchList}" var="batch"
+                                                   varStatus="status">
+                                            <option value="${batch.batchID}">${batch.batchID}</option>
+                                        </c:forEach>
+                                    </select>
+                                </div>
+
+                                <button type="submit" class="btn btn-success btn-default">Submit</button>
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="addDeliveryTeamModal" tabindex="-1" role="dialog"
+                 aria-labelledby="myModalLabel2"
+                 aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title" id="myModalLabel2">Add Delivery Team</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            <form action="${pageContext.request.contextPath}/addDeliveryTeam"
+                                  method="POST">
+                                <div class="form-group">
+                                    <label>Delivery ID</label>
+                                    <select class="form-control" name="deliveryteam_id">
+                                        <c:forEach items="${deliveryList}" var="delivery"
+                                                   varStatus="status">
+                                            <option value="${delivery.deliveryID}">${delivery.deliveryID}</option>
+                                        </c:forEach>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>User</label>
+                                    <select class="form-control" name="deliveryteam_user">
+                                        <c:forEach items="${userList}" var="user"
+                                                   varStatus="status">
+                                            <option value="${user.userID}">${user.name}</option>
+                                        </c:forEach>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-success btn-default">Submit</button>
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <ul class="breadcrumb">
-            <li><a href="${pageContext.request.contextPath}/profiles/customers">Customers</a></li>
-            <li>Delivery</li>
-        </ul>
-
         <div class="row">
-            <div class="col-md-6 col-sm-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        CUSTOMER PROFILE
-                    </div>
-                    <div class="panel-body">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" placeholder="" name="customer_name" disabled/>
-                        </div>
-                        <div class="form-group">
-                            <label>Address</label>
-                            <input type="text" class="form-control" placeholder="" name="customer_address"
-                                   disabled/>
-                        </div>
-                        <div class="form-group">
-                            <label>Contact Number</label>
-                            <input type="tel" class="form-control" placeholder="" name="customer_contact" disabled/>
-                        </div>
-                        <div class="form-group">
-                            <label>Customer Type</label>
-                            <select class="form-control" name="customer_type" disabled>
-                                <option value="Regular">Regular</option>
-                                <option value="Dealer">Dealer</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        REFILLING FORM
-                    </div>
-                    <div class="panel-body">
-                        <form action="${pageContext.request.contextPath}/addDelivery"
-                              method="POST">
-
-                            <input type="hidden" class="form-control" placeholder="" value="001" name="customer_id"/>
-
-
-                            <div class="form-group">
-                                <label>Bottle ID</label>
-                                <input type="text" class="form-control" placeholder="" name="bottle_id"/>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Price</label>
-                                <input type="text" class="form-control" placeholder="" name="transaction_price"/>
-                            </div>
-
-                            <button type="submit" class="btn btn-success btn-default">Submit
-                            </button>
-                            <a href="${pageContext.request.contextPath}/profiles/customers" type="button"
-                               class="btn btn-default toHideBtn">
-                                Cancel
-                            </a>
-                        </form>
-                    </div>
-                </div>
+            <div class="col-md-12">
+                <table id="example"
+                       class="table table-hover table-condensed table-striped"
+                       cellspacing="0" width="100%">
+                    <thead>
+                    <tr>
+                        <th>Delivery ID</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${deliveryList}" var="delivery"
+                               varStatus="status">
+                        <tr>
+                            <td>${delivery.deliveryID}</td>
+                            <td>${delivery.status}</td>
+                            <td>
+                                <a href="<c:url value='/inventory/delivery/info/${deliveryList[status.index].deliveryID}' />" class="btn btn-info btn-xs">VIEW</a>
+                                <a href="#" class="btn btn-danger btn-xs">DELETE</a>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
             </div>
 
         </div>
     </div>
-</div>
 </div>
 <!-- CONTENT-WRAPPER SECTION END-->
 <footer>
@@ -300,22 +332,15 @@
         src="${pageContext.request.contextPath}/resources/js/jquery.dataTables.min.js"></script>
 <script
         src="${pageContext.request.contextPath}/resources/js/dataTables.bootstrap.min.js"></script>
+
 <!-- LIVINGWATER SCRIPTS  -->
 <script
         src="${pageContext.request.contextPath}/resources/js/livingwaterscripts.js"></script>
-<script
-        src="${pageContext.request.contextPath}/resources/js/bootstrap-datepicker.js"></script>
 <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
 <script src="${pageContext.request.contextPath}/resources/js/html5shiv.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/respond.min.js"></script>
 <![endif]-->
-<script>
-    $('.input-group.date').datepicker({
-        clearBtn: true,
-        todayHighlight: true
-    });
-</script>
 </body>
 </html>
