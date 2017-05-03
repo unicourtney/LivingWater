@@ -4,7 +4,9 @@ import com.livingwater.dao.TransactionBottlesDao;
 import com.livingwater.entities.Bottle;
 import com.livingwater.entities.Transaction;
 import com.livingwater.entities.TransactionBottles;
+import com.livingwater.services.BottleService;
 import com.livingwater.services.TransactionBottlesService;
+import com.livingwater.services.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
@@ -24,6 +26,12 @@ public class TransactionBottlesServiceImpl implements TransactionBottlesService 
     @Autowired
     private TransactionBottlesDao transactionBottlesDao;
 
+    @Autowired
+    private BottleService bottleService;
+
+    @Autowired
+    private TransactionService transactionService;
+
     public List<TransactionBottles> getAllBottlesWithATransactionIDLike(int transaction_id) {
         List<TransactionBottles> transactionBottlesList = transactionBottlesDao.getAllBottlesWithATransactionIDLike(transaction_id);
 
@@ -38,20 +46,17 @@ public class TransactionBottlesServiceImpl implements TransactionBottlesService 
         Double transaction_price = Double.parseDouble(String.valueOf(request.getSession().getAttribute("session_transaction_price")));
         String bottle_id = request.getParameter("bottle_id");
 
-        Transaction transaction = new Transaction();
-        transaction.setTransactionID(transaction_id);
-
-        Bottle bottle = new Bottle();
-        bottle.setSerialNumber(bottle_id);
+        Transaction transaction = transactionService.getTransaction(transaction_id);
+        Bottle bottle = bottleService.getABottle(bottle_id);
         TransactionBottles transactionBottles = new TransactionBottles();
         transactionBottles.setTransaction(transaction);
         transactionBottles.setBottle(bottle);
 
         transactionBottlesDao.create(transactionBottles);
 
-      /*  List<TransactionBottles> transactionBottlesList = transactionBottlesDao.getAllBottlesWithATransactionIDLike(String.valueOf(transaction_id));
+        List<TransactionBottles> transactionBottlesList = transactionBottlesDao.getAllBottlesWithATransactionIDLike(transaction_id);
 
-        view.addObject("transactionBottlesList", transactionBottlesList);*/
+        view.addObject("transactionBottlesList", transactionBottlesList);
 
         return view;
     }
@@ -59,22 +64,21 @@ public class TransactionBottlesServiceImpl implements TransactionBottlesService 
     public ModelAndView deleteTransactionBottles(Integer id, HttpServletRequest request, HttpServletResponse response) {
         ModelAndView view = new ModelAndView("customer-transaction-bottles");
 
-        String transaction_id = String.valueOf(request.getSession().getAttribute("session_transaction_id"));
+        Integer transaction_id = Integer.parseInt(String.valueOf(request.getSession().getAttribute("session_transaction_id")));
 
-        Transaction transaction = new Transaction();
-        transaction.setTransactionID(Integer.parseInt(transaction_id));
+        Transaction transaction = transactionService.getTransaction(transaction_id);
 
-        Bottle bottle = new Bottle();
-        bottle.setSerialNumber(String.valueOf(id));
+        Bottle bottle = bottleService.getABottle(String.valueOf(id));
 
         TransactionBottles transactionBottles = new TransactionBottles(transaction, bottle);
 
         transactionBottlesDao.delete(transactionBottles);
 
-        List<TransactionBottles> transactionBottlesList = transactionBottlesDao.getAllBottlesWithATransactionIDLike(Integer.parseInt(transaction_id));
+        List<TransactionBottles> transactionBottlesList = transactionBottlesDao.getAllBottlesWithATransactionIDLike(transaction_id);
 
         view.addObject("transactionBottlesList", transactionBottlesList);
 
         return view;
     }
+    
 }

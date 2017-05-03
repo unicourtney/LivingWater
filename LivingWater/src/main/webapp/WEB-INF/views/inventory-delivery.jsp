@@ -185,16 +185,13 @@
             <div class="row">
                 <div class="col-md-4"></div>
                 <div class="col-md-5"></div>
-                <form action="${pageContext.request.contextPath}/createDelivery"
-                      method="POST">
-                <button type="submit" class="btn btn-success btn-default">
+                <button type="button" class="btn btn-success btn-default" data-toggle="modal"
+                        data-target="#createDelivery">
                     Create Delivery
                 </button>
-
                 <button class="btn btn-info btn-default" data-toggle="modal" data-target="#addDeliveryTeamModal">
                     Add Delivery Team
                 </button>
-                </form>
                 <hr>
             </div>
 

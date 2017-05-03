@@ -80,8 +80,9 @@
 					<input
 							type="password" class="form-control" name="user_password" />
 					<hr />
-					<a class="btn btn-info" onclick="document.getElementById('loginForm').submit()"><span
-							classs="glyphicon glyphicon-user"></span> &nbsp;Log Me In </a>&nbsp;
+					<a class="btn btn-info" onclick="document.getElementById('loginForm').submit()">
+						<span class="glyphicon glyphicon-user"></span> &nbsp;Log Me In
+					</a>&nbsp;
 				</form>
 			</div>
 

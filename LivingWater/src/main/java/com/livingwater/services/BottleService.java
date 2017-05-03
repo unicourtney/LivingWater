@@ -1,5 +1,6 @@
 package com.livingwater.services;
 
+import com.livingwater.entities.Bottle;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,6 +13,9 @@ public interface BottleService {
 
     public ModelAndView addBottle(HttpServletRequest request, HttpServletResponse response);
 
+    public Bottle getABottle(String id);
+
     ModelAndView updateBottle(HttpServletRequest request, HttpServletResponse response);
+
 
 }

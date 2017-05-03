@@ -23,7 +23,7 @@ public class TransactionBottlesDaoImpl extends GenericDaoImpl<TransactionBottles
     }
 
     public List<TransactionBottles> getAllBottlesWithATransactionIDLike(int transaction_id) {
-        Query query = getCurrentSession().createQuery("from TransactionBottles b where b.transactionID = :transaction_id");
+        Query query = getCurrentSession().createQuery("from TransactionBottles b where transactionID = :transaction_id");
         query.setParameter("transaction_id", transaction_id);
 
         return query.list();

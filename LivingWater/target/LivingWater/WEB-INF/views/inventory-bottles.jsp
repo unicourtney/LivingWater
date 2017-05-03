@@ -59,7 +59,7 @@
                     class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href=""> <img
-                    src="${pageContext.request.contextPath}/resources/img/Livingwater Minglanilla.jpg"/>
+                    src="${pageContext.request.contextPath}/resources/img/Livingwater Minglanilla.png"/>
             </a>
 
         </div>
@@ -128,8 +128,20 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="" class="dropdown-toggle" id="dropdownMenu2"
-                               data-toggle="dropdown">Profiles</a>
+                        <li>
+                            <%session.getAttribute("session_login_user");%>
+                            <c:choose>
+                                <c:when test="${sessionScope.session_login_user.role.roleID=='3'}">
+                                    <c:set var="toDisplay" value="none;"/>
+                                    <a href="" style="display: ${toDisplay}" class="dropdown-toggle" id="dropdownMenu2"
+                                       data-toggle="dropdown">Profiles</a>
+                                </c:when>
+                                <c:otherwise>
+                                    <c:set var="toDisplay" value=""/>
+                                    <a href="" style="display: ${toDisplay}" class="dropdown-toggle" id="dropdownMenu2"
+                                       data-toggle="dropdown">Profiles</a>
+                                </c:otherwise>
+                            </c:choose>
                             <ul class="dropdown-menu" role="menu"
                                 aria-labelledby="dropdownMenu2">
                                 <li role="presentation"><a role="menuitem" tabindex="-1"
@@ -137,12 +149,10 @@
                                     Profiles</a></li>
                                 <li role="presentation" class="divider"></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                           href="${pageContext.request.contextPath}/profiles/delivery-teams">Delivery
-                                    Team Profiles</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1"
                                                            href="${pageContext.request.contextPath}/profiles/employees">Employee
                                     Profiles</a></li>
                             </ul>
+
                         </li>
                         <li><a href="" class="dropdown-toggle" id="dropdownMenu3"
                                data-toggle="dropdown">Sales</a>
@@ -161,8 +171,15 @@
                         </li>
                         <li><a href="">OTHER LINKS</a></li>
                         <li><a href="">OTHER LINKS</a></li>
-                        <li><a href="">Log Out</a></li>
-
+                        <li><a href="" class="dropdown-toggle" id="dropdownMenu4"
+                               data-toggle="dropdown"><%session.getAttribute("session_login_user");%> ${sessionScope.session_login_user.username}</a>
+                            <ul class="dropdown-menu" role="menu"
+                                aria-labelledby="dropdownMenu4">
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                           href="${pageContext.request.contextPath}/logout">Logout</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>

@@ -12,7 +12,6 @@ import java.util.List;
  */
 public interface BatchBottlesService {
 
-    public BatchBottles getLastRecord();
 
     ModelAndView addBatchBottles(HttpServletRequest req, HttpServletResponse res);
 

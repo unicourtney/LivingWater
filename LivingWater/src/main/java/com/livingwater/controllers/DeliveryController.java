@@ -56,6 +56,7 @@ public class DeliveryController {
 
         List<Batch> batchList = batchDao.getAllBatch();
 
+
         List<Delivery> deliveryList = deliveryService.getAllDelivery();
 
         List<User> userList = userService.getAllUsers();
@@ -74,7 +75,7 @@ public class DeliveryController {
 
     @RequestMapping(value = "/createDelivery", method = RequestMethod.POST)
     public ModelAndView createDelivery(HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("HELLOOOOOOOO");
+
         return deliveryService.createDelivery(request, response);
     }
 }

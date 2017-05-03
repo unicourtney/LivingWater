@@ -26,15 +26,19 @@ public class BatchController {
     @Autowired
     private BatchBottlesService batchBottlesService;
     //----------------------Add
+
     @RequestMapping(value="/addBatch", method = RequestMethod.POST)
-    public ModelAndView addBatch(HttpServletRequest request, HttpServletResponse response, ModelMap map){
+    public ModelAndView addBatch(HttpServletRequest request, HttpServletResponse response){
+
         return batchService.addBatch(request,response);
     }
 
     @RequestMapping(value="/addBottleToBatch", method = RequestMethod.POST)
-    public ModelAndView addBottleToBatch(HttpServletRequest request, HttpServletResponse response, ModelMap map){
-        return batchBottlesService.addBatchBottles(request,response);
+
+    public ModelAndView addBottleToBatch(HttpServletRequest request, HttpServletResponse response){
+        return batchService.addBottleToBatch(request,response);
     }
+
 
     @RequestMapping(value = "/inventory/batch", method = RequestMethod.GET)
     public ModelAndView inventoryBatchPage() {

@@ -47,21 +47,56 @@ public class BatchServiceImpl implements BatchService {
 
         Batch batch = new Batch();
         batchDao.create(batch);
-        view.addObject("batchList",batchDao.getAllBatch());
-        view.addObject("allBottlesList",bottleDao.getAllBottle());
+        view.addObject("batchList", batchDao.getAllBatch());
+        view.addObject("allBottlesList", bottleDao.getAllBottle());
         return view;
+    }
+
+
+    public ModelAndView addBottleToBatch(HttpServletRequest request, HttpServletResponse response) {
+        ModelAndView view = new ModelAndView("inventory-batch");
+
+        int batch_id = Integer.parseInt(request.getParameter("batch_id"));
+        String bottle_id = request.getParameter("bottle_id");
+
+        if (!batchBottlesDao.isBatchBottlesInDB(batch_id, bottle_id)) {
+            Bottle bottle = bottleDao.getABottle(bottle_id);
+            BatchBottles batchBottles = new BatchBottles(batch_id, bottle);
+
+            batchBottlesDao.create(batchBottles);
+        }
+
+        return view;
+
     }
 
     public ModelAndView getBatches() {
         ModelAndView view = new ModelAndView("inventory-batch");
         List<Batch> batchList = batchDao.getAllBatch();
-        view.addObject("batchList",batchList);
-        view.addObject("allBottlesList",bottleDao.getAllBottle());
+        view.addObject("batchList", batchList);
+        view.addObject("allBottlesList", bottleDao.getAllBottle());
+
         return view;
+
+
     }
 
-    private List<Batch> getBatch(){
+    public List<Batch> getAllBatch() {
+        List<Batch> batchList = batchDao.getAllBatch();
+
+        return batchList;
+    }
+
+    public Batch getBatch(int id) {
+        Batch batch = batchDao.getBatch(id);
+
+        return batch;
+    }
+
+
+    private List<Batch> getBatch() {
         return batchDao.getAllBatch();
     }
+
 
 }
