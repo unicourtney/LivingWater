@@ -116,6 +116,7 @@ public class UserServiceImpl implements UserService {
         User user = userDao.getUsername(username);
 
         if (user != null) {
+            System.out.println(user.getPassword() + " " + user_password);
             if (user.getPassword().equals(user_password)) {
                 view_path = "inventory-bottles";
                 request.getSession().setAttribute("session_login_user", user);

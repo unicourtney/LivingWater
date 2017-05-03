@@ -115,7 +115,6 @@ public class UserController {
     //----------------------Login
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-
     public ModelAndView userLogin(HttpServletRequest request, HttpServletResponse response) {
         return userService.userLogin(request, response);
     }

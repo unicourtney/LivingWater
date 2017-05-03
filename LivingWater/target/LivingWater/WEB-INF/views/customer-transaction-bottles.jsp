@@ -283,6 +283,7 @@
                         </table>
                         <form action="${pageContext.request.contextPath}/confirmTransaction"
                               method="POST">
+
                         <button type="submit" class="btn btn-success btn-default">Confirm
                         </button>
                         </form>
