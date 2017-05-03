@@ -145,7 +145,7 @@ public class UserServiceImpl implements UserService {
         String user_password = DigestUtils.md5DigestAsHex(request.getParameter("user_password").getBytes());
         ModelAndView view = null;
         User user = userDao.getUsername(username);
-
+        String login_error_message = null;
 
         if (user != null) {
             if (user.getPassword().equals(user_password)) {
@@ -154,13 +154,17 @@ public class UserServiceImpl implements UserService {
                 view = new ModelAndView(view_path);
                 view.addObject("bottlesList", bottleList);
                 request.getSession().setAttribute("session_login_user", user);
+                login_error_message = "";
             } else {
                 view_path = "login";
                 view = new ModelAndView(view_path);
+                login_error_message = "Incorrect username/password";
+
+
             }
         }
 
-
+        view.addObject("login_error_message", login_error_message);
         return view;
     }
 
