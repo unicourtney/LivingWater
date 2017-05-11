@@ -156,23 +156,9 @@
                             </ul>
 
                         </li>
-                        <li><a href="" class="dropdown-toggle" id="dropdownMenu3"
-                               data-toggle="dropdown">Sales</a>
-                            <ul class="dropdown-menu" role="menu"
-                                aria-labelledby="dropdownMenu3">
-                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                           href="${pageContext.request.contextPath}/sales/delivery">Transaction</a>
-                                </li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                           href="${pageContext.request.contextPath}/sales/refilling">Refilling
-                                    Team Profiles</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                           href="${pageContext.request.contextPath}/sales/dispensers">Dispensers</a>
-                                </li>
-                            </ul>
+                        <li><a href="">Transaction</a>
+
                         </li>
-                        <li><a href="">OTHER LINKS</a></li>
-                        <li><a href="">OTHER LINKS</a></li>
                         <li><a href="" class="dropdown-toggle" id="dropdownMenu4"
                                data-toggle="dropdown"><%session.getAttribute("session_login_user");%> ${sessionScope.session_login_user.username}</a>
                             <ul class="dropdown-menu" role="menu"
