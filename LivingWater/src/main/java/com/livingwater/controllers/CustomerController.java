@@ -1,6 +1,7 @@
 package com.livingwater.controllers;
 
 import com.livingwater.entities.Customer;
+import com.livingwater.entities.User;
 import com.livingwater.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,21 +28,42 @@ public class CustomerController {
     private CustomerService customerService;
 
     @RequestMapping(value = "/profiles/customers", method = RequestMethod.GET)
-    public ModelAndView customerProfilesPage() {
-        ModelAndView view = new ModelAndView("customer-profiles");
-        List<Customer> customerList = customerService.getAllCustomer();
+    public ModelAndView customerProfilesPage(HttpServletRequest request) {
+        ModelAndView view;
 
-        view.addObject("customerList", customerList);
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
+
+        if (user1 == null) {
+
+            view = new ModelAndView("login");
+        } else {
+
+            view = new ModelAndView("customer-profiles");
+
+            List<Customer> customerList = customerService.getAllCustomer();
+
+            view.addObject("customerList", customerList);
+        }
         return view;
     }
 
     @RequestMapping(value = "/profiles/customers/info/{id}", method = RequestMethod.GET)
-    public ModelAndView customerInfoPage(@PathVariable("id") Integer id) {
-        ModelAndView view = new ModelAndView("customer-info");
+    public ModelAndView customerInfoPage(@PathVariable("id") Integer id, HttpServletRequest request) {
+        ModelAndView view;
 
-        Customer customer = customerService.getCustomer(id);
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
 
-        view.addObject("customer", customer);
+        if (user1 == null) {
+
+            view = new ModelAndView("login");
+        } else {
+
+            view = new ModelAndView("customer-info");
+
+            Customer customer = customerService.getCustomer(id);
+
+            view.addObject("customer", customer);
+        }
         return view;
     }
 
@@ -64,9 +86,9 @@ public class CustomerController {
     //----------------------Delete
 
     @RequestMapping(value = "/deleteCustomer/{id}", method = RequestMethod.GET)
-    public ModelAndView deleteCustomer(@PathVariable("id") Integer id) {
+    public ModelAndView deleteCustomer(@PathVariable("id") Integer id, HttpServletRequest request) {
 
-        return customerService.deleteCustomer(id);
+        return customerService.deleteCustomer(id, request);
     }
 
 

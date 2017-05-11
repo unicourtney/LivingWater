@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+         pageEncoding="ISO-8859-1" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+          content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
     <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <![endif]-->
@@ -27,15 +27,15 @@
     <!-- FONT AWESOME ICONS  -->
     <link
             href="${pageContext.request.contextPath}/resources/css/font-awesome.css"
-            rel="stylesheet" />
+            rel="stylesheet"/>
     <!-- CUSTOM STYLE  -->
     <link href="${pageContext.request.contextPath}/resources/css/style.css"
-          rel="stylesheet" />
+          rel="stylesheet"/>
 
     <!-- DROP DOWN MENU  -->
     <link
             href="${pageContext.request.contextPath}/resources/css/drop-down.css"
-            rel="stylesheet" />
+            rel="stylesheet"/>
 
 </head>
 <body>
@@ -60,7 +60,7 @@
                     class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href=""> <img
-                    src="${pageContext.request.contextPath}/resources/img/Livingwater Minglanilla.jpg" />
+                    src="${pageContext.request.contextPath}/resources/img/Livingwater Minglanilla.png"/>
             </a>
 
         </div>
@@ -77,7 +77,7 @@
                             <div class="media">
                                 <a class="media-left" href="#"> <img
                                         src="/WEB-INF/views/assets/img/64-64.jpg" alt=""
-                                        class="img-rounded" />
+                                        class="img-rounded"/>
                                 </a>
                                 <div class="media-body">
                                     <h4 class="media-heading">Jhon Deo Alex</h4>
@@ -85,77 +85,89 @@
 
                                 </div>
                             </div>
-                            <hr />
+                            <hr/>
                             <h5>
                                 <strong>Personal Bio : </strong>
                             </h5>
                             Anim pariatur cliche reprehen derit.
-                            <hr />
+                            <hr/>
                             <a href="#" class="btn btn-info btn-sm">Full Profile</a>&nbsp; <a
                                 href="login.html" class="btn btn-danger btn-sm">Logout</a>
 
-                        </div></li>
+                        </div>
+                    </li>
 
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- LOGO HEADER END-->
+<section class="menu-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="navbar-collapse collapse ">
+                    <ul id="menu-top" class="nav navbar-nav navbar-right">
+                        <li><a class="menu-top-active" href=""
+                               class="dropdown-toggle" id="dropdownMenu1"
+                               data-toggle="dropdown">Inventory</a>
+                            <ul class="dropdown-menu" role="menu"
+                                aria-labelledby="dropdownMenu1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                           href="${pageContext.request.contextPath}/inventory/bottles">Bottles</a>
+                                </li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                           href="${pageContext.request.contextPath}/inventory/batch">Batch</a>
+                                </li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                           href="${pageContext.request.contextPath}/inventory/supplies">Supplies</a>
+                                </li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                           href="${pageContext.request.contextPath}/inventory/delivery">Delivery</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="dropdown-toggle" id="dropdownMenu2"
+                               data-toggle="dropdown">Profiles</a>
+                            <ul class="dropdown-menu" role="menu"
+                                aria-labelledby="dropdownMenu2">
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                           href="${pageContext.request.contextPath}/profiles/customers">Customer
+                                    Profiles</a></li>
 
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- LOGO HEADER END-->
-	<section class="menu-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="navbar-collapse collapse ">
-						<ul id="menu-top" class="nav navbar-nav navbar-right">
-							<li><a class="menu-top-active" href=""
-								class="dropdown-toggle" id="dropdownMenu1"
-								data-toggle="dropdown">Inventory</a>
-								<ul class="dropdown-menu" role="menu"
-									aria-labelledby="dropdownMenu1">
-									<li role="presentation"><a role="menuitem" tabindex="-1"
-										href="${pageContext.request.contextPath}/inventory/bottles">Bottles</a></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1"
-															   href="${pageContext.request.contextPath}/inventory/batch">Batch</a></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1"
-										href="${pageContext.request.contextPath}/inventory/supplies">Supplies</a></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1"
-															   href="${pageContext.request.contextPath}/inventory/delivery">Delivery</a>
-									</li>
-								</ul></li>
-							<li><a href="" class="dropdown-toggle" id="dropdownMenu2"
-								data-toggle="dropdown">Profiles</a>
-								<ul class="dropdown-menu" role="menu"
-									aria-labelledby="dropdownMenu2">
-									<li role="presentation"><a role="menuitem" tabindex="-1"
-										href="${pageContext.request.contextPath}/profiles/customers">Customer
-											Profiles</a></li>
-									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1"
-										href="${pageContext.request.contextPath}/profiles/delivery-teams">Delivery
-											Team Profiles</a></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1"
-										href="${pageContext.request.contextPath}/profiles/employees">Employee
-											Profiles</a></li>
-								</ul></li>
-								</ul></li>
-							<li><a href="" class="dropdown-toggle" id="dropdownMenu3"
-								data-toggle="dropdown">Sales</a>
-								<ul class="dropdown-menu" role="menu"
-									aria-labelledby="dropdownMenu3">
-									<li role="presentation"><a role="menuitem" tabindex="-1"
-										href="${pageContext.request.contextPath}/sales/delivery">Transaction</a></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1"
-										href="${pageContext.request.contextPath}/sales/refilling">Refilling
-											Team Profiles</a></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1"
-										href="${pageContext.request.contextPath}/sales/dispensers">Dispensers</a></li>
-								</ul></li>
-							<li><a href="">OTHER LINKS</a></li>
-							<li><a href="">OTHER LINKS</a></li>
-							<li><a href="">Log Out</a></li>
+                                <%session.getAttribute("session_login_user");%>
+                                <c:choose>
+                                    <c:when test="${sessionScope.session_login_user.role.roleID=='3'}">
+                                        <c:set var="toDisplay" value="none;"/>
 
+                                    </c:when>
+                                    <c:otherwise>
+                                        <c:set var="toDisplay" value=""/>
+
+                                    </c:otherwise>
+                                </c:choose>
+
+                                <li role="presentation" class="divider" style="display: ${toDisplay}"></li>
+                                <li role="presentation"><a style="display: ${toDisplay}" role="menuitem" tabindex="-1"
+                                                           href="${pageContext.request.contextPath}/profiles/employees">Employee
+                                    Profiles</a></li>
+                            </ul>
+
+                        </li>
+                        <li><a href="">Transaction</a>
+
+                        </li>
+                        <li><a href="" class="dropdown-toggle" id="dropdownMenu4"
+                               data-toggle="dropdown"><%session.getAttribute("session_login_user");%> ${sessionScope.session_login_user.username}</a>
+                            <ul class="dropdown-menu" role="menu"
+                                aria-labelledby="dropdownMenu4">
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                           href="${pageContext.request.contextPath}/logout">Logout</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -185,7 +197,8 @@
                                     <c:forEach items="${batchList}" var="batch" varStatus="status">
                                         <c:choose>
                                             <c:when test="${batch.batchID == batchSelected}">
-                                                <option selected="selected" value="${batch.batchID}">${batch.batchID}</option>
+                                                <option selected="selected"
+                                                        value="${batch.batchID}">${batch.batchID}</option>
                                             </c:when>
                                             <c:otherwise>
                                                 <option value="${batch.batchID}">${batch.batchID}</option>
@@ -205,11 +218,12 @@
                 <div class="col-md-5"></div>
                 <form action="${pageContext.request.contextPath}/addBatch"
                       method="POST">
-                    <input type="hidden" 	value="1" class="form-control" placeholder="Batch ID" name="batch_id" />
+                    <input type="hidden" value="1" class="form-control" placeholder="Batch ID" name="batch_id"/>
                     <button type="submit" class="btn btn-success btn-default">
                         Create Batch
                     </button>
-                    <button type="button" class="btn btn-info btn-default" data-toggle="modal" data-target="#addBottleToBatch">
+                    <button type="button" class="btn btn-info btn-default" data-toggle="modal"
+                            data-target="#addBottleToBatch">
                         Add Bottle To Batch
                     </button>
                 </form>
@@ -262,7 +276,6 @@
                 <table id="example"
                        class="table table-hover table-condensed table-striped"
                        cellspacing="0" width="100%">
-
 
 
                     <thead>

@@ -3,10 +3,7 @@ package com.livingwater.services.impl;
 import com.livingwater.dao.BatchBottlesDao;
 import com.livingwater.dao.BatchDao;
 import com.livingwater.dao.BottleDao;
-import com.livingwater.entities.Batch;
-import com.livingwater.entities.BatchBottles;
-import com.livingwater.entities.Bottle;
-import com.livingwater.entities.Customer;
+import com.livingwater.entities.*;
 import com.livingwater.services.BatchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,38 +40,69 @@ public class BatchServiceImpl implements BatchService {
 
 
     public ModelAndView addBatch(HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView view = new ModelAndView("inventory-batch");
 
-        Batch batch = new Batch();
-        batchDao.create(batch);
-        view.addObject("batchList", batchDao.getAllBatch());
-        view.addObject("allBottlesList", bottleDao.getAllBottle());
+        ModelAndView view;
+
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
+
+        if (user1 == null) {
+
+            view = new ModelAndView("login");
+        } else {
+
+            view = new ModelAndView("inventory-batch");
+
+            Batch batch = new Batch();
+            batchDao.create(batch);
+            view.addObject("batchList", batchDao.getAllBatch());
+            view.addObject("allBottlesList", bottleDao.getAllBottle());
+        }
         return view;
     }
 
 
     public ModelAndView addBottleToBatch(HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView view = new ModelAndView("inventory-batch");
+        ModelAndView view;
 
-        int batch_id = Integer.parseInt(request.getParameter("batch_id"));
-        String bottle_id = request.getParameter("bottle_id");
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
 
-        if (!batchBottlesDao.isBatchBottlesInDB(batch_id, bottle_id)) {
-            Bottle bottle = bottleDao.getABottle(bottle_id);
-            BatchBottles batchBottles = new BatchBottles(batch_id, bottle);
+        if (user1 == null) {
 
-            batchBottlesDao.create(batchBottles);
+            view = new ModelAndView("login");
+        } else {
+
+            view = new ModelAndView("inventory-batch");
+
+            int batch_id = Integer.parseInt(request.getParameter("batch_id"));
+            String bottle_id = request.getParameter("bottle_id");
+
+            if (!batchBottlesDao.isBatchBottlesInDB(batch_id, bottle_id)) {
+                Bottle bottle = bottleDao.getABottle(bottle_id);
+                BatchBottles batchBottles = new BatchBottles(batch_id, bottle);
+
+                batchBottlesDao.create(batchBottles);
+            }
         }
 
         return view;
 
     }
 
-    public ModelAndView getBatches() {
-        ModelAndView view = new ModelAndView("inventory-batch");
-        List<Batch> batchList = batchDao.getAllBatch();
-        view.addObject("batchList", batchList);
-        view.addObject("allBottlesList", bottleDao.getAllBottle());
+    public ModelAndView getBatches(HttpServletRequest request) {
+        ModelAndView view;
+
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
+
+        if (user1 == null) {
+
+            view = new ModelAndView("login");
+        } else {
+
+            view = new ModelAndView("inventory-batch");
+            List<Batch> batchList = batchDao.getAllBatch();
+            view.addObject("batchList", batchList);
+            view.addObject("allBottlesList", bottleDao.getAllBottle());
+        }
 
         return view;
 

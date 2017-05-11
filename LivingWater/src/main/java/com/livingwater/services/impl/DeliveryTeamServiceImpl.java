@@ -34,21 +34,32 @@ public class DeliveryTeamServiceImpl implements DeliveryTeamService {
     private DeliveryTeamDao deliveryTeamDao;
 
     public ModelAndView addUserToTeam(HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView view = new ModelAndView("inventory-delivery");
+        ModelAndView view;
 
-        Delivery delivery = deliveryDao.getADelivery(Integer.parseInt(request.getParameter("deliveryteam_id")));
-        User user = userDao.getUser(Integer.parseInt(request.getParameter("deliveryteam_user")));
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
 
-        DeliveryTeam deliveryTeam = new DeliveryTeam(delivery, user);
+        if (user1 == null) {
 
-        deliveryTeamDao.create(deliveryTeam);
+            view = new ModelAndView("login");
+        } else {
 
-        List<Delivery> deliveryList = deliveryDao.getAllDelivery();
+            view = new ModelAndView("inventory-delivery");
 
-        List<User> userList = userDao.getAllUsers();
+            Delivery delivery = deliveryDao.getADelivery(Integer.parseInt(request.getParameter("deliveryteam_id")));
+            User user = userDao.getUser(Integer.parseInt(request.getParameter("deliveryteam_user")));
 
-        view.addObject("deliveryList", deliveryList);
-        view.addObject("userList", userList);
+            DeliveryTeam deliveryTeam = new DeliveryTeam(delivery, user);
+
+            deliveryTeamDao.create(deliveryTeam);
+
+            List<Delivery> deliveryList = deliveryDao.getAllDelivery();
+
+            List<User> userList = userDao.getAllUsers();
+
+            view.addObject("deliveryList", deliveryList);
+            view.addObject("userList", userList);
+
+        }
 
         return view;
 

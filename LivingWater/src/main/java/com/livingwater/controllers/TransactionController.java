@@ -1,6 +1,7 @@
 package com.livingwater.controllers;
 
 import com.livingwater.entities.Customer;
+import com.livingwater.entities.User;
 import com.livingwater.services.CustomerService;
 import com.livingwater.services.TransactionBottlesService;
 import com.livingwater.services.TransactionService;
@@ -33,12 +34,22 @@ public class TransactionController {
 
 
     @RequestMapping(value = "/profiles/customers/transaction/{id}", method = RequestMethod.GET)
-    public ModelAndView deliveryPage(@PathVariable("id") Integer id) {
-        ModelAndView view = new ModelAndView("customer-transaction");
+    public ModelAndView deliveryPage(@PathVariable("id") Integer id, HttpServletRequest request) {
+        ModelAndView view;
 
-        Customer customer = customerService.getCustomer(id);
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
 
-        view.addObject("customer", customer);
+        if (user1 == null) {
+
+            view = new ModelAndView("login");
+        } else {
+
+            view = new ModelAndView("customer-transaction");
+
+            Customer customer = customerService.getCustomer(id);
+
+            view.addObject("customer", customer);
+        }
         return view;
     }
 
@@ -76,5 +87,11 @@ public class TransactionController {
     public ModelAndView cancelTransaction(HttpServletRequest request, HttpServletResponse response) {
 
         return transactionService.cancelTransaction(request, response);
+    }
+
+    @RequestMapping(value = "/cancelTransactionBottle", method = RequestMethod.GET)
+    public ModelAndView cancelTransactionBottle(HttpServletRequest request, HttpServletResponse response) {
+
+        return transactionBottlesService.cancelTransactionBottle(request, response);
     }
 }

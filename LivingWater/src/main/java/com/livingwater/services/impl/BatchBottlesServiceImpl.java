@@ -5,6 +5,7 @@ import com.livingwater.dao.BatchDao;
 import com.livingwater.dao.BottleDao;
 import com.livingwater.entities.BatchBottles;
 import com.livingwater.entities.Bottle;
+import com.livingwater.entities.User;
 import com.livingwater.services.BatchBottlesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,39 +43,62 @@ public class BatchBottlesServiceImpl implements BatchBottlesService{
 
 
     public ModelAndView addBatchBottles(HttpServletRequest req, HttpServletResponse res) {
-        ModelAndView mav = new ModelAndView("inventory-batch");
+        ModelAndView mav;
         int batchID = Integer.parseInt(req.getParameter("batch_id"));
         int bottleID = Integer.parseInt(req.getParameter("bottle_id"));
 
+        User user1 = (User) req.getSession().getAttribute("session_login_user");
 
-        if(batchBottlesDao.isBatchBottlesInDB(batchID,req.getParameter("bottle_id"))){
-            System.out.println("bottle already exists in batch");
-            mav.addObject("batchList",batchDao.getAllBatch());
-            mav.addObject("allBottlesList",bottleDao.getAllBottle());
+        if (user1 == null) {
+
+            mav = new ModelAndView("login");
+
             return mav;
-        }
-        else{
-            BatchBottles batchBottles = new BatchBottles(Calendar.getInstance(),batchDao.getABatch(batchID),bottleDao.getABottle(req.getParameter("bottle_id")));
-             batchBottlesDao.create(batchBottles);
-            System.out.println("Successfully Inserted");
-            mav.addObject("batchList",batchDao.getAllBatch());
-            mav.addObject("allBottlesList",bottleDao.getAllBottle());
-            return mav;
+
+        } else {
+
+            mav = new ModelAndView("inventory-batch");
+
+            if(batchBottlesDao.isBatchBottlesInDB(batchID,req.getParameter("bottle_id"))){
+                System.out.println("bottle already exists in batch");
+                mav.addObject("batchList",batchDao.getAllBatch());
+                mav.addObject("allBottlesList",bottleDao.getAllBottle());
+                return mav;
+            }
+            else{
+                BatchBottles batchBottles = new BatchBottles(Calendar.getInstance(),batchDao.getABatch(batchID),bottleDao.getABottle(req.getParameter("bottle_id")));
+                batchBottlesDao.create(batchBottles);
+                System.out.println("Successfully Inserted");
+                mav.addObject("batchList",batchDao.getAllBatch());
+                mav.addObject("allBottlesList",bottleDao.getAllBottle());
+                return mav;
+            }
         }
     }
 
-    public ModelAndView getAllBottlesInBatch(int batchID) {
-        ModelAndView mav = new ModelAndView("inventory-batch");
-        List<BatchBottles> batchBottles = batchBottlesDao.getAllBottles(batchID);
-        List<Bottle> bottles = new ArrayList<Bottle>();
-        for(int x  =0;x<batchBottles.size();x++){
-            bottles.add(bottleDao.getABottle(batchBottles.get(x).getBottle().getSerialNumber()));
-            System.out.println(bottles.get(x));
+    public ModelAndView getAllBottlesInBatch(int batchID, HttpServletRequest request) {
+        ModelAndView mav;
+
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
+
+        if (user1 == null) {
+
+            mav = new ModelAndView("login");
+        } else {
+
+            mav = new ModelAndView("inventory-batch");
+
+            List<BatchBottles> batchBottles = batchBottlesDao.getAllBottles(batchID);
+            List<Bottle> bottles = new ArrayList<Bottle>();
+            for(int x  =0;x<batchBottles.size();x++){
+                bottles.add(bottleDao.getABottle(batchBottles.get(x).getBottle().getSerialNumber()));
+                System.out.println(bottles.get(x));
+            }
+            mav.addObject("batchSelected",batchID);
+            mav.addObject("batchList",batchDao.getAllBatch());
+            mav.addObject("allBottlesList",bottleDao.getAllBottle());
+            mav.addObject("bottlesList",bottles);
         }
-        mav.addObject("batchSelected",batchID);
-        mav.addObject("batchList",batchDao.getAllBatch());
-        mav.addObject("allBottlesList",bottleDao.getAllBottle());
-        mav.addObject("bottlesList",bottles);
         return  mav;
     }
 

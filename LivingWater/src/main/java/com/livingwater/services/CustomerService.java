@@ -20,7 +20,7 @@ public interface CustomerService {
 
     public ModelAndView updateCustomer(int id, HttpServletRequest request, HttpServletResponse response);
 
-    public ModelAndView deleteCustomer(int id);
+    public ModelAndView deleteCustomer(int id, HttpServletRequest request);
 
 
 }

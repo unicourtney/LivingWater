@@ -44,29 +44,49 @@ public class DeliveryController {
 
 
     @RequestMapping(value = "/inventory/delivery/info/{id}", method = RequestMethod.GET)
-    public ModelAndView deliveryInfoPage(@PathVariable("id") Integer id) {
-        ModelAndView view = new ModelAndView("delivery-info");
+    public ModelAndView deliveryInfoPage(@PathVariable("id") Integer id, HttpServletRequest request) {
+        ModelAndView view;
+
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
+
+        if (user1 == null) {
+
+            view = new ModelAndView("login");
+        } else {
+
+            view = new ModelAndView("delivery-info");
+        }
         return view;
     }
 
     @RequestMapping(value = "/inventory/delivery", method = RequestMethod.GET)
     public ModelAndView inventoryDeliveryPage(HttpServletRequest request, HttpServletResponse response) {
 
-        ModelAndView view = new ModelAndView("inventory-delivery");
+        ModelAndView view;
+
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
+
+        if (user1 == null) {
+
+            view = new ModelAndView("login");
+        } else {
+
+            view = new ModelAndView("inventory-delivery");
+
 
         List<Batch> batchList = batchDao.getAllBatch();
 
+            List<Delivery> deliveryList = deliveryService.getAllDelivery();
 
-        List<Delivery> deliveryList = deliveryService.getAllDelivery();
+            List<User> userList = userService.getAllUsers();
 
-        List<User> userList = userService.getAllUsers();
+            List<DeliveryTeam> deliveryTeamList = deliveryTeamService.getAllDeliveryTeam();
 
-        List<DeliveryTeam> deliveryTeamList = deliveryTeamService.getAllDeliveryTeam();
-
-        view.addObject("deliveryList", deliveryList);
-        view.addObject("userList", userList);
-        view.addObject("deliveryTeamList", deliveryTeamList);
-        view.addObject("batchList", batchList);
+            view.addObject("deliveryList", deliveryList);
+            view.addObject("userList", userList);
+            view.addObject("deliveryTeamList", deliveryTeamList);
+            view.addObject("batchList", batchList);
+        }
 
         return view;
     }

@@ -2,106 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5724dc96-6f04-409a-95f2-dc18a30efcb3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.classpath" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.project" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.settings/.jsdtscope" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.component" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.project.facet.core.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.container" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.validation.prefs" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/delivery-team-info.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/delivery-team-profiles.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/delivery-team-info.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/delivery-team-profiles.jsp" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/controllers/BatchController.class" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/controllers/BatchController.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/sales-dispensers.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/sales-refilling.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/sales-dispensers.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/sales-refilling.jsp" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/controllers/DeliveryController.class" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/controllers/DeliveryController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/controllers/DeliveryTeamController.class" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/controllers/DeliveryTeamController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/controllers/UserController.class" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/controllers/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/dao/BatchBottlesDao.class" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/dao/BatchBottlesDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/dao/BatchDao.class" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/dao/BatchDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/dao/impl/BatchBottlesDaoImpl.class" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/dao/impl/BatchBottlesDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/dao/impl/BatchDaoImpl.class" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/dao/impl/BatchDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/dao/impl/BottleDaoImpl.class" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/dao/impl/BottleDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/dao/impl/TransactionBottlesDaoImpl.class" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/dao/impl/TransactionBottlesDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/dao/impl/UserDaoImpl.class" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/dao/impl/UserDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/entities/BatchBottles.class" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/entities/BatchBottles.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/entities/Delivery.class" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/entities/Delivery.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/services/BatchBottlesService.class" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/services/BatchBottlesService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/services/BatchService.class" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/services/BatchService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/services/BottleService.class" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/services/BottleService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/services/impl/BatchBottlesServiceImpl.class" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/services/impl/BatchBottlesServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/services/impl/BatchServiceImpl.class" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/services/impl/BatchServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/services/impl/BottleServiceImpl.class" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/services/impl/BottleServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/services/impl/DeliveryServiceImpl.class" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/services/impl/DeliveryServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/services/impl/TransactionBottlesServiceImpl.class" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/services/impl/TransactionBottlesServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/services/impl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/classes/com/livingwater/services/impl/UserServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/controllers/BatchController.class" afterPath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/controllers/BatchController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/controllers/DeliveryController.class" afterPath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/controllers/DeliveryController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/controllers/DeliveryTeamController.class" afterPath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/controllers/DeliveryTeamController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/controllers/UserController.class" afterPath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/controllers/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/dao/BatchBottlesDao.class" afterPath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/dao/BatchBottlesDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/dao/BatchDao.class" afterPath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/dao/BatchDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/dao/impl/BatchBottlesDaoImpl.class" afterPath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/dao/impl/BatchBottlesDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/dao/impl/BatchDaoImpl.class" afterPath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/dao/impl/BatchDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/dao/impl/BottleDaoImpl.class" afterPath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/dao/impl/BottleDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/dao/impl/TransactionBottlesDaoImpl.class" afterPath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/dao/impl/TransactionBottlesDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/dao/impl/UserDaoImpl.class" afterPath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/dao/impl/UserDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/entities/BatchBottles.class" afterPath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/entities/BatchBottles.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/entities/Delivery.class" afterPath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/entities/Delivery.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/services/BatchBottlesService.class" afterPath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/services/BatchBottlesService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/services/BatchService.class" afterPath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/services/BatchService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/services/BottleService.class" afterPath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/services/BottleService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/services/impl/BatchBottlesServiceImpl.class" afterPath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/services/impl/BatchBottlesServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/services/impl/BatchServiceImpl.class" afterPath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/services/impl/BatchServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/services/impl/BottleServiceImpl.class" afterPath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/services/impl/BottleServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/services/impl/DeliveryServiceImpl.class" afterPath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/services/impl/DeliveryServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/services/impl/TransactionBottlesServiceImpl.class" afterPath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/services/impl/TransactionBottlesServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/services/impl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/LivingWater/target/classes/com/livingwater/services/impl/UserServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/BatchController.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/BatchController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/DeliveryController.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/DeliveryController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/DeliveryTeamController.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/DeliveryTeamController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/UserController.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/BatchBottlesDao.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/BatchBottlesDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/BatchDao.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/BatchDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/BottleDao.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/BottleDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/impl/BatchBottlesDaoImpl.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/impl/BatchBottlesDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/impl/BatchDaoImpl.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/impl/BatchDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/impl/BottleDaoImpl.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/impl/BottleDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/impl/TransactionBottlesDaoImpl.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/impl/TransactionBottlesDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/impl/TransactionDaoImpl.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/impl/TransactionDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/impl/UserDaoImpl.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/impl/UserDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/entities/BatchBottles.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/entities/BatchBottles.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/entities/Delivery.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/entities/Delivery.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/BatchBottlesService.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/BatchBottlesService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/BatchService.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/BatchService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/BottleService.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/BottleService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/BatchBottlesServiceImpl.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/BatchBottlesServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/BatchServiceImpl.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/BatchServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/BottleServiceImpl.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/BottleServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/DeliveryServiceImpl.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/DeliveryServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/TransactionBottlesServiceImpl.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/TransactionBottlesServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/UserServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-dispensers.jsp" afterPath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-dispensers.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-info.jsp" afterPath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-info.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-profiles.jsp" afterPath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-profiles.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-refilling.jsp" afterPath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-refilling.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-transaction-bottles.jsp" afterPath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-transaction-bottles.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-transaction.jsp" afterPath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-transaction.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/delivery-info.jsp" afterPath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/delivery-info.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/employee-info.jsp" afterPath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/employee-info.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/employee-profiles.jsp" afterPath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/employee-profiles.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-batch.jsp" afterPath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-batch.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-bottles.jsp" afterPath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-bottles.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-delivery.jsp" afterPath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-delivery.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-supplies.jsp" afterPath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-supplies.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/login.jsp" afterPath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/sales-dispensers.jsp" afterPath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/sales-dispensers.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/sales-delivery.jsp" afterPath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/sales-delivery.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/supply-info.jsp" afterPath="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/supply-info.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/src/main/webapp/resources/css/style.css" afterPath="$PROJECT_DIR$/LivingWater/src/main/webapp/resources/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/customer-dispensers.jsp" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/customer-dispensers.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/customer-info.jsp" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/customer-info.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/customer-profiles.jsp" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/customer-profiles.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/customer-refilling.jsp" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/customer-refilling.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/customer-transaction-bottles.jsp" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/customer-transaction-bottles.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/customer-transaction.jsp" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/customer-transaction.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/delivery-info.jsp" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/delivery-info.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/employee-info.jsp" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/employee-info.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/employee-profiles.jsp" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/employee-profiles.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/inventory-batch.jsp" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/inventory-batch.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/inventory-bottles.jsp" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/inventory-bottles.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/inventory-delivery.jsp" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/inventory-delivery.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/inventory-supplies.jsp" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/inventory-supplies.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/login.jsp" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/sales-dispensers.jsp" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/WEB-INF/views/sales-dispensers.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LivingWater/target/LivingWater/resources/css/style.css" afterPath="$PROJECT_DIR$/LivingWater/target/LivingWater/resources/css/style.css" />
     </list>
     <ignored path="LivingWater.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -115,7 +61,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -125,106 +70,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="DeliveryServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/DeliveryServiceImpl.java">
+      <file leaf-file-name="supply-info.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/supply-info.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Delivery.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/entities/Delivery.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
-              <folding>
-                <element signature="e#446#447#0" expanded="true" />
-                <element signature="e#479#480#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TransactionBottlesServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/TransactionBottlesServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="76" column="131" selection-start-line="76" selection-start-column="131" selection-end-line="76" selection-end-column="131" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/UserServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="117" column="27" selection-start-line="117" selection-start-column="27" selection-end-line="117" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="customer-transaction-bottles.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-transaction-bottles.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="27.161291">
-              <caret line="287" column="33" selection-start-line="287" selection-start-column="33" selection-end-line="287" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inventory-batch.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-batch.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.935484">
-              <caret line="153" column="28" selection-start-line="153" selection-start-column="28" selection-end-line="153" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inventory-bottles.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-bottles.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.7096774">
-              <caret line="142" column="37" selection-start-line="142" selection-start-column="37" selection-end-line="142" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inventory-delivery.jsp~HEAD" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-delivery.jsp~HEAD">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="96" column="30" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/login.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="73.29032">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sales-dispensers.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/sales-dispensers.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.132">
-              <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+            <state relative-caret-position="-1092">
+              <caret line="164" column="33" lean-forward="false" selection-start-line="164" selection-start-column="33" selection-end-line="164" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -240,6 +90,19 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>example</find>
+      <find>.menu-top-active</find>
+      <find>data-toggle=&quot;dropdown&quot;&gt;Sales&lt;/a&gt;</find>
+      <find>a href=&quot;&quot; class=&quot;dropdown-toggle&quot; id=&quot;dropdownMenu3&quot;                               data-toggle=&quot;dropdown&quot;&gt;Transaction</find>
+      <find>a href=&quot;&quot; class=&quot;dropdown-toggle&quot; id=&quot;dropdownMenu3&quot; data-toggle=&quot;dropdown&quot;&gt;Transaction</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>data-toggle=&quot;dropdown&quot;&gt;Transaction&lt;/a&gt;</replace>
+    </replaceStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -251,21 +114,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/BatchDao.java" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/impl/BatchDaoImpl.java" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/BatchBottlesService.java" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/entities/BatchBottles.java" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/BatchController.java" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/impl/BottleDaoImpl.java" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/BottleDao.java" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/BatchServiceImpl.java" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/BatchBottlesDao.java" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/BatchBottlesServiceImpl.java" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/impl/BatchBottlesDaoImpl.java" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/BottleService.java" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/BottleController.java" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/BottleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/DeliveryTeamServiceImpl.java" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/DispenserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/SuppliesServiceImpl.java" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/TransactionServiceImpl.java" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/impl/TransactionBottlesDaoImpl.java" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/TransactionBottlesService.java" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/TransactionController.java" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/TransactionBottlesServiceImpl.java" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/login.jsp" />
         <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/TransactionController.java" />
         <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/UserDao.java" />
         <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/DeliveryTeamServiceImpl.java" />
@@ -273,21 +131,10 @@
         <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/DeliveryTeamService.java" />
         <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/TransactionService.java" />
         <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/UserService.java" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-dispensers.jsp" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-info.jsp" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-profiles.jsp" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-refilling.jsp" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-transaction.jsp" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/employee-info.jsp" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/employee-profiles.jsp" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/sales-delivery.jsp" />
         <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/sales-refilling.jsp" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/supply-info.jsp" />
         <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/BatchService.java" />
         <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/TransactionBottlesService.java" />
         <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/TransactionBottlesDao.java" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-bottles.jsp" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-supplies.jsp" />
         <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/DeliveryController.java" />
         <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/DeliveryTeamController.java" />
         <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/UserController.java" />
@@ -298,17 +145,34 @@
         <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/TransactionBottlesServiceImpl.java" />
         <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/sales-dispensers.jsp" />
         <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/login.jsp" />
-        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-delivery.jsp" />
         <option value="$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/entities/Delivery.java" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/resources/css/style.css" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-info.jsp" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-dispensers.jsp" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-profiles.jsp" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-refilling.jsp" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-transaction.jsp" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-transaction.jsp" />
         <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-transaction-bottles.jsp" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-transaction-bottles.jsp" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/delivery-info.jsp" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/employee-info.jsp" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/employee-profiles.jsp" />
         <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-batch.jsp" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-bottles.jsp" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-bottles.jsp" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-delivery.jsp" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-supplies.jsp" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/sales-delivery.jsp" />
+        <option value="$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/supply-info.jsp" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" />
-  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -318,11 +182,6 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="Bundled (Maven 3)" />
-      </MavenGeneralSettings>
-    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="importAutomatically" value="true" />
@@ -332,18 +191,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
+    <option name="width" value="2060" />
+    <option name="height" value="1120" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -360,16 +209,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LivingWater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="LivingWater" />
@@ -457,70 +298,6 @@
               <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LivingWater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LivingWater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LivingWater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LivingWater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -545,174 +322,14 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="livingwater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LivingWater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LivingWater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="livingwater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LivingWater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LivingWater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="livingwater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LivingWater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LivingWater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="livingwater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LivingWater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LivingWater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="livingwater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LivingWater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LivingWater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="livingwater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -740,7 +357,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Unnamed">
+  <component name="RunManager" selected="Tomcat Server.LivingWater">
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
       <server-settings />
@@ -759,33 +376,32 @@
       <predefined_log_file id="idea.log" enabled="true" />
       <method />
     </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
-      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
-      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
-      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -795,27 +411,24 @@
       <option name="METHOD_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
-      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
-      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
-      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -898,6 +511,9 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" custom_browser="" web_path="">
       <method />
     </configuration>
     <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
@@ -985,13 +601,13 @@
       <method />
     </configuration>
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
-      <module name="" />
       <setting name="vmparams" value="" />
       <setting name="cmdLine" value="run-app" />
-      <setting name="depsClasspath" value="false" />
       <setting name="passParentEnv" value="true" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <setting name="launchBrowser" value="false" />
+      <setting name="launchBrowserUrl" value="" />
+      <setting name="depsClasspath" value="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -1006,27 +622,6 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -1057,6 +652,19 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
@@ -1070,6 +678,18 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="LivingWater" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
       <envs />
       <method />
     </configuration>
@@ -1115,35 +735,8 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
@@ -1152,8 +745,9 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run-script" />
+      <command value="run" />
       <scripts />
+      <node-interpreter value="project" />
       <envs />
       <method />
     </configuration>
@@ -1163,7 +757,7 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <configuration default="false" name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.21" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration default="false" name="LivingWater" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.36" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -1238,10 +832,41 @@
       </method>
     </configuration>
     <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Unnamed" />
+      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.LivingWater" />
     </list>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
+      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
+      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
+      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
+      <method />
+    </configuration>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -1250,59 +875,68 @@
       <changelist id="5724dc96-6f04-409a-95f2-dc18a30efcb3" name="Default" comment="" />
       <created>1492430425604</created>
       <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
       <updated>1492430425604</updated>
       <workItem from="1492430427206" duration="1128000" />
       <workItem from="1492519140188" duration="6073000" />
       <workItem from="1492556384315" duration="203000" />
       <workItem from="1493088961115" duration="14999000" />
+      <workItem from="1493272389847" duration="5424000" />
+      <workItem from="1493350508373" duration="629000" />
+      <workItem from="1493353211584" duration="11705000" />
+      <workItem from="1493654441959" duration="2584000" />
+      <workItem from="1493784662492" duration="403000" />
+      <workItem from="1493831282683" duration="209000" />
       <workItem from="1493191290442" duration="1218000" />
       <workItem from="1493261761964" duration="11633000" />
       <workItem from="1493407129275" duration="1195000" />
       <workItem from="1493648117611" duration="2861000" />
       <workItem from="1493781855171" duration="2215000" />
+      <workItem from="1493833604147" duration="1117000" />
+      <workItem from="1493867400543" duration="668000" />
+      <workItem from="1494243771138" duration="5150000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41532000" />
+    <option name="totallyTimeSpent" value="50299000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="2060" height="1120" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20293123" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36414883" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23043944" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20209424" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41151834" sideWeight="0.49798387" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2827621" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30994764" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31003383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1321,13 +955,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/BottleController.java</url>
-          <line>23</line>
-          <properties class="com.livingwater.controllers.BottleController" method="addBottle" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
@@ -1337,150 +964,17 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/DispenserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/SuppliesService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-dispensers.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.806452">
-          <caret line="311" column="0" selection-start-line="311" selection-start-column="0" selection-end-line="311" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-info.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.806452">
-          <caret line="301" column="0" selection-start-line="301" selection-start-column="0" selection-end-line="301" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-profiles.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.806452">
-          <caret line="319" column="0" selection-start-line="319" selection-start-column="0" selection-end-line="319" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-refilling.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.806452">
-          <caret line="308" column="0" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-transaction.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.387096">
-          <caret line="339" column="0" selection-start-line="339" selection-start-column="0" selection-end-line="339" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/employee-info.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.806452">
-          <caret line="313" column="0" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/employee-profiles.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.806452">
-          <caret line="307" column="0" selection-start-line="307" selection-start-column="0" selection-end-line="307" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/sales-delivery.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.806452">
-          <caret line="277" column="0" selection-start-line="277" selection-start-column="0" selection-end-line="277" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/sales-refilling.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.806452">
-          <caret line="257" column="0" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/supply-info.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-69.51613">
-          <caret line="277" column="0" selection-start-line="277" selection-start-column="0" selection-end-line="277" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/TransactionServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/TransactionBottlesService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="75" selection-start-line="14" selection-start-column="75" selection-end-line="14" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/TransactionBottlesDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/impl/TransactionDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/entities/TransactionBottles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/entities/Transaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/TransactionService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/TransactionDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        <state relative-caret-position="0">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1491,58 +985,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/DeliveryDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/impl/DeliveryDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/BatchController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/io/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1426" column="0" selection-start-line="1426" selection-start-column="0" selection-end-line="1426" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/io/File.java" />
     <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/BatchService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/BatchServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
+        <state relative-caret-position="0">
+          <caret line="51" column="20" lean-forward="false" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/SupplyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        <state relative-caret-position="0">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/DeliveryTeamServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="59" column="32" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="59" column="32" lean-forward="false" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1553,169 +1033,300 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/DeliveryService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/DeliveryTeamService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-supplies.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="126" column="41" selection-start-line="126" selection-start-column="41" selection-end-line="126" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/delivery-info.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.032259">
-          <caret line="24" column="68" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-delivery.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.096774">
-          <caret line="289" column="28" selection-start-line="289" selection-start-column="28" selection-end-line="289" selection-end-column="28" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/DeliveryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="31" selection-start-line="73" selection-start-column="31" selection-end-line="73" selection-end-column="31" />
+        <state relative-caret-position="0">
+          <caret line="73" column="31" lean-forward="false" selection-start-line="73" selection-start-column="31" selection-end-line="73" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/DeliveryTeamController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="20" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="116" column="66" selection-start-line="116" selection-start-column="66" selection-end-line="116" selection-end-column="66" />
+        <state relative-caret-position="0">
+          <caret line="116" column="66" lean-forward="false" selection-start-line="116" selection-start-column="66" selection-end-line="116" selection-end-column="66" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/impl/TransactionBottlesDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="26" column="43" lean-forward="false" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/impl/UserDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="26" column="16" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/entities/Delivery.java">
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/TransactionDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
-          <folding>
-            <element signature="e#446#447#0" expanded="true" />
-            <element signature="e#479#480#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="126">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/DeliveryServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/dao/impl/TransactionDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-26">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/TransactionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1659">
+          <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/TransactionBottlesServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="76" column="131" selection-start-line="76" selection-start-column="131" selection-end-line="76" selection-end-column="131" />
+        <state relative-caret-position="861">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/entities/Delivery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/DeliveryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/TransactionBottlesServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="76" column="131" lean-forward="false" selection-start-line="76" selection-start-column="131" selection-end-line="76" selection-end-column="131" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="117" column="27" selection-start-line="117" selection-start-column="27" selection-end-line="117" selection-end-column="27" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="117" column="27" lean-forward="false" selection-start-line="117" selection-start-column="27" selection-end-line="117" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-transaction-bottles.jsp">
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/TransactionServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="27.161291">
-          <caret line="287" column="33" selection-start-line="287" selection-start-column="33" selection-end-line="287" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="1617">
+          <caret line="97" column="88" lean-forward="true" selection-start-line="97" selection-start-column="88" selection-end-line="97" selection-end-column="88" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-batch.jsp">
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.935484">
-          <caret line="153" column="28" selection-start-line="153" selection-start-column="28" selection-end-line="153" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-bottles.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7096774">
-          <caret line="142" column="37" selection-start-line="142" selection-start-column="37" selection-end-line="142" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-delivery.jsp~HEAD">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="96" column="30" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
-          <folding />
+        <state relative-caret-position="-2256">
+          <caret line="51" column="19" lean-forward="true" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="73.29032">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="184">
+          <caret line="82" column="44" lean-forward="false" selection-start-line="82" selection-start-column="44" selection-end-line="82" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-delivery.jsp~HEAD" />
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="166" column="43" lean-forward="false" selection-start-line="166" selection-start-column="24" selection-end-line="166" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/services/impl/DeliveryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="32" column="14" lean-forward="false" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/sales-dispensers.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.132">
-          <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+        <state relative-caret-position="0">
+          <caret line="42" column="34" lean-forward="false" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/DeliveryTeamController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="44" column="20" lean-forward="false" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/java/com/livingwater/controllers/BatchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="35" column="53" lean-forward="false" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/resources/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="177" column="1" lean-forward="true" selection-start-line="177" selection-start-column="1" selection-end-line="177" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-315">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-dispensers.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="164" column="38" lean-forward="false" selection-start-line="164" selection-start-column="38" selection-end-line="164" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-info.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="159" column="39" lean-forward="false" selection-start-line="159" selection-start-column="39" selection-end-line="159" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-profiles.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="159" column="38" lean-forward="false" selection-start-line="159" selection-start-column="38" selection-end-line="159" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-transaction.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="176" column="31" lean-forward="false" selection-start-line="176" selection-start-column="31" selection-end-line="176" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-refilling.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="164" column="38" lean-forward="false" selection-start-line="164" selection-start-column="38" selection-end-line="164" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/customer-transaction-bottles.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="165" column="38" lean-forward="false" selection-start-line="165" selection-start-column="38" selection-end-line="165" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/delivery-info.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="160" column="38" lean-forward="false" selection-start-line="160" selection-start-column="38" selection-end-line="160" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/employee-info.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="160" column="38" lean-forward="false" selection-start-line="160" selection-start-column="38" selection-end-line="160" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/employee-profiles.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="157" column="38" lean-forward="false" selection-start-line="157" selection-start-column="38" selection-end-line="157" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-batch.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="158" column="38" lean-forward="false" selection-start-line="158" selection-start-column="38" selection-end-line="158" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-bottles.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="158" column="38" lean-forward="false" selection-start-line="158" selection-start-column="38" selection-end-line="158" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-delivery.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="156" column="38" lean-forward="false" selection-start-line="156" selection-start-column="38" selection-end-line="156" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/inventory-supplies.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="173" column="10" lean-forward="true" selection-start-line="173" selection-start-column="10" selection-end-line="173" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/sales-delivery.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="161" column="42" lean-forward="false" selection-start-line="161" selection-start-column="42" selection-end-line="161" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LivingWater/src/main/webapp/WEB-INF/views/supply-info.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1092">
+          <caret line="164" column="33" lean-forward="false" selection-start-line="164" selection-start-column="33" selection-end-line="164" selection-end-column="33" />
           <folding />
         </state>
       </provider>
