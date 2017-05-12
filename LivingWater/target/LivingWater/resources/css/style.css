@@ -37,9 +37,9 @@ body {
 .page-head-line {
     font-weight: 900;
     padding-bottom: 20px;
-    border-bottom: 2px solid #c0392b;
+    border-bottom: 2px solid #ff9510;
     text-transform: uppercase;
-    color: #c0392b;
+    color: #ff9510;
     font-size: 20px;
     margin-bottom: 40px;
 }
@@ -78,7 +78,7 @@ body {
    HEADER SECTION STYLES
  ============================================================ */
 header {
-    background-color: #ac3826;
+    background-color: #ff9510;
     color: #fff;
     padding: 10px;
     text-align: right;
@@ -170,19 +170,19 @@ header {
 }
 
 .menu-top-active {
-    background-color: #ac3826;
+    background-color: #ff9510;
 }
 
 .menu-section .nav > li > a:hover, .menu-section .nav > li > a:focus {
-    background-color: #ca3222 !important;
+    background-color: #ff9510 !important;
 }
 
 .menu-section .dropdown-menu > li > a:hover, .menu-section .dropdown-menu > li > a:focus {
-    background-color: #ca3222 !important;
+    background-color: #ff9510 !important;
 }
 
 .navbar-inverse {
-    background-color: #c0392b;
+    background-color: rgba(255, 149, 16, 0.89);
     border-color: transparent;
 }
 
@@ -202,7 +202,7 @@ footer {
     padding: 10px;
     color: #fff;
     font-size: 12px;
-    background-color: #c0392b;
+    background-color: #ff9510;
 }
 
 footer a, footer a:hover {

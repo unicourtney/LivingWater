@@ -26,12 +26,6 @@ public class BatchBottles implements Serializable{
 
 	private int batchID;
 
-	public BatchBottles(Calendar date,Batch batch, Bottle bottle) {
-		this.date = date;
-		this.bottle = bottle;
-		this.batch = batch;
-	}
-
 	@Id
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "bottleID")
@@ -42,6 +36,11 @@ public class BatchBottles implements Serializable{
 		this.bottle = bottle;
 	}
 
+	public BatchBottles(Calendar date,Batch batch, Bottle bottle) {
+		this.date = date;
+		this.bottle = bottle;
+		this.batch = batch;
+	}
 
 	public BatchBottles() {
 		super();

@@ -4,6 +4,7 @@ import com.livingwater.dao.BatchDao;
 import com.livingwater.dao.DeliveryDao;
 import com.livingwater.entities.Batch;
 import com.livingwater.entities.Delivery;
+import com.livingwater.entities.User;
 import com.livingwater.services.BatchService;
 import com.livingwater.services.DeliveryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,15 +34,26 @@ public class DeliveryServiceImpl implements DeliveryService {
     private DeliveryDao deliveryDao;
 
     public ModelAndView createDelivery(HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView view = new ModelAndView("inventory-delivery");
+        ModelAndView view;
 
-        Delivery delivery = new Delivery();
-        delivery.setStatus("Okay");
-        deliveryDao.create(delivery);
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
 
-        /*List<Batch> batchList = batchDao.getAllBatch();
+        if (user1 == null) {
 
-        view.addObject("batchList", batchList);*/
+            view = new ModelAndView("login");
+        } else {
+
+            view = new ModelAndView("inventory-delivery");
+
+            Delivery delivery = new Delivery();
+            delivery.setStatus("Okay");
+            deliveryDao.create(delivery);
+
+            List<Batch> batchList = batchService.getAllBatch();
+
+            view.addObject("batchList", batchList);
+        }
+
         return view;
     }
 

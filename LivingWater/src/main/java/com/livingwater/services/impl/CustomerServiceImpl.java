@@ -2,6 +2,7 @@ package com.livingwater.services.impl;
 
 import com.livingwater.dao.CustomerDao;
 import com.livingwater.entities.Customer;
+import com.livingwater.entities.User;
 import com.livingwater.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,24 +27,35 @@ public class CustomerServiceImpl implements CustomerService {
     private CustomerDao customerDao;
 
     public ModelAndView addCustomer(HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView view = new ModelAndView("customer-profiles");
+        ModelAndView view;
 
-        String customer_name = request.getParameter("customer_name");
-        String customer_address = request.getParameter("customer_address");
-        Long customer_contact = Long.parseLong(request.getParameter("customer_contact"));
-        String customer_type = request.getParameter("customer_type");
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
 
-        Customer customer = new Customer();
-        customer.setAddress(customer_address);
-        customer.setContactNumber(customer_contact);
-        customer.setName(customer_name);
-        customer.setTypeOfCustomer(customer_type);
+        if (user1 == null) {
 
-        customerDao.create(customer);
+            view = new ModelAndView("login");
+        } else {
 
-        List<Customer> customerList = customerDao.getAllCustomer();
+            view = new ModelAndView("customer-profiles");
 
-        view.addObject("customerList", customerList);
+            String customer_name = request.getParameter("customer_name");
+            String customer_address = request.getParameter("customer_address");
+            Long customer_contact = Long.parseLong(request.getParameter("customer_contact"));
+            String customer_type = request.getParameter("customer_type");
+
+            Customer customer = new Customer();
+            customer.setAddress(customer_address);
+            customer.setContactNumber(customer_contact);
+            customer.setName(customer_name);
+            customer.setTypeOfCustomer(customer_type);
+
+            customerDao.create(customer);
+
+            List<Customer> customerList = customerDao.getAllCustomer();
+
+            view.addObject("customerList", customerList);
+
+        }
         return view;
     }
 
@@ -63,39 +75,60 @@ public class CustomerServiceImpl implements CustomerService {
 
     public ModelAndView updateCustomer(int id, HttpServletRequest request, HttpServletResponse response) {
 
-        ModelAndView view = new ModelAndView("customer-info");
+        ModelAndView view;
 
-        String customer_name = request.getParameter("customer_name");
-        String customer_address = request.getParameter("customer_address");
-        Long customer_contact = Long.parseLong(request.getParameter("customer_contact"));
-        String customer_type = request.getParameter("customer_type");
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
+
+        if (user1 == null) {
+
+            view = new ModelAndView("login");
+        } else {
+
+            view = new ModelAndView("customer-info");
+
+            String customer_name = request.getParameter("customer_name");
+            String customer_address = request.getParameter("customer_address");
+            Long customer_contact = Long.parseLong(request.getParameter("customer_contact"));
+            String customer_type = request.getParameter("customer_type");
 
 
-        Customer customer = new Customer();
-        customer.setCustomerID(id);
-        customer.setAddress(customer_address);
-        customer.setContactNumber(customer_contact);
-        customer.setName(customer_name);
-        customer.setTypeOfCustomer(customer_type);
+            Customer customer = new Customer();
+            customer.setCustomerID(id);
+            customer.setAddress(customer_address);
+            customer.setContactNumber(customer_contact);
+            customer.setName(customer_name);
+            customer.setTypeOfCustomer(customer_type);
 
-        customerDao.update(customer);
-        customer = customerDao.getCustomer(id);
+            customerDao.update(customer);
+            customer = customerDao.getCustomer(id);
 
-        view.addObject("customer", customer);
+            view.addObject("customer", customer);
+
+        }
         return view;
     }
 
     @RequestMapping(value = "/deleteCustomer/{id}", method = RequestMethod.POST)
-    public ModelAndView deleteCustomer(int id) {
+    public ModelAndView deleteCustomer(int id, HttpServletRequest request) {
 
-        ModelAndView view = new ModelAndView("customer-profiles");
+        ModelAndView view;
 
-        Customer customer = customerDao.getCustomer(id);
+        User user1 = (User) request.getSession().getAttribute("session_login_user");
 
-        customerDao.delete(customer);
+        if (user1 == null) {
 
-        List<Customer> customerList = customerDao.getAllCustomer();
-        view.addObject("customerList", customerList);
+            view = new ModelAndView("login");
+        } else {
+
+            view = new ModelAndView("customer-profiles");
+
+            Customer customer = customerDao.getCustomer(id);
+
+            customerDao.delete(customer);
+
+            List<Customer> customerList = customerDao.getAllCustomer();
+            view.addObject("customerList", customerList);
+        }
 
         return view;
     }

@@ -27,27 +27,28 @@ public class BatchController {
     private BatchBottlesService batchBottlesService;
     //----------------------Add
 
-    @RequestMapping(value="/addBatch", method = RequestMethod.POST)
-    public ModelAndView addBatch(HttpServletRequest request, HttpServletResponse response){
+    @RequestMapping(value = "/addBatch", method = RequestMethod.POST)
+    public ModelAndView addBatch(HttpServletRequest request, HttpServletResponse response) {
 
-        return batchService.addBatch(request,response);
+        return batchService.addBatch(request, response);
     }
 
-    @RequestMapping(value="/addBottleToBatch", method = RequestMethod.POST)
+    @RequestMapping(value = "/addBottleToBatch", method = RequestMethod.POST)
 
-    public ModelAndView addBottleToBatch(HttpServletRequest request, HttpServletResponse response){
-        return batchService.addBottleToBatch(request,response);
+    public ModelAndView addBottleToBatch(HttpServletRequest request, HttpServletResponse response) {
+        return batchService.addBottleToBatch(request, response);
     }
 
 
     @RequestMapping(value = "/inventory/batch", method = RequestMethod.GET)
-    public ModelAndView inventoryBatchPage() {
-        return batchService.getBatches();
+    public ModelAndView inventoryBatchPage(HttpServletRequest request) {
+
+        return batchService.getBatches(request);
     }
 
     @RequestMapping(value = "/inventory/getBatch", method = RequestMethod.POST)
-    public ModelAndView getInventoryBatch(HttpServletRequest req, HttpServletResponse resp){
-        return batchBottlesService.getAllBottlesInBatch(Integer.parseInt(req.getParameter("showBatchID")));
+    public ModelAndView getInventoryBatch(HttpServletRequest req, HttpServletResponse resp) {
+        return batchBottlesService.getAllBottlesInBatch(Integer.parseInt(req.getParameter("showBatchID")), req);
     }
 
 }

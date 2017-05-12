@@ -15,6 +15,6 @@ public interface BatchBottlesService {
 
     ModelAndView addBatchBottles(HttpServletRequest req, HttpServletResponse res);
 
-    ModelAndView getAllBottlesInBatch(int batchID);
+    ModelAndView getAllBottlesInBatch(int batchID, HttpServletRequest request);
 
 }

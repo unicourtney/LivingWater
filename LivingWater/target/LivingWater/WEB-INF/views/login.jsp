@@ -79,12 +79,12 @@
 																   class="form-control" name="username"/> <label>Enter Password : </label>
 					<input
 							type="password" class="form-control" name="user_password" />
-					<hr />
-					<a class="btn btn-info" onclick="document.getElementById('loginForm').submit()">
-						<span class="glyphicon glyphicon-user"></span> &nbsp;Log Me In
-					</a>&nbsp;
-				</form>
-			</div>
+						<hr />
+						<p style="color: red">${login_error_message}</p>
+						<a class="btn btn-info" onclick="document.getElementById('loginForm').submit()"><span
+							classs="glyphicon glyphicon-user"></span> &nbsp;Log Me In </a>&nbsp;
+					</form>
+				</div>
 
 
 		</div>
