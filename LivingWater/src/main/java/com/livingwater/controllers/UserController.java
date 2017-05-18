@@ -5,16 +5,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.livingwater.dao.BottleDao;
 import com.livingwater.dao.RoleDao;
-import com.livingwater.entities.Batch;
-import com.livingwater.entities.Bottle;
 import com.livingwater.entities.Role;
 import com.livingwater.entities.User;
 import com.livingwater.services.BatchService;
 import com.livingwater.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -86,40 +82,7 @@ public class UserController {
         return view;
     }
 
-    @RequestMapping(value = "/sales/delivery", method = RequestMethod.GET)
-    public ModelAndView salesDeliveryPage(HttpServletRequest request) {
-
-        ModelAndView view;
-
-        User user1 = (User) request.getSession().getAttribute("session_login_user");
-
-        if (user1 == null) {
-
-            view = new ModelAndView("login");
-        } else {
-
-            view = new ModelAndView("sales-delivery");
-        }
-        return view;
-    }
-
-    @RequestMapping(value = "/sales/refilling", method = RequestMethod.GET)
-    public ModelAndView salesRefillingPage(HttpServletRequest request) {
-        ModelAndView view;
-
-        User user1 = (User) request.getSession().getAttribute("session_login_user");
-
-        if (user1 == null) {
-
-            view = new ModelAndView("login");
-        } else {
-
-            view = new ModelAndView("sales-refilling");
-        }
-        return view;
-    }
-
-    @RequestMapping(value = "/sales/dispensers", method = RequestMethod.GET)
+    @RequestMapping(value = "/transaction", method = RequestMethod.GET)
     public ModelAndView salesDispensersPage(HttpServletRequest request) {
         ModelAndView view;
 
@@ -130,7 +93,7 @@ public class UserController {
             view = new ModelAndView("login");
         } else {
 
-            view = new ModelAndView("sales-dispensers");
+            view = new ModelAndView("transaction");
         }
         return view;
     }

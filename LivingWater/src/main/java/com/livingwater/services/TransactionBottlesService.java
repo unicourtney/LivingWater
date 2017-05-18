@@ -20,4 +20,7 @@ public interface TransactionBottlesService {
 
     public ModelAndView cancelTransactionBottle(HttpServletRequest request, HttpServletResponse response);
 
+    public List<TransactionBottles> getBottlesReturned(int id);
+
+    public List<TransactionBottles> getBottlesOnHand(int id);
 }

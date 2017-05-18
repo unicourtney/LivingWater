@@ -162,7 +162,7 @@
                                     Profiles</a></li>
                             </ul>
                         </li>
-                        <li><a href="">Transaction</a>
+                        <li><a href="${pageContext.request.contextPath}/transaction">Transaction</a>
                         </li>
                         <li><a href="" class="dropdown-toggle" id="dropdownMenu4"
                                data-toggle="dropdown"><%session.getAttribute("session_login_user");%> ${sessionScope.session_login_user.username}</a>
@@ -216,7 +216,7 @@
 
                             <div class="form-group">
                                 <label>Dispenser Serial No.</label>
-                                <input type="text" class="form-control" placeholder="" value="" name="dispenser_id"/>
+                                <input type="text" class="form-control" placeholder="" value="" name="dispenser_id" required/>
                             </div>
                             <button type="submit" class="btn btn-success btn-default">Submit
                             </button>
