@@ -165,7 +165,7 @@
                             </ul>
                         </li>
 
-                        <li><a href="">Transaction</a>
+                        <li><a href="${pageContext.request.contextPath}/transaction">Transaction</a>
 
                         </li>
                         <li><a href="" class="dropdown-toggle" id="dropdownMenu4"
@@ -249,18 +249,10 @@
                         TRANSACTION FORM
                     </div>
                     <div class="panel-body">
-                        <form action="${pageContext.request.contextPath}/createTransaction/${customer.customerID}"
+                        <form action="${pageContext.request.contextPath}/createTransaction/"
                               method="POST">
 
                             <input type="hidden" class="form-control" placeholder="" value="001" name="customer_id"/>
-
-<%--                            <div class="form-group">
-                                <label>Bottle Case</label>
-                                <select class="form-control" name="bottle_case">
-                                    <option value="Customer Owned">Customer Owned</option>
-                                    <option value="Company Owned">Company Owned</option>
-                                </select>
-                            </div>--%>
 
                             <div class="form-group">
                                 <label>Price</label>

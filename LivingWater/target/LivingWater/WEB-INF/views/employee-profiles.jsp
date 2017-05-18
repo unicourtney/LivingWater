@@ -155,7 +155,7 @@
                             </ul>
                         </li>
 
-                        <li><a href="">Transaction</a>
+                        <li><a href="${pageContext.request.contextPath}/transaction">Transaction</a>
 
                         </li>
                         <li><a href="" class="dropdown-toggle" id="dropdownMenu4"
@@ -217,9 +217,9 @@
                             <div class="form-group">
                                 <label>Role</label>
                                 <select class="form-control" name="user_role">
-                                    <option value="Superadmin">Superadmin</option>
                                     <option value="Admin">Admin</option>
-                                    <option value="Employee">Employee</option>
+                                    <option value="TeamLead">Team Lead</option>
+                                    <option value="Staff">Staff</option>
                                 </select>
                             </div>
 

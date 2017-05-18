@@ -154,7 +154,7 @@
                                     Profiles</a></li>
                             </ul>
                         </li>
-                        <li><a href="">Transaction</a>
+                        <li><a href="${pageContext.request.contextPath}/transaction">Transaction</a>
 
                         </li>
                         <li><a href="" class="dropdown-toggle" id="dropdownMenu4"

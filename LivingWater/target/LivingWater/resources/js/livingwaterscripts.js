@@ -6,21 +6,21 @@ $(document).ready(function () {
 $().ready(function () {
 
     $('#clicker').click(function () {
-        $('input').each(function () {
+        $('.customerInfo').each(function () {
             $(this).removeAttr('disabled');
         });
-        $('select').each(function () {
+/*        $('select').each(function () {
             $(this).removeAttr('disabled');
-        });
+        });*/
     });
 
     $('#hide').click(function () {
-        $('input').each(function () {
+        $('.customerInfo').each(function () {
             $(this).prop('disabled', true);
         });
-        $('select').each(function () {
+/*        $('.form-control').each(function () {
             $(this).prop('disabled', true);
-        });
+        });*/
     });
 });
 

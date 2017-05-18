@@ -158,7 +158,7 @@
                                     Profiles</a></li>
                             </ul>
                         </li>
-                        <li><a href="">Transaction</a>
+                        <li><a href="${pageContext.request.contextPath}/transaction">Transaction</a>
 
                         </li>
                         <li><a href="" class="dropdown-toggle" id="dropdownMenu4"
@@ -217,41 +217,41 @@
                             <div class="form-group">
                                 <label>Name</label>
                                 <input type="text" class="form-control" placeholder="Name" value="${user.name}"
-                                       name="user_name" disabled/>
+                                       name="user_name" disabled required/>
                             </div>
                             <div class="form-group">
                                 <label>Username</label>
                                 <input type="text" class="form-control" placeholder="Username" value="${user.username}"
                                        name="username"
-                                       disabled/>
+                                       disabled required/>
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
                                 <input type="password" class="form-control" placeholder="" value="${user.password}"
                                        name="user_password"
-                                       disabled/>
+                                       disabled required/>
                             </div>
                             <div class="form-group">
                                 <label>Role</label>
-                                <select class="form-control" name="user_role" disabled/>
+                                <select class="form-control" name="user_role" disabled required/>
                                 <c:choose>
                                     <c:when test="${role.roleID==1}">
                                         <c:set var="isSelected" value="selected"/>
-                                        <option selected=${isSelected} value="Superadmin">Superadmin</option>
-                                        <option value="Admin">Admin</option>
-                                        <option value="Employee">Employee</option>
+                                        <option selected=${isSelected} value="Admin">Admin</option>
+                                        <option value="TeamLead">Team Lead</option>
+                                        <option value="Staff">Staff</option>
                                     </c:when>
                                     <c:when test="${role.roleID==2}">
                                         <c:set var="isSelected" value="selected"/>
-                                        <option value="Superadmin">Superadmin</option>
-                                        <option selected=${isSelected} value="Admin">Admin</option>
-                                        <option value="Employee">Employee</option>
+                                        <option value="Admin">Admin</option>
+                                        <option selected=${isSelected} value="TeamLead">Team Lead</option>
+                                        <option value="Staff">Staff</option>
                                     </c:when>
                                     <c:when test="${role.roleID==3}">
                                         <c:set var="isSelected" value="selected"/>
-                                        <option value="Superadmin">Superadmin</option>
                                         <option value="Admin">Admin</option>
-                                        <option selected=${isSelected} value="Employee">Employee</option>
+                                        <option value="TeamLead">Team Lead</option>
+                                        <option selected=${isSelected} value="Staff">Staff</option>
                                     </c:when>
                                 </c:choose>
 

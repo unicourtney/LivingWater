@@ -13,11 +13,17 @@ import java.util.List;
  */
 public interface TransactionService {
 
-    public ModelAndView createTransaction(Integer id, HttpServletRequest request, HttpServletResponse response) throws  ParseException;
+    public ModelAndView createTransaction(HttpServletRequest request, HttpServletResponse response) throws  ParseException;
 
     public ModelAndView cancelTransaction(HttpServletRequest request, HttpServletResponse response);
 
     public Transaction getTransaction(int id);
 
     public ModelAndView confirmTransaction(HttpServletRequest request, HttpServletResponse response);
+
+    public List<Transaction> getCustomerTransaction(int id);
+
+    public Transaction getBottlesOnHand(int id);
+
+    public Transaction getBottlesReturned(int id);
 }

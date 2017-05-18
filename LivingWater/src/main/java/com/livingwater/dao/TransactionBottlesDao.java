@@ -15,4 +15,8 @@ public interface TransactionBottlesDao extends GenericDao<TransactionBottles>{
 
     public List<TransactionBottles> getAllBottlesWithATransactionIDLike(int transaction_id);
 
+    public List<TransactionBottles> getBottlesReturned(int id);
+
+    public List<TransactionBottles> getBottlesOnHand(int id);
+
 }

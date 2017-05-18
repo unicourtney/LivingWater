@@ -55,10 +55,10 @@ public class TransactionController {
 
     //----------------------Add
 
-    @RequestMapping(value = "/createTransaction/{id}", method = RequestMethod.POST)
-    public ModelAndView createTransaction(@PathVariable("id") Integer id, HttpServletRequest request, HttpServletResponse response) throws ParseException {
+    @RequestMapping(value = "/createTransaction", method = RequestMethod.POST)
+    public ModelAndView createTransaction(HttpServletRequest request, HttpServletResponse response) throws ParseException {
 
-        return transactionService.createTransaction(id, request, response);
+        return transactionService.createTransaction(request, response);
     }
 
     @RequestMapping(value = "/addTransactionBottles", method = RequestMethod.POST)
