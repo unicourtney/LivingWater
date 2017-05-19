@@ -205,13 +205,25 @@
                             <form action="${pageContext.request.contextPath}/createDelivery"
                                   method="POST">
                                 <div class="form-group">
-                                    <label>Batch ID</label>
-                                    <select class="form-control" name="batch_id">
-                                        <c:forEach items="${batchList}" var="batch"
+                                    <label>Contact Person</label>
+                                    <select class="form-control employeeContact" name="contactPerson">
+                                        <c:forEach items="${userList}" var="employee"
                                                    varStatus="status">
-                                            <option value="${batch.batchID}">${batch.batchID}</option>
+                                            <option value="${employee.userID}">${employee.name}</option>
                                         </c:forEach>
                                     </select>
+                                    <label>Plate Number</label>
+                                    <select class="form-control" name="plateNumber">
+                                        <c:forEach items="${vehicleList}" var="vehicle">
+                                            <option value="${vehicle.plateNumber}">${vehicle.plateNumber}</option>
+                                        </c:forEach>
+                                    </select>
+                                    <br>
+                                    <label>Members</label>
+                                    <button type="button" class="btn btn-default" id="myBtn"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                                    <div class="addMembers">
+
+                                    </div>
                                 </div>
 
                                 <button type="submit" class="btn btn-success btn-default">Submit</button>
@@ -278,7 +290,8 @@
                     <thead>
                     <tr>
                         <th>Delivery ID</th>
-                        <th>Status</th>
+                        <th>Vehicle</th>
+                        <th>Date</th>
                         <th>Actions</th>
                     </tr>
                     </thead>
@@ -287,7 +300,11 @@
                                varStatus="status">
                         <tr>
                             <td>${delivery.deliveryID}</td>
-                            <td>${delivery.status}</td>
+                            <td><a class="viewMembers" data-uid="${delivery.deliveryID}" data-toggle="modal"
+                                   data-target="#viewVehicle" href="#myModal">${delivery.vehicle.plateNumber}</a></td>
+
+                            <td>${delivery.date}</td>
+
                             <td>
                                 <a href="<c:url value='/inventory/delivery/info/${deliveryList[status.index].deliveryID}' />" class="btn btn-info btn-xs">VIEW</a>
                                 <a href="#" class="btn btn-danger btn-xs">DELETE</a>
@@ -297,7 +314,24 @@
                     </tbody>
                 </table>
             </div>
+            <div class="modal fade" id="viewVehicle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
+                 aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title" id="myModalLabel1">Members List</h4>
+                        </div>
+                        <div class="modal-body viewModalBody">
 
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -317,12 +351,15 @@
 <!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
 <!-- CORE JQUERY SCRIPTS -->
 <script
-        src="${pageContext.request.contextPath}/resources/js/jquery-1.11.1.js"></script>
+        src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.js"></script>
+<%--
+<script
+        src="${pageContext.request.contextPath}/resources/js/jquery-1.11.1.js"></script>--%>
 <!-- BOOTSTRAP SCRIPTS  -->
 <script
         src="${pageContext.request.contextPath}/resources/js/bootstrap.js"></script>
-<!-- BOOTSTRAP DATA TABLE SCRIPTS  -->
-<script src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.js"></script>
+<!-- BOOTSTRAP DATA TABLE SCRIPTS  --><%--
+<script src="${pageContext.request.contextPath}/resources/js/jquery-1.12.4.js"></script>--%>
 <script
         src="${pageContext.request.contextPath}/resources/js/jquery.dataTables.min.js"></script>
 <script
@@ -331,10 +368,76 @@
 <!-- LIVINGWATER SCRIPTS  -->
 <script
         src="${pageContext.request.contextPath}/resources/js/livingwaterscripts.js"></script>
+<script>
+
+    var count = 1;
+    $('#myBtn').click(function(){
+
+        var div = $('<select class="form-control" name="members'+count+'"></select>');
+
+        div.append($(".employeeContact > option").clone());
+        $('<label>'+ count+'</label>').appendTo('.addMembers');
+        div.appendTo('.addMembers');
+
+        count = count + 1;
+
+    });
+</script>
+
+
+<script>
+    $(document).ready(function(){
+
+        $('.viewMembers').click(function(){
+            $('.viewModalBody').html('');
+            var deliveryID = $(this).data('uid');
+            console.log(deliveryID);
+
+            $.ajax({
+                type: 'GET',
+                headers: {
+                    Accept: "application/json; charset=utf-8",
+                    "Content-Type": "application/json; charset=utf-8"
+                },
+                url: '${pageContext.request.contextPath}/viewMembers/'+deliveryID+'.html',
+                success: function(result){
+                    var membersList = JSON.parse(result);
+                    console.log(membersList);
+                    $('.viewModalBody').append('<label>Plate Number</label>');
+                    $('.viewModalBody').append('<p>' + membersList[0]["vehicle"]["plateNumber"]);
+                    for(i = 0; i<membersList.length;i++){
+                        var mem = membersList[i];
+                        alert(mem["user"]["name"]);
+                        if(mem["designation"] == "Contact Person"){
+                            $('.viewModalBody').append('<label>Contact Person</label>');
+                            $('.viewModalBody').append('<p>'+ mem["user"]["name"] + '</p>');
+                        }else{
+                            $('.viewModalBody').append('<label>Helper</label>');
+                            $('.viewModalBody').append('<p>'+ mem["user"]["name"] + '</p>');
+                        }
+
+                    }
+
+
+                }
+
+            });
+
+        });
+
+    });
+
+
+
+</script>
+
+
 <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
 <script src="${pageContext.request.contextPath}/resources/js/html5shiv.js"></script>
+
+
 <script src="${pageContext.request.contextPath}/resources/js/respond.min.js"></script>
 <![endif]-->
 </body>

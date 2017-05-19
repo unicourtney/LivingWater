@@ -6,15 +6,37 @@ import java.io.Serializable;
 @Entity
 @Table(name = "deliveryTeam")
 public class DeliveryTeam implements Serializable{
+
+
 	@Id
+	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
+
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "plateNumber")
+	private Vehicle vehicle;
+
+
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "deliveryID")
 	private Delivery delivery;
 
-	@Id
+
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "user")
 	private User user;
+
+	@Column(name = "designation")
+	private String designation;
+
+	public String getDesignation() {
+		return designation;
+	}
+
+	public void setDesignation(String designation) {
+		this.designation = designation;
+	}
 
 	public DeliveryTeam() {
 	}
@@ -35,9 +57,17 @@ public class DeliveryTeam implements Serializable{
 		this.user = user;
 	}
 
-	public DeliveryTeam(Delivery delivery, User user) {
-
+	public DeliveryTeam(Vehicle vehicle, Delivery delivery, User user) {
+		this.vehicle = vehicle;
 		this.delivery = delivery;
 		this.user = user;
+	}
+
+	public Vehicle getVehicle() {
+		return vehicle;
+	}
+
+	public void setVehicle(Vehicle vehicle) {
+		this.vehicle = vehicle;
 	}
 }

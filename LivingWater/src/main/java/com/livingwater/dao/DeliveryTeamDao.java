@@ -16,4 +16,6 @@ public interface DeliveryTeamDao extends GenericDao<DeliveryTeam>{
 
     public boolean isInDeliveryTeam(Delivery delivery, User user);
 
+    public List<DeliveryTeam> getDeliveryTeam(Delivery deliveryID);
+
 }

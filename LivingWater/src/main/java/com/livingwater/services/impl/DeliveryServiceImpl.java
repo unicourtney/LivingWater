@@ -1,10 +1,7 @@
 package com.livingwater.services.impl;
 
-import com.livingwater.dao.BatchDao;
-import com.livingwater.dao.DeliveryDao;
-import com.livingwater.entities.Batch;
-import com.livingwater.entities.Delivery;
-import com.livingwater.entities.User;
+import com.livingwater.dao.*;
+import com.livingwater.entities.*;
 import com.livingwater.services.BatchService;
 import com.livingwater.services.DeliveryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +11,10 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.transaction.Transactional;
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 /**
@@ -33,26 +34,65 @@ public class DeliveryServiceImpl implements DeliveryService {
     @Autowired
     private DeliveryDao deliveryDao;
 
+    @Autowired
+    private VehicleDao vehicleDao;
+
+    @Autowired
+    private UserDao userDao;
+
+    @Autowired
+    private DeliveryTeamDao deliveryTeamDao;
+
     public ModelAndView createDelivery(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView view;
 
         User user1 = (User) request.getSession().getAttribute("session_login_user");
-
+        java.util.Date date = new java.util.Date();
+        Timestamp timestamp = new Timestamp(date.getTime());
         if (user1 == null) {
 
             view = new ModelAndView("login");
         } else {
-
             view = new ModelAndView("inventory-delivery");
 
             Delivery delivery = new Delivery();
+            delivery.setVehicle(vehicleDao.getVehicle(Integer.parseInt(request.getParameter("plateNumber"))));
             delivery.setStatus("Okay");
+            delivery.setDate(timestamp);
             deliveryDao.create(delivery);
+            DeliveryTeam deliveryTeam = new DeliveryTeam();
+            deliveryTeam.setVehicle(delivery.getVehicle());
+            deliveryTeam.setDelivery(delivery);
+            deliveryTeam.setUser(userDao.getUser(Integer.parseInt(request.getParameter("contactPerson"))));
+            deliveryTeam.setDesignation("Contact Person");
+            deliveryTeamDao.create(deliveryTeam);
 
-            List<Batch> batchList = batchService.getAllBatch();
+            String[] ids = request.getParameterValues("members");
+            int count = 1;
+            while(request.getParameter("members"+count)!=null){
+                deliveryTeam = new DeliveryTeam();
+                deliveryTeam.setVehicle(delivery.getVehicle());
+                deliveryTeam.setDelivery(delivery);
+                deliveryTeam.setUser(userDao.getUser(Integer.parseInt(request.getParameter("members"+count))));
+                deliveryTeam.setDesignation("Helper");
+                deliveryTeamDao.create(deliveryTeam);
+                count++;
+            }
 
-            view.addObject("batchList", batchList);
+
         }
+        List<Delivery> deliveryList = deliveryDao.getAllDelivery();
+
+        List<User> userList = userDao.getAllUsers();
+
+        List<DeliveryTeam> deliveryTeamList = deliveryTeamDao.getAllDeliveryTeam();
+
+        List<Vehicle> vehicles = vehicleDao.getAllVehicles();
+
+        view.addObject("deliveryList", deliveryList);
+        view.addObject("userList", userList);
+        view.addObject("deliveryTeamList", deliveryTeamList);
+        view.addObject("vehicleList",vehicles);
 
         return view;
     }
