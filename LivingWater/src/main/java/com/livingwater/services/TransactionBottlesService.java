@@ -12,13 +12,13 @@ import java.util.List;
  */
 public interface TransactionBottlesService {
 
-    public List<TransactionBottles> getAllBottlesWithATransactionIDLike(int transaction_id);
+    List<TransactionBottles> getAllBottlesWithATransactionIDLike(int transaction_id);
 
-    public ModelAndView addTransactionBottles(HttpServletRequest request, HttpServletResponse response);
+    ModelAndView addTransactionBottles(HttpServletRequest request, HttpServletResponse response);
 
-    public ModelAndView deleteTransactionBottles(Integer id, HttpServletRequest request, HttpServletResponse response);
+    ModelAndView deleteTransactionBottles(Integer id, HttpServletRequest request, HttpServletResponse response);
 
-    public ModelAndView cancelTransactionBottle(HttpServletRequest request, HttpServletResponse response);
+    ModelAndView cancelTransactionBottle(HttpServletRequest request, HttpServletResponse response);
 
     public List<TransactionBottles> getBottlesReturned(int id);
 

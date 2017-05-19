@@ -3,9 +3,11 @@ package com.livingwater.services.impl;
 import com.livingwater.dao.DeliveryDao;
 import com.livingwater.dao.DeliveryTeamDao;
 import com.livingwater.dao.UserDao;
+import com.livingwater.dao.VehicleDao;
 import com.livingwater.entities.Delivery;
 import com.livingwater.entities.DeliveryTeam;
 import com.livingwater.entities.User;
+import com.livingwater.entities.Vehicle;
 import com.livingwater.services.DeliveryService;
 import com.livingwater.services.DeliveryTeamService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +35,9 @@ public class DeliveryTeamServiceImpl implements DeliveryTeamService {
     @Autowired
     private DeliveryTeamDao deliveryTeamDao;
 
+    @Autowired
+    private VehicleDao vehicleDao;
+
     public ModelAndView addUserToTeam(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView view;
 
@@ -47,8 +52,8 @@ public class DeliveryTeamServiceImpl implements DeliveryTeamService {
 
             Delivery delivery = deliveryDao.getADelivery(Integer.parseInt(request.getParameter("deliveryteam_id")));
             User user = userDao.getUser(Integer.parseInt(request.getParameter("deliveryteam_user")));
-
-            DeliveryTeam deliveryTeam = new DeliveryTeam(delivery, user);
+            Vehicle vehicle = vehicleDao.getVehicle(delivery.getVehicle().getPlateNumber());
+            DeliveryTeam deliveryTeam = new DeliveryTeam(vehicle,delivery, user);
 
             deliveryTeamDao.create(deliveryTeam);
 

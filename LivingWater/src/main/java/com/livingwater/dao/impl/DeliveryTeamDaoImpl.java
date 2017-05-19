@@ -36,4 +36,11 @@ public class DeliveryTeamDaoImpl extends GenericDaoImpl<DeliveryTeam> implements
             return false;
         }
     }
+
+    public List<DeliveryTeam> getDeliveryTeam(Delivery deliveryID) {
+        Query query = getCurrentSession().createQuery("from DeliveryTeam where deliveryID = :deliveryID");
+        query.setParameter("deliveryID",deliveryID);
+
+        return query.list();
+    }
 }
