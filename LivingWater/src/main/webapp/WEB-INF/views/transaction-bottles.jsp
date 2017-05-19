@@ -136,7 +136,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a class="menu-top-active"
+                        <li><a
                                href="" class="dropdown-toggle" id="dropdownMenu2"
                                data-toggle="dropdown">Profiles</a>
                             <ul class="dropdown-menu" role="menu"
@@ -144,6 +144,7 @@
                                 <li role="presentation"><a role="menuitem" tabindex="-1"
                                                            href="${pageContext.request.contextPath}/profiles/customers">Customer
                                     Profiles</a></li>
+                                <li role="presentation" class="divider"></li>
                                 <%session.getAttribute("session_login_user");%>
                                 <c:choose>
                                     <c:when test="${sessionScope.session_login_user.role.roleID=='3'}">
@@ -162,16 +163,17 @@
                                     Profiles</a></li>
                             </ul>
                         </li>
-                        <li><a href="">Transaction</a>
-
+                        <li><a class="menu-top-active" href="${pageContext.request.contextPath}/transaction">Transaction</a>
                         </li>
                         <li><a href="" class="dropdown-toggle" id="dropdownMenu4"
                                data-toggle="dropdown"><%session.getAttribute("session_login_user");%> ${sessionScope.session_login_user.username}</a>
                             <ul class="dropdown-menu" role="menu"
                                 aria-labelledby="dropdownMenu4">
                                 <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                           href="${pageContext.request.contextPath}/logout">Logout</a></li>
-                            </ul></li>
+                                                           href="${pageContext.request.contextPath}/logout">Logout</a>
+                                </li>
+                            </ul>
+                        </li>
 
                     </ul>
                 </div>
@@ -190,67 +192,91 @@
         </div>
         <ul class="breadcrumb">
             <li><a href="${pageContext.request.contextPath}/profiles/customers">Customers</a></li>
-            <li>Delivery</li>
+            <li>Transaction</li>
         </ul>
 
         <div class="row">
             <div class="col-md-6 col-sm-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        CUSTOMER PROFILE
+                        TRANSACTION FORM
                     </div>
                     <div class="panel-body">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" placeholder="" name="customer_name" disabled/>
-                        </div>
-                        <div class="form-group">
-                            <label>Address</label>
-                            <input type="text" class="form-control" placeholder="" name="customer_address"
-                                   disabled/>
-                        </div>
-                        <div class="form-group">
-                            <label>Contact Number</label>
-                            <input type="tel" class="form-control" placeholder="" name="customer_contact" disabled/>
-                        </div>
-                        <div class="form-group">
-                            <label>Customer Type</label>
-                            <select class="form-control" name="customer_type" disabled>
-                                <option value="Regular">Regular</option>
-                                <option value="Dealer">Dealer</option>
-                            </select>
-                        </div>
+                        <form action="${pageContext.request.contextPath}/addTransactionBottles"
+                              method="POST">
+
+                            <input type="hidden" class="form-control" placeholder=""
+                                   value="<%session.getAttribute("session_customer_id");%> ${sessionScope.session_customer_id }"
+                                   name="customer_id"/>
+
+                            <div class="form-group">
+                                <label>Customer Name</label>
+                                <input type="text" class="form-control" placeholder=""
+                                       value="<%session.getAttribute("session_customer_name");%> ${sessionScope.session_customer_name }"
+                                       disabled/>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Price</label>
+                                <input type="text" class="form-control" placeholder=""
+                                       value="<%session.getAttribute("session_transaction_price");%> ${sessionScope.session_transaction_price }"
+                                       name="transaction_price" disabled/>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Transaction Date</label>
+                                <input type="text" class="form-control" placeholder=""
+                                       value="<%session.getAttribute("session_transaction_date");%> ${sessionScope.session_transaction_date }"
+                                       name="transaction_date" disabled/>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Bottle ID</label>
+                                <input type="text" class="form-control" placeholder="" name="bottle_id" required/>
+                            </div>
+
+                            <button type="submit" class="btn btn-success btn-default">Add Bottle
+                            </button>
+                            <a href="${pageContext.request.contextPath}/cancelTransactionBottle" type="button"
+                               class="btn btn-default toHideBtn">
+                                Cancel
+                            </a>
+                        </form>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-sm-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        REFILLING FORM
+                        TRANSACTIONS
                     </div>
                     <div class="panel-body">
-                        <form action="${pageContext.request.contextPath}/addDelivery"
+                        <table id="example"
+                               class="table table-hover table-condensed table-striped"
+                               cellspacing="0" width="100%">
+                            <thead>
+                            <tr>
+                                <th>Bottle ID</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <c:forEach items="${transactionBottlesList}" var="transactionBottles"
+                                       varStatus="status">
+                                <tr>
+                                    <td>${transactionBottles.bottle.serialNumber}</td>
+                                    <td>
+                                        <a href="<c:url value='/deleteTransactionBottle/${transactionBottles.bottle.serialNumber}' />"
+                                           class="btn btn-danger btn-xs">DELETE</a></td>
+                                </tr>
+                            </c:forEach>
+                            </tbody>
+                        </table>
+                        <form action="${pageContext.request.contextPath}/confirmTransaction"
                               method="POST">
 
-                            <input type="hidden" class="form-control" placeholder="" value="001" name="customer_id"/>
-
-
-                            <div class="form-group">
-                                <label>Bottle ID</label>
-                                <input type="text" class="form-control" placeholder="" name="bottle_id"/>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Price</label>
-                                <input type="text" class="form-control" placeholder="" name="transaction_price"/>
-                            </div>
-
-                            <button type="submit" class="btn btn-success btn-default">Submit
-                            </button>
-                            <a href="${pageContext.request.contextPath}/profiles/customers" type="button"
-                               class="btn btn-default toHideBtn">
-                                Cancel
-                            </a>
+                        <button type="submit" class="btn btn-success btn-default">Confirm
+                        </button>
                         </form>
                     </div>
                 </div>

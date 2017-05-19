@@ -17,4 +17,10 @@ public interface TransactionDao extends GenericDao<Transaction>{
 
     public Transaction getTransaction(int id);
 
+    public List<Transaction> getCustomerTransaction(int id);
+
+    public Transaction getBottlesOnHand(int id);
+
+    public Transaction getBottlesReturned(int id);
+
 }

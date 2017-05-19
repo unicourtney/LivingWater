@@ -157,15 +157,17 @@
                                     Profiles</a></li>
                             </ul>
                         </li>
-                        <li><a href="">Transaction</a>
+                        <li><a href="${pageContext.request.contextPath}/transaction">Transaction</a>
                         </li>
                         <li><a href="" class="dropdown-toggle" id="dropdownMenu4"
                                data-toggle="dropdown"><%session.getAttribute("session_login_user");%> ${sessionScope.session_login_user.username}</a>
                             <ul class="dropdown-menu" role="menu"
                                 aria-labelledby="dropdownMenu4">
                                 <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                           href="${pageContext.request.contextPath}/logout">Logout</a></li>
-                            </ul></li>
+                                                           href="${pageContext.request.contextPath}/logout">Logout</a>
+                                </li>
+                            </ul>
+                        </li>
 
                     </ul>
                 </div>
@@ -205,19 +207,21 @@
                               method="POST">
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control" placeholder="Name" name="customer_name"/>
+                                <input type="text" class="form-control" placeholder="Name" name="customer_name"
+                                       required/>
                             </div>
                             <div class="form-group">
                                 <label>Address</label>
-                                <input type="text" class="form-control" placeholder="Address" name="customer_address"/>
+                                <input type="text" class="form-control" placeholder="Address" name="customer_address"
+                                       required/>
                             </div>
                             <div class="form-group">
                                 <label>Contact Number</label>
-                                <input type="tel" class="form-control" placeholder="" name="customer_contact"/>
+                                <input type="tel" class="form-control" placeholder="" name="customer_contact" required/>
                             </div>
                             <div class="form-group">
                                 <label>Customer Type</label>
-                                <select class="form-control" name="customer_type">
+                                <select class="form-control" name="customer_type" required>
                                     <option value="Regular">Regular</option>
                                     <option value="Dealer">Dealer</option>
                                 </select>
@@ -235,6 +239,36 @@
             </div>
         </div>
 
+        <div class="modal fade" id="bottles" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
+             aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title" id="myModalLabel">Add Customer</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-md-12">
+                            <table id="example"
+                                   class="table1 table table-hover table-condensed table-striped"
+                                   cellspacing="0" width="100%">
+                                <thead>
+                                <tr>
+                                    <th>Bottles on Hand</th>
+                                    <th>Bottles Returned</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btnCloseBottles" type="button" class="btn btn-default" data-dismiss="modal">Close
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-md-12">
@@ -245,8 +279,8 @@
                     <tr>
                         <th>Customer ID</th>
                         <th>Name</th>
-                        <th>Action</th>
                         <th>Transaction</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -256,15 +290,20 @@
                             <td>${customer.customerID}</td>
                             <td>${customer.name}</td>
                             <td>
+                                <a href="<c:url value='/profiles/customers/rent-dispenser/${customerList[status.index].customerID}' />"
+                                   class="btn btn-default btn-xs ">RENT DISPENSER</a>
+                                <button data-uid="${customer.customerID}" class="btn btn-info btn-xs btnBottles"
+                                        data-toggle="modal"
+                                        data-target="#bottles">
+                                    BOTTLES
+                                </button>
+                            </td>
+                            <td>
                                 <a href="<c:url value='/profiles/customers/info/${customerList[status.index].customerID}' />"
                                    class="btn btn-info btn-xs">VIEW</a>
                                 <a href="<c:url value='/deleteCustomer/${customerList[status.index].customerID}' />"
                                    class="btn btn-danger btn-xs">DELETE</a></td>
-                            <td><a href="<c:url value='/profiles/customers/transaction/${customerList[status.index].customerID}' />"
-                                   class="btn btn-primary btn-xs">TRANSACTION</a>
-                                <a href="#" class="btn btn-warning btn-xs">REFILL</a>
-                                <a href="<c:url value='/profiles/customers/rent-dispenser/${customerList[status.index].customerID}' />"
-                                   class="btn btn-default btn-xs">RENT DISPENSER</a></td>
+
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -312,5 +351,46 @@
         $('#example').DataTable();
     });
 </script>
+<script>
+    $(document).ready(function () {
+
+        $('.btnBottles').click(function () {
+            var customerID = $(this).data("uid");
+            console.log(customerID);
+
+            $.ajax({
+                type: 'GET',
+                headers: {
+                    Accept: "application/json; charset=utf-8",
+                    "Content-Type": "application/json; charset=utf-8"
+                },
+                url: '${pageContext.request.contextPath}/demo2/' + customerID + '.html',
+                success: function (result) {
+
+                    var customerBottles = JSON.parse(result);
+
+
+                    $(".table1 tbody").empty();
+                    $.each(customerBottles, function (index) {
+                        console.log(customerBottles[index].bottlesOnHand + " - " + customerBottles[index].bottlesReturned);
+
+                        $(".table1 tbody").append(
+                            "<tr>"
+                            + "<td>" + customerBottles[index].bottlesOnHand + "</td>"
+                            + "<td>" + customerBottles[index].bottlesReturned + "</td>" + "</tr>");
+                    });
+
+                },
+                error: function(){
+
+                    $(".table1 tbody").empty();
+                    console.log("EMPTY");
+                }
+            });
+        });
+
+    });
+</script>
+
 </body>
 </html>
