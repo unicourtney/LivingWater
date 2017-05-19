@@ -1,6 +1,5 @@
 package com.livingwater.services.impl;
 
-import com.livingwater.dao.TransactionBottlesDao;
 import com.livingwater.dao.TransactionDao;
 import com.livingwater.entities.*;
 import com.livingwater.services.CustomerService;
@@ -9,13 +8,10 @@ import com.livingwater.services.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -38,7 +34,7 @@ public class TransactionServiceImpl implements TransactionService {
     @Autowired
     private TransactionBottlesService transactionBottlesService;
 
-    public ModelAndView createTransaction(Integer id, HttpServletRequest request, HttpServletResponse response) throws ParseException {
+    public ModelAndView createTransaction(HttpServletRequest request, HttpServletResponse response) throws ParseException {
         ModelAndView view;
 
         User user1 = (User) request.getSession().getAttribute("session_login_user");
@@ -48,34 +44,41 @@ public class TransactionServiceImpl implements TransactionService {
             view = new ModelAndView("login");
         } else {
 
-            view = new ModelAndView("customer-transaction-bottles");
 
-            Customer customer = customerService.getCustomer(id);
-
-            String bottle_case = request.getParameter("bottle_case");
             Double transaction_price = Double.parseDouble(String.valueOf(request.getParameter("transaction_price")));
             String transaction_date = request.getParameter("transaction_date");
+            Integer customer_id = Integer.parseInt(request.getParameter("customer_id"));
 
-            request.getSession().setAttribute("session_customer_name", customer.getName());
-            request.getSession().setAttribute("session_customer_id", customer.getCustomerID());
-            request.getSession().setAttribute("session_bottle_case", bottle_case);
-            request.getSession().setAttribute("session_transaction_price", transaction_price);
-            request.getSession().setAttribute("session_transaction_date", transaction_date);
+            Customer customer = customerService.getCustomer(customer_id);
 
-            DateFormat transactionDateFormat = new SimpleDateFormat("MM/dd/yyyy");
-            Date date = transactionDateFormat.parse(transaction_date);
-            java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+            if (customer != null) {
+                view = new ModelAndView("transaction-bottles");
 
-            Transaction transaction = new Transaction();
-            TransactionBottles transactionBottles = new TransactionBottles();
+                request.getSession().setAttribute("session_customer_name", customer.getName());
+                request.getSession().setAttribute("session_customer_id", customer.getCustomerID());
+                request.getSession().setAttribute("session_transaction_price", transaction_price);
+                request.getSession().setAttribute("session_transaction_date", transaction_date);
 
-            transaction.setCustomer(customer);
-            transaction.setDateOfDelivery(sqlDate);
-            transactionDao.create(transaction);
+                DateFormat transactionDateFormat = new SimpleDateFormat("MM/dd/yyyy");
+                Date date = transactionDateFormat.parse(transaction_date);
+                java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 
-            Transaction transaction1 = transactionDao.getLastRecord();
+                Transaction transaction = new Transaction();
+                TransactionBottles transactionBottles = new TransactionBottles();
 
-            request.getSession().setAttribute("session_transaction_id", transaction1.getTransactionID());
+                transaction.setCustomer(customer);
+                transaction.setDateOfDelivery(sqlDate);
+                transactionDao.create(transaction);
+
+                Transaction transaction1 = transactionDao.getLastRecord();
+
+                request.getSession().setAttribute("session_transaction_id", transaction1.getTransactionID());
+            } else {
+
+                view = new ModelAndView("transaction");
+
+                view.addObject("transaction_error_message", "Invalid customer ID.");
+            }
         }
         return view;
     }
@@ -90,7 +93,7 @@ public class TransactionServiceImpl implements TransactionService {
             view = new ModelAndView("login");
         } else {
 
-            view = new ModelAndView("customer-transaction");
+            view = new ModelAndView("transaction");
 
             int transaction_id = Integer.parseInt(String.valueOf(request.getSession().getAttribute("session_transaction_id")).trim());
 
@@ -159,4 +162,24 @@ public class TransactionServiceImpl implements TransactionService {
         return view;
     }
 
+    public List<Transaction> getCustomerTransaction(int id) {
+
+        List<Transaction> transactionList = transactionDao.getCustomerTransaction(id);
+
+        return transactionList;
+    }
+
+    public Transaction getBottlesOnHand(int id) {
+
+        Transaction transaction = transactionDao.getBottlesOnHand(id);
+
+        return transaction;
+    }
+
+    public Transaction getBottlesReturned(int id){
+
+        Transaction transaction = transactionDao.getBottlesReturned(id);
+
+        return  transaction;
+    }
 }

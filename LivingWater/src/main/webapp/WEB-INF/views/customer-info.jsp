@@ -157,7 +157,7 @@
                                     Profiles</a></li>
                             </ul>
                         </li>
-                        <li><a href="" >Transaction</a>
+                        <li><a href="${pageContext.request.contextPath}/transaction">Transaction</a>
                         </li>
                         <li><a href="" class="dropdown-toggle" id="dropdownMenu4"
                                data-toggle="dropdown"><%session.getAttribute("session_login_user");%> ${sessionScope.session_login_user.username}</a>
@@ -214,23 +214,23 @@
                               method="POST">
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control" placeholder="" value="${customer.name}"
-                                       name="customer_name" disabled/>
+                                <input type="text" class="form-control customerInfo" placeholder="" value="${customer.name}"
+                                       name="customer_name" disabled required/>
                             </div>
                             <div class="form-group">
                                 <label>Address</label>
-                                <input type="text" class="form-control" placeholder="" value="${customer.address}"
+                                <input type="text" class="form-control customerInfo" placeholder="" value="${customer.address}"
                                        name="customer_address"
-                                       disabled/>
+                                       disabled required/>
                             </div>
                             <div class="form-group">
                                 <label>Contact Number</label>
-                                <input type="tel" class="form-control" placeholder="" value="${customer.contactNumber}"
-                                       name="customer_contact" disabled/>
+                                <input type="tel" class="form-control customerInfo" placeholder="" value="${customer.contactNumber}"
+                                       name="customer_contact" disabled required/>
                             </div>
                             <div class="form-group">
                                 <label>Customer Type</label>
-                                <select class="form-control" name="customer_type" disabled>
+                                <select class="form-control customerInfo" name="customer_type" disabled required>
                                     <c:choose>
                                         <c:when test="${customer.typeOfCustomer=='Regular'}">
                                             <c:set var="isSelected" value="selected"/>
@@ -253,6 +253,31 @@
                         </form>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <table id="example"
+                       class="table table-hover table-condensed table-striped"
+                       cellspacing="0" width="100%">
+                    <thead>
+                    <tr>
+                        <th>Transaction ID</th>
+                        <th>Date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      <c:forEach items="${transactionList}" var="transaction"
+                                                           varStatus="status">
+                        <tr>
+                           <td>${transaction.transactionID}</td>
+                           <td>${transaction.dateOfDelivery}</td>
+
+                         </tr>
+                         </c:forEach>
+                    </tbody>
+                </table>
             </div>
 
         </div>

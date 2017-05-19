@@ -29,4 +29,21 @@ public class TransactionBottlesDaoImpl extends GenericDaoImpl<TransactionBottles
         return query.list();
     }
 
+    public List<TransactionBottles> getBottlesReturned(int id){
+        Query query = getCurrentSession().createQuery("from TransactionBottles where transactionID = :id");
+        query.setParameter("id", id);
+
+        return query.list();
+    }
+
+    public List<TransactionBottles> getBottlesOnHand(int id){
+
+        Query query = getCurrentSession().createQuery("from TransactionBottles where transactionID = :id");
+        query.setParameter("id", id);
+
+
+        return query.list();
+    }
+
+
 }

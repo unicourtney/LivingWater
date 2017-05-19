@@ -35,6 +35,7 @@ public class Customer {
 	@Column(name="typeOfCustomer")
 	private String typeOfCustomer;
 
+
 	public Integer getCustomerID() {
 		return customerID;
 	}
@@ -82,9 +83,6 @@ public class Customer {
 	public void setTypeOfCustomer(String typeOfCustomer) {
 		this.typeOfCustomer = typeOfCustomer;
 	}
-	
-	
-	
-	
-	
+
+
 }

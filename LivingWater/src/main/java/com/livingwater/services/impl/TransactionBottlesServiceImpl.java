@@ -54,7 +54,7 @@ public class TransactionBottlesServiceImpl implements TransactionBottlesService 
             view = new ModelAndView("login");
         } else {
 
-            view = new ModelAndView("customer-transaction-bottles");
+            view = new ModelAndView("transaction-bottles");
 
             Integer transaction_id = Integer.parseInt(String.valueOf(request.getSession().getAttribute("session_transaction_id")));
 //        String bottle_case = String.valueOf(request.getSession().getAttribute("session_bottle_case"));
@@ -87,7 +87,7 @@ public class TransactionBottlesServiceImpl implements TransactionBottlesService 
             view = new ModelAndView("login");
         } else {
 
-            view = new ModelAndView("customer-transaction-bottles");
+            view = new ModelAndView("transaction-bottles");
 
             Integer transaction_id = Integer.parseInt(String.valueOf(request.getSession().getAttribute("session_transaction_id")));
 
@@ -119,7 +119,7 @@ public class TransactionBottlesServiceImpl implements TransactionBottlesService 
             view = new ModelAndView("login");
         } else {
 
-            view = new ModelAndView("customer-transaction");
+            view = new ModelAndView("transaction");
 
             Integer id = Integer.parseInt(String.valueOf(request.getSession().getAttribute("session_customer_id")));
 
@@ -141,6 +141,19 @@ public class TransactionBottlesServiceImpl implements TransactionBottlesService 
         }
 
         return view;
+    }
+
+    public List<TransactionBottles> getBottlesReturned(int id){
+        List<TransactionBottles> transactionBottlesList = transactionBottlesDao.getBottlesReturned(id);
+
+        return transactionBottlesList;
+    }
+
+    public List<TransactionBottles> getBottlesOnHand(int id){
+
+        List<TransactionBottles> transactionBottlesList = transactionBottlesDao.getBottlesOnHand(id);
+
+        return transactionBottlesList;
     }
     
 }

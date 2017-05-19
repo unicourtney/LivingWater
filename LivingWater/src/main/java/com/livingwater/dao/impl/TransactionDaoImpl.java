@@ -40,4 +40,48 @@ public class TransactionDaoImpl extends GenericDaoImpl<Transaction> implements T
         return transaction;
     }
 
+    public List<Transaction> getCustomerTransaction(int id) {
+
+        Query query = getCurrentSession().createQuery("from Transaction where customerID = :id");
+        query.setParameter("id", id);
+
+
+        return query.list();
+    }
+
+    public Transaction getBottlesOnHand(int id) {
+
+        Query query = getCurrentSession().createQuery("from Transaction where customerID = :id order by dateOfDelivery ASC ");
+        query.setParameter("id", id);
+        List<Transaction> transactionList = query.list();
+        Transaction transaction;
+        if (transactionList.size() > 1) {
+            query.setFirstResult(0);
+            query.setMaxResults(1);
+            transaction = (Transaction) query.uniqueResult();
+            System.out.println("SIZE ---- " + transactionList.size());
+        } else {
+            System.out.println("SIZE ---- " + transactionList.size());
+            transaction = (Transaction) query.uniqueResult();
+        }
+
+
+        return transaction;
+    }
+
+    public Transaction getBottlesReturned(int id) {
+
+        Query query = getCurrentSession().createQuery("from Transaction where customerID = :id order by dateOfDelivery ASC");
+        query.setParameter("id", id);
+        List<Transaction> transactionList = query.list();
+        Transaction transaction = null;
+        if(transactionList.size()!=1) {
+           transaction = new Transaction();
+            int row = transactionList.size() - 1;
+            transaction.setTransactionID(transactionList.get(row).getTransactionID());
+        }
+
+        return transaction;
+    }
+
 }
