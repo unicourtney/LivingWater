@@ -187,10 +187,9 @@
                         data-target="#createDelivery">
                     Create Delivery
                 </button>
-                <button class="btn btn-danger btn-default" data-toggle="modal" data-target="#addBottleModal">
-                    Add Bottles to Delivery
+                <button class="btn btn-info btn-default" data-toggle="modal" data-target="#addDeliveryTeamModal">
+                    Add Delivery Team
                 </button>
-
                 <hr>
             </div>
 
@@ -282,51 +281,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="modal fade" id="addBottleModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true" style="display:none;">
-
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h4 class="modal-title" id="myModalLabel3">Add Bottles to Delivery</h4>
-                        </div>
-                        <div class="modal-body">
-
-                            <form action="${pageContext.request.contextPath}/addBottleDelivery"
-                                  method="POST">
-                                <div class="form-group">
-                                    <label>Delivery ID</label>
-                                    <select class="form-control" name="deliveryBottle_id">
-                                        <c:forEach items="${deliveryList}" var="delivery"
-                                                   varStatus="status">
-                                            <option value="${delivery.deliveryID}">${delivery.deliveryID}</option>
-                                        </c:forEach>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Bottle ID</label>
-                                    <select class="form-control" name="deliveryBottle_bottle">
-                                        <c:forEach items="${bottlesList}" var="bottles"
-                                                   varStatus="status">
-                                            <option value="${bottles.serialNumber}">${bottles.serialNumber}</option>
-                                        </c:forEach>
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn btn-success btn-default">Submit</button>
-
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -345,15 +299,14 @@
                     <c:forEach items="${deliveryList}" var="delivery"
                                varStatus="status">
                         <tr>
-                            <td><a class="viewBottleModal" data-uid="${delivery.deliveryID}" data-toggle="modal" data-target="#viewBottles" href="#myModal2">
-                                    ${delivery.deliveryID}
-                            </a> </td>
+                            <td>${delivery.deliveryID}</td>
                             <td><a class="viewMembers" data-uid="${delivery.deliveryID}" data-toggle="modal"
                                    data-target="#viewVehicle" href="#myModal">${delivery.vehicle.plateNumber}</a></td>
 
                             <td>${delivery.date}</td>
 
                             <td>
+                                <a href="<c:url value='/inventory/delivery/info/${deliveryList[status.index].deliveryID}' />" class="btn btn-info btn-xs">VIEW</a>
                                 <a href="#" class="btn btn-danger btn-xs">DELETE</a>
                             </td>
                         </tr>
@@ -370,24 +323,6 @@
                             <h4 class="modal-title" id="myModalLabel1">Members List</h4>
                         </div>
                         <div class="modal-body viewModalBody">
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade" id="viewBottles" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
-                 aria-hidden="true" style="display: none;">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h4 class="modal-title" id="myModalLabel1">Bottles List</h4>
-                        </div>
-                        <div class="modal-body viewBottlesBody">
 
                         </div>
                         <div class="modal-footer">
@@ -452,34 +387,6 @@
 
 <script>
     $(document).ready(function(){
-        $('.viewBottleModal').click(function(){
-            $('.viewBottlesBody').html('');
-            var deliveryID = $(this).data('uid');
-
-            $.ajax({
-                type: 'GET',
-                headers: {
-                    Accept: "application/json; charset=utf-8",
-                    "Content-Type": "application/json; charset=utf-8"
-                },
-                url: '${pageContext.request.contextPath}/viewBottles/'+deliveryID+'.html',
-                success: function(result){
-                    var bottlesList = JSON.parse(result);
-                    console.log(bottlesList);
-                    $('.viewBottlesBody').append('<label>Serial Number</label>');
-                    for(i = 0;i<bottlesList.length;i++){
-                        var bot = bottlesList[i];
-                        $('.viewBottlesBody').append('<p>'+ bot["bottle"]["serialNumber"] + '</p>');
-                    }
-                }
-            });
-
-        });
-    });
-</script>
-
-<script>
-    $(document).ready(function(){
 
         $('.viewMembers').click(function(){
             $('.viewModalBody').html('');
@@ -500,6 +407,7 @@
                     $('.viewModalBody').append('<p>' + membersList[0]["vehicle"]["plateNumber"]);
                     for(i = 0; i<membersList.length;i++){
                         var mem = membersList[i];
+                        alert(mem["user"]["name"]);
                         if(mem["designation"] == "Contact Person"){
                             $('.viewModalBody').append('<label>Contact Person</label>');
                             $('.viewModalBody').append('<p>'+ mem["user"]["name"] + '</p>');

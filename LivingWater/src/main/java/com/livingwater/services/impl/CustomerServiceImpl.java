@@ -42,14 +42,12 @@ public class CustomerServiceImpl implements CustomerService {
             String customer_address = request.getParameter("customer_address");
             Long customer_contact = Long.parseLong(request.getParameter("customer_contact"));
             String customer_type = request.getParameter("customer_type");
-            Double pricing = Double.parseDouble(request.getParameter("customer_pricing"));
 
             Customer customer = new Customer();
             customer.setAddress(customer_address);
             customer.setContactNumber(customer_contact);
             customer.setName(customer_name);
             customer.setTypeOfCustomer(customer_type);
-            customer.setPricing(pricing);
 
             customerDao.create(customer);
 

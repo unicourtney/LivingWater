@@ -78,7 +78,7 @@ public class BatchServiceImpl implements BatchService {
 
             if (!batchBottlesDao.isBatchBottlesInDB(batch_id, bottle_id)) {
                 Bottle bottle = bottleDao.getABottle(bottle_id);
-                BatchBottles batchBottles = new BatchBottles(batchDao.getABatch(batch_id), bottle);
+                BatchBottles batchBottles = new BatchBottles(batch_id, bottle);
 
                 batchBottlesDao.create(batchBottles);
             }

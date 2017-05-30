@@ -4,9 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.livingwater.dao.BottleDao;
-import com.livingwater.dao.CustomerDao;
 import com.livingwater.dao.RoleDao;
-import com.livingwater.dao.TransactionDao;
 import com.livingwater.entities.Role;
 import com.livingwater.entities.User;
 import com.livingwater.services.BatchService;
@@ -35,11 +33,6 @@ public class UserController {
     @Autowired
     private BottleDao bottleDao;
 
-    @Autowired
-    private CustomerDao customerDao;
-
-    @Autowired
-    private TransactionDao transactionDao;
 
     @Autowired
     private RoleDao roleDao;
@@ -102,8 +95,6 @@ public class UserController {
 
             view = new ModelAndView("transaction");
         }
-        view.addObject("customerList",customerDao.getAllCustomer());
-        view.addObject("transactionsList",transactionDao.getAllTransaction());
         return view;
     }
 

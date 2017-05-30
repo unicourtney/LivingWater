@@ -1,7 +1,10 @@
 package com.livingwater.controllers;
 
 import com.google.gson.Gson;
-import com.livingwater.dao.*;
+import com.livingwater.dao.BatchDao;
+import com.livingwater.dao.DeliveryDao;
+import com.livingwater.dao.DeliveryTeamDao;
+import com.livingwater.dao.VehicleDao;
 import com.livingwater.entities.*;
 import com.livingwater.services.BatchService;
 import com.livingwater.services.DeliveryService;
@@ -50,12 +53,6 @@ public class DeliveryController {
     @Autowired
     private DeliveryDao deliveryDao;
 
-    @Autowired
-    private BottleDao bottleDao;
-
-    @Autowired
-    private DeliveryBottlesDao deliveryBottlesDao;
-
     @RequestMapping(value = "/inventory/delivery/info/{id}", method = RequestMethod.GET)
     public ModelAndView deliveryInfoPage(@PathVariable("id") Integer id, HttpServletRequest request) {
         ModelAndView view;
@@ -102,7 +99,6 @@ public class DeliveryController {
             view.addObject("deliveryTeamList", deliveryTeamList);
             view.addObject("batchList", batchList);
             view.addObject("vehicleList",vehicles);
-            view.addObject("bottlesList",bottleDao.getAllBottle());
         }
 
         return view;
@@ -138,26 +134,5 @@ public class DeliveryController {
 
     }
 
-    @RequestMapping(value = "/addBottleDelivery", method = RequestMethod.POST)
-    public ModelAndView addBottleDelivery(HttpServletRequest request, HttpServletResponse response) {
-        return deliveryService.addBottleDelivery(request,response);
-    }
 
-    @RequestMapping(value = "/viewBottles/{deliveryID}", method = RequestMethod.GET)
-    @ResponseBody
-    public String viewBottles(@PathVariable("deliveryID") String deliveryID){
-        int id = Integer.parseInt(deliveryID);
-        System.out.println(deliveryID);
-        Delivery delivery = deliveryDao.getADelivery(id);
-
-        List<DeliveryBottles> deliveryBottles = deliveryBottlesDao.getAll(delivery);
-
-
-        Gson gson = new Gson();
-
-        String json = gson.toJson(deliveryBottles);
-
-        return json;
-
-    }
 }

@@ -69,9 +69,6 @@ public class BatchBottlesServiceImpl implements BatchBottlesService{
                 BatchBottles batchBottles = new BatchBottles(Calendar.getInstance(),batchDao.getABatch(batchID),bottleDao.getABottle(req.getParameter("bottle_id")));
                 batchBottlesDao.create(batchBottles);
                 System.out.println("Successfully Inserted");
-                Bottle bot = bottleDao.getABottle(req.getParameter("bottle_id"));
-                bot.setStatus("Refilled");
-                bottleDao.update(bot);
                 mav.addObject("batchList",batchDao.getAllBatch());
                 mav.addObject("allBottlesList",bottleDao.getAllBottle());
                 return mav;

@@ -211,9 +211,6 @@
 
                             <div class="form-group">
                                 <label>Customer Name</label>
-
-                                <select
-
                                 <input type="text" class="form-control" placeholder=""
                                        value="<%session.getAttribute("session_customer_name");%> ${sessionScope.session_customer_name }"
                                        disabled/>

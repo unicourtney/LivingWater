@@ -95,7 +95,7 @@ public class TransactionBottlesServiceImpl implements TransactionBottlesService 
 
             Bottle bottle = bottleService.getABottle(String.valueOf(id));
 
-            TransactionBottles transactionBottles = new TransactionBottles(transaction, bottle, "Delivered");
+            TransactionBottles transactionBottles = new TransactionBottles(transaction, bottle);
 
             transactionBottlesDao.delete(transactionBottles);
 

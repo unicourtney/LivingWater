@@ -43,12 +43,6 @@ public class DeliveryServiceImpl implements DeliveryService {
     @Autowired
     private DeliveryTeamDao deliveryTeamDao;
 
-    @Autowired
-    private DeliveryBottlesDao deliveryBottlesDao;
-
-    @Autowired
-    private BottleDao bottleDao;
-
     public ModelAndView createDelivery(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView view;
 
@@ -107,34 +101,5 @@ public class DeliveryServiceImpl implements DeliveryService {
         List<Delivery> deliveryList = deliveryDao.getAllDelivery();
 
         return deliveryList;
-    }
-
-    public ModelAndView addBottleDelivery(HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView mav = new ModelAndView("inventory-delivery");
-        Delivery delivery = deliveryDao.getADelivery(Integer.parseInt(request.getParameter("deliveryBottle_id")));
-        Bottle bottle_id = bottleDao.getABottle(request.getParameter("deliveryBottle_bottle"));
-
-        if (!deliveryBottlesDao.isBottlesInDB(delivery, bottle_id)) {
-            DeliveryBottles deliveryBottles = new DeliveryBottles();
-            deliveryBottles.setDelivery(delivery);
-            deliveryBottles.setBottle(bottle_id);
-            deliveryBottlesDao.create(deliveryBottles);
-            bottle_id.setStatus("Delivered");
-            bottleDao.update(bottle_id);
-        }
-        List<Delivery> deliveryList = deliveryDao.getAllDelivery();
-
-        List<User> userList = userDao.getAllUsers();
-
-        List<DeliveryTeam> deliveryTeamList = deliveryTeamDao.getAllDeliveryTeam();
-
-        List<Vehicle> vehicles = vehicleDao.getAllVehicles();
-
-        mav.addObject("deliveryList", deliveryList);
-        mav.addObject("userList", userList);
-        mav.addObject("deliveryTeamList", deliveryTeamList);
-        mav.addObject("vehicleList",vehicles);
-        mav.addObject("bottlesList",bottleDao.getAllBottle());
-        return mav;
     }
 }

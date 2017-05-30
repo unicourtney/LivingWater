@@ -201,20 +201,13 @@
 
                             <div class="form-group">
                                 <label>Customer ID</label>
-                                <select class="form-control customerInput" name="customer_id" required>
-                                    <option data-uid="-1">Select</option>
-                                    <c:forEach items="${customerList}" var="customer">
-                                        <option data-uid="${customer.customerID}" value="${customer.customerID}">${customer.name}</option>
-                                    </c:forEach>
-                                </select>
-
-                                <%--<input type="text" class="form-control" placeholder="" name="customer_id" required/>--%>
+                                <input type="text" class="form-control" placeholder="" name="customer_id" required/>
                                 <p style="color: red">${transaction_error_message}</p>
                             </div>
 
                             <div class="form-group">
                                 <label>Price</label>
-                                <input type="text" class="form-control priceInput" placeholder="" name="transaction_price" readonly/>
+                                <input type="text" class="form-control" placeholder="" name="transaction_price" required/>
                             </div>
 
                             <div class="form-group">
@@ -237,36 +230,6 @@
             </div>
             </div>
 
-        <div class="row">
-            <div class="col-md-12">
-                <table id="example"
-                       class="table table-hover table-condensed table-striped"
-                       cellspacing="0" width="100%">
-                    <thead>
-                    <tr>
-                        <th>Transaction ID</th>
-                        <th>Customer ID</th>
-                        <th>Transaction Date</th>
-                        <th>Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach items="${transactionsList}" var="transaction">
-                    <tr>
-                        <td>${transaction.transactionID}</td>
-                        <td>${transaction.customer.name}</td>
-                        <td>${transaction.dateOfDelivery}</td>
-                        <td><a href="${pageContext.request.contextPath}/inventory/supplies/info"
-                               class="btn btn-info btn-xs">VIEW</a>
-                            <a href="#" class="btn btn-danger btn-xs">DELETE</a></td>
-                    </tr>
-
-                    </c:forEach>
-                    </tbody>
-                </table>
-            </div>
-
-        </div>
 
         </div>
     </div>
@@ -315,38 +278,5 @@
         todayHighlight: true
     });
 </script>
-
-<script>
-
-    $(document).ready(function(){
-        $('.customerInput').change(function(){
-            $('.priceInput').val('');
-            var customerID = $(this).find(':selected').data('uid');
-
-            $.ajax({
-                type: 'GET',
-                headers: {
-                    Accept: "application/json; charset=utf-8",
-                    "Content-Type": "application/json; charset=utf-8"
-                },
-                url: '${pageContext.request.contextPath}/getPrice/'+customerID+'.html',
-                success:function(result){
-                    var customer = JSON.parse(result);
-                    console.log(customer);
-
-                    $('.priceInput').val(customer['pricing']);
-                    $('.priceInput').attr("value",customer['pricing']);
-                }
-
-            });
-
-
-        });
-
-    });
-
-
-</script>
-
 </body>
 </html>

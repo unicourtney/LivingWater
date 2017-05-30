@@ -15,7 +15,4 @@ public interface DeliveryService {
     public ModelAndView createDelivery(HttpServletRequest request, HttpServletResponse response);
 
     public List<Delivery> getAllDelivery();
-
-    ModelAndView addBottleDelivery(HttpServletRequest request, HttpServletResponse response);
-
 }
