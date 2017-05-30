@@ -214,8 +214,8 @@
                                 <div class="form-group">
                                     <label>Bottle Type</label>
                                     <select class="form-control" name="bottle_type">
-                                        <option value="Special">Special</option>
-                                        <option value="Not Special">Not Special</option>
+                                        <option value="Company-Owned">Company-Owned</option>
+                                        <option value="Customer-Owned">Customer-Owned</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
