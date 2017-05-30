@@ -20,13 +20,17 @@ public class TransactionBottles implements Serializable{
     @JoinColumn(name = "bottleID")
     private Bottle bottle;
 
+    @Column(name = "status")
+    private String status;
+
     public TransactionBottles() {
     }
 
-    public TransactionBottles(Transaction transaction, Bottle bottle) {
+    public TransactionBottles(Transaction transaction, Bottle bottle, String status) {
 
         this.transaction = transaction;
         this.bottle = bottle;
+        this.status = status;
     }
 
     public Transaction getTransaction() {
@@ -44,4 +48,13 @@ public class TransactionBottles implements Serializable{
     public void setBottle(Bottle bottle) {
         this.bottle = bottle;
     }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }
+

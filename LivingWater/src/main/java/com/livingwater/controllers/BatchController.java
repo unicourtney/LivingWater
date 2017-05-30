@@ -36,7 +36,7 @@ public class BatchController {
     @RequestMapping(value = "/addBottleToBatch", method = RequestMethod.POST)
 
     public ModelAndView addBottleToBatch(HttpServletRequest request, HttpServletResponse response) {
-        return batchService.addBottleToBatch(request, response);
+        return batchBottlesService.addBatchBottles(request, response);
     }
 
 

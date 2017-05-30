@@ -1,5 +1,7 @@
 package com.livingwater.controllers;
 
+import com.google.gson.Gson;
+import com.livingwater.dao.CustomerDao;
 import com.livingwater.entities.Customer;
 import com.livingwater.entities.User;
 import com.livingwater.services.CustomerService;
@@ -11,6 +13,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -31,6 +34,9 @@ public class TransactionController {
 
     @Autowired
     private TransactionBottlesService transactionBottlesService;
+
+    @Autowired
+    private CustomerDao customerDao;
 
 
     @RequestMapping(value = "/profiles/customers/transaction/{id}", method = RequestMethod.GET)
@@ -93,5 +99,19 @@ public class TransactionController {
     public ModelAndView cancelTransactionBottle(HttpServletRequest request, HttpServletResponse response) {
 
         return transactionBottlesService.cancelTransactionBottle(request, response);
+
+    }
+
+
+    @RequestMapping(value = "/getPrice/{customerID}", method = RequestMethod.GET)
+    @ResponseBody
+    public String getPrice(@PathVariable("customerID") String customerID) {
+        int id = Integer.parseInt(customerID);
+        Customer customer = customerDao.getCustomer(id);
+
+        Gson gson = new Gson();
+        String json = gson.toJson(customer);
+
+        return json;
     }
 }
