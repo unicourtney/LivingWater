@@ -227,6 +227,11 @@
                                 </select>
                             </div>
 
+                            <div class="form-group">
+                                <label>Price</label>
+                                <input type="text" class="form-control" placeholder="" name="customer_pricing" required/>
+                            </div>
+
                             <button type="submit" class="btn btn-success btn-default">Submit</button>
 
                         </form>
